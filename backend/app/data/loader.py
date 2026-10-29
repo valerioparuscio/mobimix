@@ -280,10 +280,12 @@ def _unique(items: list[Any], what: str, file_name: str) -> dict[str, Any]:
 
 
 def _version(data_dir: Path) -> str:
+    """Identifies the content of the data files. Line endings are not content: a file checked out
+    on Windows (CRLF) and on Linux (LF) is the same data, so it gets the same version."""
     digest = hashlib.sha256()
     for name in _DATA_FILES:
         digest.update(name.encode())
-        digest.update((data_dir / name).read_bytes())
+        digest.update((data_dir / name).read_bytes().replace(b"\r\n", b"\n"))
     return digest.hexdigest()[:12]
 
 

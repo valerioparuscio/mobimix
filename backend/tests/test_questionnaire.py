@@ -1,4 +1,5 @@
 import json
+import math
 
 import pytest
 from fastapi.testclient import TestClient
@@ -83,11 +84,27 @@ def test_questionnaire_endpoint():
     assert {"id", "label", "low", "high"} <= first_band.keys()
 
 
+def same_data(a, b) -> bool:
+    """Equal JSON data, numbers compared to about nine digits: the last digit of a computed
+    number can differ between operating systems (another maths library), which is not staleness."""
+    if isinstance(a, dict) and isinstance(b, dict):
+        return a.keys() == b.keys() and all(same_data(a[key], b[key]) for key in a)
+    if isinstance(a, list) and isinstance(b, list):
+        return len(a) == len(b) and all(same_data(x, y) for x, y in zip(a, b, strict=True))
+    if isinstance(a, float) or isinstance(b, float):
+        return (
+            isinstance(a, int | float)
+            and isinstance(b, int | float)
+            and math.isclose(a, b, rel_tol=1e-9, abs_tol=1e-9)
+        )
+    return a == b
+
+
 def test_frontend_fixtures_are_up_to_date():
     """The frontend mapper tests use JSON snapshots of the backend reference data."""
     for name, content in build().items():
         snapshot = json.loads((FIXTURE_DIR / name).read_text(encoding="utf-8"))
-        assert snapshot == content, (
+        assert same_data(snapshot, content), (
             f"frontend/src/form/fixtures/{name} is stale: "
             "run `python -m app.data.export_demo_fixture` from backend/"
         )
