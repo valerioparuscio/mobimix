@@ -85,6 +85,7 @@ frontend/   React + Vite + TypeScript
   src/components/  small reusable controls
 data/       editable reference data (YAML) - all model assumptions live here
 docs/       methodology, data sources, assumptions
+Dockerfile, render.yaml   publishing on Render (one service: API + web app)
 ```
 
 ## Run locally
@@ -131,7 +132,28 @@ npm run build                        # type-check + production build
 ```
 
 Environment variables are listed in [.env.example](.env.example); none are required for local use.
-Docker is not set up.
+Docker is not needed locally: it is only used to publish (below).
+
+## Publish on Render
+
+One web service serves both the API and the web app, from the same address (no second service, no
+cross-origin setup): the [Dockerfile](Dockerfile) builds the web app and puts it in the Python image, and
+the server (`MOBIMIX_STATIC_DIR`) serves it after the API. [render.yaml](render.yaml) describes the service.
+
+1. Push the repository to GitHub.
+2. In [Render](https://render.com): **New > Blueprint**, pick the repository, **Apply**.
+3. Wait for the first build (a few minutes). The address is shown in the dashboard
+   (`https://mobimix-....onrender.com`); `/api/health` should answer `{"status":"ok",...}`.
+4. From then on every push to `main` publishes again.
+
+Things to know:
+
+- The **free** plan puts the service to sleep after 15 minutes without visits; the first visit after that
+  takes about a minute to wake it. The `starter` plan (set `plan: starter` in `render.yaml`) keeps it awake.
+- Nothing is stored on the server: the answers stay in the visitor's browser, and each analysis is computed
+  from the request alone. Anyone who knows the address can use the API.
+- To try the image locally (needs Docker): `docker build -t mobimix .` then
+  `docker run -p 10000:10000 mobimix`, and open http://localhost:10000.
 
 ## Reference data
 

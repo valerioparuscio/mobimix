@@ -43,3 +43,22 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run build
+
+  docker:
+    # The image published on Render: it must build, and the server in it must answer.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: docker build -t mobimix .
+      - name: Start it and ask
+        run: |
+          docker run -d --name mobimix -p 10000:10000 mobimix
+          for attempt in $(seq 1 30); do
+            curl -fs http://localhost:10000/api/health && break
+            sleep 1
+          done
+          curl -fs http://localhost:10000/api/health
+          curl -fs http://localhost:10000/ | grep -q "MobiMix"
+      - name: Server log
+        if: always()
+        run: docker logs mobimix

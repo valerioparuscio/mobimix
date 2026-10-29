@@ -1,0 +1,11 @@
+# Render blueprint: one web service that serves the API and the web app (see the Dockerfile).
+# In Render: New > Blueprint, pick this repository, Apply. Every push to main publishes again.
+services:
+  - type: web
+    name: mobimix
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    region: frankfurt   # the closest to Italy; change it if you prefer
+    plan: free          # sleeps after 15 minutes without visits; "starter" keeps it awake
+    healthCheckPath: /api/health
