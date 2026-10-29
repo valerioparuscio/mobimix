@@ -1,0 +1,245 @@
+[
+  {
+    "id": "car_small_petrol",
+    "name": "Utilitaria a benzina",
+    "type": "CAR_SMALL_PETROL",
+    "mode": "CAR",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "car_medium_petrol",
+    "name": "Auto media a benzina",
+    "type": "CAR_MEDIUM_PETROL",
+    "mode": "CAR",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "car_diesel",
+    "name": "Auto media a gasolio",
+    "type": "CAR_DIESEL",
+    "mode": "CAR",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "car_electric",
+    "name": "Auto elettrica",
+    "type": "CAR_ELECTRIC",
+    "mode": "CAR",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "motorcycle",
+    "name": "Moto",
+    "type": "MOTORCYCLE",
+    "mode": "MOTORCYCLE",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "scooter_125",
+    "name": "Scooter 125 cc",
+    "type": "SCOOTER",
+    "mode": "MOTORCYCLE",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "bicycle",
+    "name": "Bicicletta",
+    "type": "BICYCLE",
+    "mode": "BICYCLE",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "e_bike",
+    "name": "E-bike",
+    "type": "E_BIKE",
+    "mode": "E_BIKE",
+    "ownership": "OWNED",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "walking",
+    "name": "A piedi",
+    "type": "WALKING",
+    "mode": "WALK",
+    "ownership": "FREE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "pt_annual_urban_milano",
+    "name": "Abbonamento annuale urbano ATM (ordinario)",
+    "type": "PT_ANNUAL",
+    "mode": "PUBLIC_TRANSPORT",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "pt_annual_urban_milano_under27",
+    "name": "Abbonamento annuale urbano ATM (under 27)",
+    "type": "PT_ANNUAL",
+    "mode": "PUBLIC_TRANSPORT",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": 26
+  },
+  {
+    "id": "pt_annual_urban_milano_senior",
+    "name": "Abbonamento annuale urbano ATM (senior 65+)",
+    "type": "PT_ANNUAL",
+    "mode": "PUBLIC_TRANSPORT",
+    "ownership": "SUBSCRIPTION",
+    "min_age": 65,
+    "max_age": null
+  },
+  {
+    "id": "pt_annual_metro_mi1_mi3",
+    "name": "Abbonamento annuale ATM area metropolitana (Mi1-Mi3)",
+    "type": "PT_ANNUAL",
+    "mode": "PUBLIC_TRANSPORT",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "pt_monthly_urban_milano",
+    "name": "Abbonamento mensile urbano ATM (ordinario)",
+    "type": "PT_MONTHLY",
+    "mode": "PUBLIC_TRANSPORT",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "rail_annual_lombardia",
+    "name": "Abbonamento annuale treni regionali \"Io viaggio ovunque in Lombardia\"",
+    "type": "RAIL_SUBSCRIPTION",
+    "mode": "RAIL",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "bikemi_annual",
+    "name": "Abbonamento annuale BikeMi",
+    "type": "BIKE_SHARING_SUBSCRIPTION",
+    "mode": "BICYCLE",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "car_sharing_subscription",
+    "name": "Abbonamento car sharing (ipotetico)",
+    "type": "CAR_SHARING_SUBSCRIPTION",
+    "mode": "CAR",
+    "ownership": "SUBSCRIPTION",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "pt_ticket_urban_milano",
+    "name": "Biglietto urbano ATM",
+    "type": "PT_TICKET",
+    "mode": "PUBLIC_TRANSPORT",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "taxi_milano",
+    "name": "Taxi",
+    "type": "TAXI",
+    "mode": "TAXI",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "ride_hailing_ncc",
+    "name": "Auto con conducente (NCC / app)",
+    "type": "RIDE_HAILING",
+    "mode": "TAXI",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "car_sharing_free2move_milano",
+    "name": "Car sharing free-floating (Free2move)",
+    "type": "CAR_SHARING",
+    "mode": "CAR",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "bikemi_day_pass",
+    "name": "BikeMi giornaliero",
+    "type": "BIKE_SHARING",
+    "mode": "BICYCLE",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "kick_scooter_sharing",
+    "name": "Monopattino in sharing",
+    "type": "SCOOTER_SHARING",
+    "mode": "KICK_SCOOTER",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "car_rental_daily",
+    "name": "Noleggio auto (giornaliero)",
+    "type": "CAR_RENTAL",
+    "mode": "CAR",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "rail_regional_ticket",
+    "name": "Biglietto treno regionale",
+    "type": "RAIL",
+    "mode": "RAIL",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "rail_high_speed_ticket",
+    "name": "Biglietto treno alta velocità",
+    "type": "RAIL",
+    "mode": "RAIL",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  },
+  {
+    "id": "air_domestic",
+    "name": "Volo nazionale",
+    "type": "AIR",
+    "mode": "AIR",
+    "ownership": "PAY_PER_USE",
+    "min_age": null,
+    "max_age": null
+  }
+]

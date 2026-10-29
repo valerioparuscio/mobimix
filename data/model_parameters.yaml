@@ -1,0 +1,589 @@
+# Global model parameters (energy prices, emission factors, national statistics, calendar,
+# valuation). One entry = one number with its provenance. See docs/assumptions.md.
+#
+# Conventions
+#   confidence   LOW | MEDIUM | HIGH - trust in the value, not in its source's prestige.
+#   source       id from sources.yaml. Missing = unsourced assumption.
+#   placeholder  true = stand-in that must be replaced or explicitly confirmed. Listed by
+#                `python -m app.data.audit`.
+#   low / high   plausible range; drives the uncertainty ranges shown to the user.
+
+meta:
+  geographic_scope: IT
+  valid_from: 2026-01-01
+
+parameters:
+  # --- trip bands (thresholds on one-way leg distance) -----------------------------------
+  - id: bands.urban_max_km
+    description: Longest leg classified as URBAN.
+    unit: km
+    value: 15
+    placeholder: true
+    notes: Modelling choice; Audimob shows >80% of trips within 10 km.
+
+  - id: bands.regional_max_km
+    description: Longest leg classified as REGIONAL; longer legs are LONG.
+    unit: km
+    value: 100
+    placeholder: true
+    notes: Modelling choice.
+
+  # --- energy prices ---------------------------------------------------------------------
+  - id: energy.petrol_eur_per_l
+    description: Average self-service petrol price.
+    unit: EUR/l
+    value: 2.022
+    low: 1.85
+    high: 2.25
+    confidence: HIGH
+    source: mimit_carburanti_2026_10
+    valid_from: 2026-10-23
+    notes: Spot value at 23/10/2026 on the road network; volatile. The range is an assumption.
+
+  - id: energy.diesel_eur_per_l
+    description: Average self-service diesel price.
+    unit: EUR/l
+    value: 2.260
+    low: 2.05
+    high: 2.45
+    confidence: HIGH
+    source: mimit_carburanti_2026_10
+    valid_from: 2026-10-23
+    notes: Spot value at 23/10/2026; volatile. The range is an assumption.
+
+  - id: energy.electricity_home_eur_per_kwh
+    description: Residential electricity price for home EV charging.
+    unit: EUR/kWh
+    value: 0.25
+    low: 0.08
+    high: 0.33
+    confidence: MEDIUM
+    source: ev_ricarica_2026
+    notes: Low end is a dedicated night tariff.
+
+  - id: energy.electricity_public_ac_eur_per_kwh
+    description: Average public AC charging price.
+    unit: EUR/kWh
+    value: 0.63
+    low: 0.46
+    high: 0.64
+    confidence: MEDIUM
+    source: ev_ricarica_2026
+
+  - id: energy.electricity_public_dc_eur_per_kwh
+    description: Average public DC fast / ultra-fast charging price.
+    unit: EUR/kWh
+    value: 0.74
+    low: 0.60
+    high: 0.90
+    confidence: MEDIUM
+    source: ev_ricarica_2026
+    notes: Range is an assumption around the reported average.
+
+  - id: energy.ev_home_charging_share
+    description: Share of EV energy charged at home (the rest is public).
+    unit: share 0-1
+    value: 0.70
+    low: 0.50
+    high: 0.90
+    placeholder: true
+    notes: Assumption. Households without a private parking spot charge mostly in public.
+
+  - id: energy.ev_public_dc_share
+    description: Share of public EV charging done on DC fast chargers (the rest is AC).
+    unit: share 0-1
+    value: 0.40
+    low: 0.20
+    high: 0.60
+    placeholder: true
+    notes: Assumption.
+
+  # --- emission factors ------------------------------------------------------------------
+  - id: emissions.petrol_kg_co2_per_l
+    description: Direct CO2 from burning one litre of petrol.
+    unit: kgCO2/l
+    value: 2.31
+    confidence: HIGH
+    notes: Standard combustion factor. Source to be linked (IPCC / ISPRA).
+
+  - id: emissions.diesel_kg_co2_per_l
+    description: Direct CO2 from burning one litre of diesel.
+    unit: kgCO2/l
+    value: 2.65
+    confidence: HIGH
+    notes: Standard combustion factor. Source to be linked (IPCC / ISPRA).
+
+  - id: emissions.electricity_g_co2_per_kwh
+    description: CO2 intensity of the national electricity mix.
+    unit: gCO2/kWh
+    value: 280
+    low: 230
+    high: 330
+    confidence: MEDIUM
+    source: ispra_fattori_emissione
+    notes: 2021 figure; the mix is decarbonising, update when a newer ISPRA value is available.
+
+  # --- national statistics (anchors for default profiles) -------------------------------
+  - id: statistics.car_annual_km_italy_avg
+    description: Average annual distance driven per car in Italy.
+    unit: km/year
+    value: 10712
+    low: 10020
+    high: 10949
+    confidence: MEDIUM
+    source: istat_percorrenze_2023
+    notes: UNRAE 10,712; ISTAT 2023 10,949 (earlier ISTAT estimate 10,020); ACI 10,647.
+
+  - id: statistics.car_annual_km_under_5_years
+    description: Average annual distance driven by cars younger than 5 years.
+    unit: km/year
+    value: 13600
+    confidence: MEDIUM
+    source: istat_percorrenze_2023
+
+  - id: statistics.car_fleet_avg_age_years
+    description: Average age of the Italian car fleet.
+    unit: years
+    value: 13
+    confidence: MEDIUM
+    source: aci_annuario_2025
+
+  - id: statistics.trip_avg_distance_km
+    description: Average length of a trip of the Italian population.
+    unit: km
+    value: 9
+    low: 7
+    high: 11
+    confidence: LOW
+    source: audimob_2025
+    notes: Own derivation - 944.5 M passenger-km / 102.7 M trips, first half of 2025.
+
+  - id: statistics.share_trips_within_10km
+    description: Share of trips shorter than 10 km.
+    unit: share 0-1
+    value: 0.80
+    confidence: MEDIUM
+    source: audimob_2025
+
+  - id: statistics.share_trips_up_to_2km_by_car
+    description: Share of trips up to 2 km made by car.
+    unit: share 0-1
+    value: 0.273
+    confidence: MEDIUM
+    source: audimob_2025
+
+  - id: statistics.rc_auto_avg_premium_eur
+    description: Average annual third-party liability premium for a car.
+    unit: EUR/year
+    value: 438
+    low: 410
+    high: 450
+    confidence: MEDIUM
+    source: ivass_rc_auto_2025
+
+  - id: statistics.car_cost_sanity_eur_per_year
+    description: Average total annual cost of owning a car (ISFORT). Used only as a sanity
+      check for the TCO model in tests, never as a model input.
+    unit: EUR/year
+    value: 4008
+    low: 2329
+    high: 4486
+    confidence: MEDIUM
+    source: isfort_costo_auto_2026
+
+  # --- calendar --------------------------------------------------------------------------
+  - id: calendar.working_days_per_year
+    description: Working days per year before remote work (net of leave and holidays).
+    unit: days
+    value: 220
+    low: 210
+    high: 230
+    confidence: MEDIUM
+    notes: 260 weekdays minus ~20 days leave and ~12 public holidays plus sick days.
+
+  - id: calendar.school_days_per_year
+    description: School days per year (for school escort missions).
+    unit: days
+    value: 200
+    low: 190
+    high: 205
+    confidence: MEDIUM
+    notes: Italian school calendar minimum is 200 days.
+
+  # --- household simultaneity (MVP stand-in for schedules) -------------------------------
+  # Maps the qualitative answer "how often do two household members need a car at the same
+  # time?" to days per year. Drives how long a second car is *really* needed.
+  - id: simultaneity.days_per_year.never
+    unit: days/year
+    value: 0
+    confidence: MEDIUM
+    notes: Mappatura concordata con il product owner (2026-10-28).
+
+  - id: simultaneity.days_per_year.rarely
+    unit: days/year
+    value: 10
+    low: 5
+    high: 20
+    confidence: MEDIUM
+    notes: Mappatura concordata con il product owner (2026-10-28).
+
+  - id: simultaneity.days_per_year.sometimes
+    unit: days/year
+    value: 40
+    low: 20
+    high: 70
+    confidence: MEDIUM
+    notes: Mappatura concordata con il product owner (2026-10-28).
+
+  - id: simultaneity.days_per_year.often
+    unit: days/year
+    value: 100
+    low: 60
+    high: 150
+    confidence: MEDIUM
+    notes: Mappatura concordata con il product owner (2026-10-28).
+
+  - id: simultaneity.days_per_year.almost_daily
+    unit: days/year
+    value: 200
+    low: 150
+    high: 230
+    confidence: MEDIUM
+    notes: Mappatura concordata con il product owner (2026-10-28).
+
+  # --- feasibility (step 8; categorical rules are in feasibility_rules.yaml) --------------
+  - id: feasibility.regular_min_occurrences_per_year
+    description: From this many times a year a mission counts as regular. A regular mission
+      needs a regular means, not one meant for the occasional trip (taxi, rental, flights).
+    unit: times/year
+    value: 50
+    low: 30
+    high: 100
+    placeholder: true
+    notes: Scelta di modellazione, da confermare. 50 volte = circa una a settimana.
+
+  - id: feasibility.rare_max_occurrences_per_year
+    description: Up to this many times a year a mission is rare. If nothing serves it, the
+      portfolio is not rejected (it can be arranged case by case) but a warning is shown.
+    unit: times/year
+    value: 2
+    placeholder: true
+    notes: Scelta di modellazione, da confermare.
+
+  - id: feasibility.luggage_tolerance_levels
+    description: Levels by which a vehicle's luggage space may fall short of the mission's
+      luggage and still be accepted (NONE < SMALL < MEDIUM < LARGE). With 1, a family can
+      go on holiday with a medium-boot car although the mission asks for LARGE luggage.
+    unit: levels
+    value: 1
+    placeholder: true
+    notes: >-
+      Scelta di modellazione. Con 0 un'utilitaria non potrebbe mai portare la famiglia in
+      vacanza, il che falserebbe il confronto contro chi possiede l'auto (neutralita').
+
+  # --- mode assignment (step 9; the tables are in assignment_rules.yaml) -----------------
+  - id: assignment.logit_scale_per_eur
+    description: How sharply a household sticks to the cheapest way of making a trip. The share
+      of a means is proportional to exp(-scale x its generalized cost in EUR), so a means that
+      costs 4 EUR more than the best one is used about a third as often. High values make
+      the choice all-or-nothing; low values spread it.
+    unit: 1/EUR
+    value: 0.25
+    low: 0.10
+    high: 0.60
+    placeholder: true
+    notes: >-
+      Scelta di modellazione. E' l'ordine di grandezza dei modelli di scelta modale urbani:
+      con 10 EUR/h di valore del tempo, 0,25 per EUR di costo generalizzato (andata e ritorno)
+      equivale a circa 0,04 per minuto di viaggio. Da calibrare sui dati.
+
+  - id: assignment.min_share
+    description: Shares of a mission below this value are dropped and the rest renormalised,
+      so a mission is not scattered over means used 1 time out of 100.
+    unit: share 0-1
+    value: 0.02
+    placeholder: true
+    notes: Scelta di modellazione.
+
+  - id: assignment.perceived_time_multiplier_at_zero_comfort
+    description: How many times longer an hour feels in a means with comfort 0 (10 = 1x, linear
+      in between). Standard practice weighs waiting, walking and crowded travel more than
+      time spent seated in a car.
+    unit: x
+    value: 2.0
+    low: 1.5
+    high: 3.0
+    placeholder: true
+    notes: >-
+      Scelta di modellazione. In letteratura i tempi di attesa e di accesso pesano 1,5-2,5 volte
+      il tempo a bordo. Con comfort 8,5 (auto) un'ora vale 1,15 ore; con 5,5 (trasporto
+      pubblico) 1,45 ore.
+
+  - id: assignment.bad_weather_share
+    description: Share of the days on which a means exposed to the weather (bicycle, e-bike,
+      scooter, motorcycle, micro-sharing) is not used because of rain, cold or heat, if another
+      means can serve the trip.
+    unit: share 0-1
+    value: 0.15
+    low: 0.08
+    high: 0.25
+    placeholder: true
+    notes: "Stima propria: a Milano piove circa 80-90 giorni l'anno e non si rinuncia alla bici in tutti."
+
+  # --- recommendations (step 11) ----------------------------------------------------------
+  # The change penalty is the effort of changing, in EUR-equivalent per year: it keeps the engine
+  # from recommending a big change for a small gain (CLAUDE.md section 22). Values proposed by
+  # Claude and accepted by the product owner on 2026-10-29 as a starting point.
+  - id: recommendation.penalty.sell_vehicle
+    description: Change penalty for each vehicle the household would sell.
+    unit: EUR/year
+    value: 400
+    placeholder: true
+    notes: Punto di partenza concordato con il product owner (2026-10-29), da tarare.
+
+  - id: recommendation.penalty.buy_vehicle
+    description: Change penalty for each vehicle the household would buy (also an e-bike).
+    unit: EUR/year
+    value: 250
+    placeholder: true
+    notes: Punto di partenza concordato con il product owner (2026-10-29), da tarare.
+
+  - id: recommendation.penalty.cancel_subscription
+    description: Change penalty for each subscription the household would cancel.
+    unit: EUR/year
+    value: 50
+    placeholder: true
+    notes: Punto di partenza concordato con il product owner (2026-10-29), da tarare.
+
+  - id: recommendation.penalty.start_subscription
+    description: Change penalty for each subscription the household would start.
+    unit: EUR/year
+    value: 50
+    placeholder: true
+    notes: Scelta di Claude (non discussa), simmetrica alla disdetta; da confermare.
+
+  - id: recommendation.penalty.car_sharing_dependence
+    description: Change penalty (once) if the portfolio relies on car sharing more than today.
+    unit: EUR/year
+    value: 150
+    placeholder: true
+    notes: Punto di partenza concordato con il product owner (2026-10-29), da tarare.
+
+  - id: recommendation.car_sharing_dependence_min_uses_per_year
+    description: A portfolio relies on car sharing if it uses it at least this many times a
+      year, and more than the current portfolio does.
+    unit: uses/year
+    value: 12
+    placeholder: true
+    notes: Scelta di Claude (circa una volta al mese); da confermare.
+
+  - id: recommendation.net_benefit.keep_below
+    description: Below this net benefit a change is not worth recommending (KEEP_CURRENT).
+    unit: EUR/year
+    value: 150
+    placeholder: true
+    notes: Soglia concordata con il product owner (2026-10-29).
+
+  - id: recommendation.net_benefit.consider_from
+    description: From this net benefit a change is worth considering (CONSIDER_CHANGE); between
+      keep_below and this it is only a small improvement.
+    unit: EUR/year
+    value: 500
+    placeholder: true
+    notes: Scelta di Claude (non discussa) per separare "piccolo miglioramento" da "da valutare".
+
+  - id: recommendation.net_benefit.strong_from
+    description: From this net benefit - and only if even the pessimistic end of its range
+      reaches keep_below - a change is a STRONG_OPPORTUNITY.
+    unit: EUR/year
+    value: 1000
+    placeholder: true
+    notes: Soglia concordata con il product owner (2026-10-29).
+
+  # --- valuation -------------------------------------------------------------------------
+  - id: valuation.value_of_time_eur_per_hour
+    description: Monetary value of one hour of travel time, used to turn time into money in
+      net_benefit (brief section 22).
+    unit: EUR/hour
+    value: 10
+    low: 5
+    high: 20
+    confidence: MEDIUM
+    notes: Valore fisso scelto dal product owner come punto di partenza (2026-10-28). Il
+      range 5-20 serve solo per le analisi di sensibilita'; una variante scalata sullo slider
+      "risparmio contro tempo" resta un'opzione per dopo i primi risultati.
+
+  # --- demand estimation (step 5) --------------------------------------------------------
+  - id: calendar.local_trip_weeks_per_year
+    description: Weeks per year in which everyday local trips happen (52 minus weeks away).
+    unit: weeks
+    value: 48
+    low: 44
+    high: 50
+    confidence: LOW
+    notes: Stima ragionata, nessuna fonte.
+
+  - id: demand.local_trips_shopping_share
+    description: Share of everyday local trips that are shopping / errands; the rest is local
+      leisure.
+    unit: share 0-1
+    value: 0.5
+    low: 0.3
+    high: 0.7
+    placeholder: true
+    notes: Nessun dato; divisione 50/50 provvisoria.
+
+  - id: demand.school_escort_default_share
+    description: When the household has children and has not said whether it escorts them, the
+      share of school days assumed to need an escort.
+    unit: share 0-1
+    value: 0.5
+    low: 0
+    high: 1
+    placeholder: true
+    notes: Non conosciamo l'eta' dei figli (la domanda non e' nel questionario rapido), quindi
+      il range copre da "mai" a "ogni giorno di scuola".
+
+  # --- costing the current portfolio (step 6) -------------------------------------------
+  # Typical size of one use of a pay-per-use service, needed because the questionnaire only asks
+  # HOW OFTEN a service is used, not how far or how long. Small items: all placeholders.
+  - id: usage.taxi_ride_km
+    description: Typical length of one taxi ride.
+    unit: km
+    value: 6
+    low: 3
+    high: 12
+    placeholder: true
+    notes: Nessuna fonte.
+
+  - id: usage.car_sharing_minutes_per_rental
+    description: Typical billed duration of one car-sharing rental.
+    unit: minutes
+    value: 60
+    low: 30
+    high: 120
+    placeholder: true
+    notes: Nessuna fonte.
+
+  - id: usage.car_rental_km_per_day
+    description: Typical distance driven per day of car rental (fuel is paid by the renter).
+    unit: km/day
+    value: 60
+    low: 30
+    high: 150
+    placeholder: true
+    notes: Nessuna fonte.
+
+  - id: usage.rail_trip_km
+    description: Typical length of one rail trip.
+    unit: km
+    value: 120
+    low: 40
+    high: 300
+    placeholder: true
+    notes: Nessuna fonte.
+
+  - id: usage.micro_sharing_minutes_per_trip
+    description: Typical duration of one kick-scooter or bike-sharing trip.
+    unit: minutes
+    value: 12
+    low: 6
+    high: 25
+    placeholder: true
+    notes: Nessuna fonte.
+
+  # Tolls and the cost of getting around at the destination (step 10: used when a trip is
+  # costed; the current-portfolio costing of step 6 has no use for them).
+  - id: usage.motorway_toll_eur_per_km
+    description: Average motorway toll per km driven on a toll motorway, class A (cars,
+      motorcycles), VAT included.
+    unit: EUR/km
+    value: 0.08
+    low: 0.07
+    high: 0.09
+    confidence: MEDIUM
+    source: pedaggi_autostradali_2026
+    notes: In montagna sale a 0,09-0,14 EUR/km; non modellato.
+
+  - id: usage.motorway_share.regional
+    description: Share of the distance of a trip of the REGIONAL band (see bands.*) driven on
+      toll motorways.
+    unit: share 0-1
+    value: 0.4
+    low: 0.2
+    high: 0.7
+    placeholder: true
+    notes: Nessuna fonte. Dipende molto dalla tratta (tangenziali, statali parallele).
+
+  - id: usage.motorway_share.long
+    description: Share of the distance of a trip of the LONG band driven on toll motorways.
+    unit: share 0-1
+    value: 0.8
+    low: 0.6
+    high: 0.9
+    placeholder: true
+    notes: Nessuna fonte.
+
+  - id: usage.destination_mobility_eur_per_day
+    description: What a household spends per day of stay to get around at a destination when it
+      arrives by train or plane (local transport, some taxis, a rental for part of the days).
+      Paid per group, not per person.
+    unit: EUR/day
+    value: 15
+    low: 5
+    high: 40
+    placeholder: true
+    notes: Nessuna fonte. Serve a non favorire il treno per chi ha l'auto, che a destinazione ha il suo mezzo.
+
+  # Yearly distance of owned vehicles that are not cars, when the user does not say.
+  - id: usage.annual_km.motorcycle
+    unit: km/year
+    value: 2500
+    low: 1000
+    high: 6000
+    placeholder: true
+
+  - id: usage.annual_km.scooter_125
+    unit: km/year
+    value: 2000
+    low: 800
+    high: 5000
+    placeholder: true
+
+  - id: usage.annual_km.bicycle
+    unit: km/year
+    value: 600
+    low: 100
+    high: 2000
+    placeholder: true
+    notes: L'esempio del brief (sezione 8) usa 600 km/anno come stima statistica.
+
+  - id: usage.annual_km.e_bike
+    unit: km/year
+    value: 1000
+    low: 200
+    high: 3000
+    placeholder: true
+
+  # Plausibility check of declared car mileage against the estimated needs.
+  - id: calibration.car_km_min_ratio
+    description: Declared car km below this share of the estimated needs triggers a note.
+    unit: ratio
+    value: 0.5
+    placeholder: true
+    notes: Soglia provvisoria.
+
+  - id: calibration.car_km_max_ratio
+    description: Declared car km above this multiple of the estimated needs triggers a note.
+    unit: ratio
+    value: 1.25
+    placeholder: true
+    notes: Soglia provvisoria.
+
+  - id: costing.material_share
+    description: An item counts towards the confidence of a portfolio cost only if it carries at
+      least this share of the total.
+    unit: share 0-1
+    value: 0.10
+    placeholder: true
+    notes: Soglia provvisoria.

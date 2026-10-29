@@ -1,0 +1,53 @@
+# Comfort, flexibility and reliability of each option, on a 0-10 scale, with the reason for
+# each score. EDIT THE NUMBERS FREELY: this file is meant to be reviewed by the product owner.
+#
+# What the scores mean
+#   comfort      10 = protected from weather, seated, no physical effort, no crowding, easy with
+#                     luggage and children;  0 = exposed, tiring, crowded, hard with luggage.
+#   flexibility  10 = available at any time and to any destination, no booking, no timetable;
+#                     0 = fixed timetable, fixed stops, booking required.
+#   reliability  10 = arrives when planned almost always;  0 = frequent delays, cancellations.
+#
+# ALL VALUES ARE STILL PLACEHOLDERS (first draft by Claude, not yet reviewed). They are
+# subjective modelling choices that belong to the product owner. Brief section 17.3: comfort
+# may eventually depend on transfers, weather, crowding, luggage, children, seat availability
+# and trip length; for the MVP it is one coefficient per option.
+
+meta:
+  placeholder: true
+  notes: PLACEHOLDER - bozza da rivedere con il product owner.
+
+scores:
+
+  # owned
+  car_small_petrol: {comfort: 7.5, flexibility: 9.5, reliability: 8.5, notes: "Riparata e comoda, ma con meno spazio per bagagli e passeggeri di un'auto media."}
+  car_medium_petrol: {comfort: 8.5, flexibility: 9.5, reliability: 8.5, notes: "Riparata e spaziosa: adatta a bagagli e bambini."}
+  car_diesel: {comfort: 8.5, flexibility: 9.5, reliability: 8.5, notes: "Come l'auto media a benzina."}
+  car_electric: {comfort: 8.5, flexibility: 9.0, reliability: 8.5, notes: "Come l'auto media; flessibilita' un po' piu' bassa per la ricarica da pianificare sui viaggi lunghi."}
+  motorcycle: {comfort: 5.5, flexibility: 8.5, reliability: 8.0, notes: "Esposta a meteo e fatica di guida; niente bagagli ne' bambini piccoli."}
+  scooter_125: {comfort: 6.0, flexibility: 8.5, reliability: 8.0, notes: "Pratico in citta', ma esposto al meteo; un solo passeggero e poco spazio."}
+  bicycle: {comfort: 5.0, flexibility: 8.0, reliability: 8.0, notes: "Fatica fisica e meteo; sempre disponibile e senza attese sulle tratte brevi."}
+  e_bike: {comfort: 6.5, flexibility: 8.5, reliability: 8.5, notes: "Meno fatica della bici, stessa esposizione al meteo."}
+  walking: {comfort: 6.0, flexibility: 9.0, reliability: 10.0, notes: "Nessun mezzo e nessuna attesa, ma solo per distanze brevi e con il meteo che c'e'."}
+
+  # subscriptions
+  pt_annual_urban_milano: {comfort: 5.5, flexibility: 6.0, reliability: 6.5, notes: "Metro, tram e bus: attese, trasbordi e affollamento nelle ore di punta, ma riparato e senza guida."}
+  pt_annual_urban_milano_under27: {comfort: 5.5, flexibility: 6.0, reliability: 6.5, notes: "Come l'abbonamento urbano ordinario (cambia solo il prezzo)."}
+  pt_annual_urban_milano_senior: {comfort: 5.5, flexibility: 6.0, reliability: 6.5, notes: "Come l'abbonamento urbano ordinario (cambia solo il prezzo)."}
+  pt_annual_metro_mi1_mi3: {comfort: 5.5, flexibility: 5.5, reliability: 6.5, notes: "Come il trasporto urbano, ma con corse meno frequenti fuori citta'."}
+  pt_monthly_urban_milano: {comfort: 5.5, flexibility: 6.0, reliability: 6.5, notes: "Come l'abbonamento urbano ordinario (cambia solo il prezzo)."}
+  rail_annual_lombardia: {comfort: 6.0, flexibility: 5.0, reliability: 6.0, notes: "Orari fissi e coincidenze; ritardi e scioperi possibili."}
+  bikemi_annual: {comfort: 5.0, flexibility: 6.5, reliability: 6.5, notes: "Bici condivisa: dipende dalla disponibilita' di bici e stalli vicino a casa e a destinazione."}
+  car_sharing_subscription: {comfort: 7.5, flexibility: 6.5, reliability: 7.0, notes: "Come il car sharing a consumo."}
+
+  # pay-per-use
+  pt_ticket_urban_milano: {comfort: 5.5, flexibility: 6.0, reliability: 6.5, notes: "Come l'abbonamento urbano: cambia solo il modo di pagare."}
+  taxi_milano: {comfort: 8.5, flexibility: 7.5, reliability: 7.5, notes: "Porta a porta e senza guidare; l'attesa varia con l'ora e la zona."}
+  ride_hailing_ncc: {comfort: 8.5, flexibility: 7.5, reliability: 8.0, notes: "Come il taxi, con prenotazione da app."}
+  car_sharing_free2move_milano: {comfort: 7.5, flexibility: 6.5, reliability: 7.0, notes: "Auto sempre diversa, da trovare e da riconsegnare dentro l'area di servizio."}
+  bikemi_day_pass: {comfort: 5.0, flexibility: 6.5, reliability: 6.5, notes: "Come l'abbonamento BikeMi."}
+  kick_scooter_sharing: {comfort: 4.5, flexibility: 7.0, reliability: 6.0, notes: "Instabile e senza riparo; batteria e mezzo disponibili non garantiti."}
+  car_rental_daily: {comfort: 8.0, flexibility: 5.0, reliability: 9.0, notes: "Auto comoda e affidabile, ma servono prenotazione, ritiro e riconsegna."}
+  rail_regional_ticket: {comfort: 6.0, flexibility: 5.0, reliability: 6.0, notes: "Come l'abbonamento ferroviario regionale."}
+  rail_high_speed_ticket: {comfort: 8.0, flexibility: 5.5, reliability: 8.0, notes: "Veloce e confortevole, ma solo tra stazioni e con orari fissi."}
+  air_domestic: {comfort: 6.0, flexibility: 4.0, reliability: 6.5, notes: "Veloce sulle lunghe distanze, ma con accessi, controlli e orari fissi."}

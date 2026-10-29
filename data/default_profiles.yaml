@@ -1,0 +1,130 @@
+# Statistical defaults for missing answers, by residential context (AreaType).
+# Used by the demand estimator when the user answers "I don't know" (brief section 8).
+#
+# ALL VALUES ARE PLACEHOLDERS: reasoned estimates anchored to the national averages in
+# model_parameters.yaml (statistics.*), NOT derived from a dataset. They exist so the
+# pipeline can run end to end; replace them with ISTAT / Audimob / municipal data per area
+# (data roadmap, Phase 2-3) or with Car Independence Index based priors.
+#
+# Keys (the estimator relies on all of them):
+#   car_annual_km_first / _second          km/year driven by the first / second car
+#   parking_cost_year_per_car              EUR/year, garage or permit
+#   commute_distance_km_one_way            km, when the user does not know it
+#   work_days_per_week                     days/week of work or study before remote work
+#   local_trips_per_week_per_adult         round trips/week for shopping, errands, leisure
+#   local_trip_distance_km_one_way         km
+#   school_escort_distance_km_one_way      km, per child-escort trip
+#   weekend_trips_per_year                 household outings, ~1 day, 30-100 km
+#   weekend_trip_distance_km_one_way       km
+#   long_weekends_per_year                 household long-distance weekends
+#   long_weekend_distance_km_one_way       km
+#   holiday_trips_per_year                 household holiday round trips
+#   holiday_distance_km_one_way            km
+#   taxi_trips_per_year, car_sharing_trips_per_year, rail_trips_per_year, flights_per_year,
+#   bike_scooter_sharing_trips_per_year   household totals (trips/year)
+#   car_rental_days_per_year              household total (days/year)
+
+meta:
+  geographic_scope: IT
+  valid_from: 2026-01-01
+
+defaults:
+  - id: defaults_city_center
+    area_type: CITY_CENTER
+    description: Centro citta' - alta densita', buon trasporto pubblico, parcheggio costoso.
+    values:
+      car_annual_km_first: {value: 6500, low: 4500, high: 9000, placeholder: true, notes: "Sotto la media nazionale (10.700 km): molti spostamenti brevi fatti a piedi / con mezzi pubblici."}
+      car_annual_km_second: {value: 4000, low: 2500, high: 6000, placeholder: true}
+      parking_cost_year_per_car: {value: 1800, low: 900, high: 2700, placeholder: true, notes: "Box / posto auto ~150 EUR/mese a Milano; nessuna fonte."}
+      commute_distance_km_one_way: {value: 5, low: 2, high: 9, placeholder: true}
+      work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
+      local_trips_per_week_per_adult: {value: 3.0, low: 2.0, high: 5.0, placeholder: true}
+      local_trip_distance_km_one_way: {value: 2.5, low: 1.0, high: 5.0, placeholder: true}
+      school_escort_distance_km_one_way: {value: 1.5, low: 0.5, high: 3.0, placeholder: true}
+      weekend_trips_per_year: {value: 15, low: 6, high: 25, placeholder: true}
+      weekend_trip_distance_km_one_way: {value: 60, low: 30, high: 100, placeholder: true}
+      long_weekends_per_year: {value: 3, low: 1, high: 6, placeholder: true}
+      long_weekend_distance_km_one_way: {value: 250, low: 150, high: 400, placeholder: true}
+      holiday_trips_per_year: {value: 2, low: 1, high: 4, placeholder: true}
+      holiday_distance_km_one_way: {value: 450, low: 200, high: 800, placeholder: true}
+      taxi_trips_per_year: {value: 6, low: 0, high: 20, placeholder: true}
+      rail_trips_per_year: {value: 8, low: 0, high: 24, placeholder: true}
+      flights_per_year: {value: 1, low: 0, high: 4, placeholder: true}
+      car_sharing_trips_per_year: {value: 2, low: 0, high: 12, placeholder: true}
+      car_rental_days_per_year: {value: 3, low: 0, high: 10, placeholder: true}
+      bike_scooter_sharing_trips_per_year: {value: 4, low: 0, high: 20, placeholder: true}
+
+  - id: defaults_urban
+    area_type: URBAN
+    description: Citta' fuori dal centro - densita' media, trasporto pubblico discreto.
+    values:
+      car_annual_km_first: {value: 9000, low: 6500, high: 12000, placeholder: true}
+      car_annual_km_second: {value: 5500, low: 3500, high: 8000, placeholder: true}
+      parking_cost_year_per_car: {value: 900, low: 300, high: 1800, placeholder: true}
+      commute_distance_km_one_way: {value: 8, low: 3, high: 14, placeholder: true}
+      work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
+      local_trips_per_week_per_adult: {value: 3.5, low: 2.0, high: 6.0, placeholder: true}
+      local_trip_distance_km_one_way: {value: 3.5, low: 1.5, high: 7.0, placeholder: true}
+      school_escort_distance_km_one_way: {value: 2.5, low: 1.0, high: 5.0, placeholder: true}
+      weekend_trips_per_year: {value: 18, low: 8, high: 30, placeholder: true}
+      weekend_trip_distance_km_one_way: {value: 60, low: 30, high: 100, placeholder: true}
+      long_weekends_per_year: {value: 3, low: 1, high: 6, placeholder: true}
+      long_weekend_distance_km_one_way: {value: 250, low: 150, high: 400, placeholder: true}
+      holiday_trips_per_year: {value: 2, low: 1, high: 4, placeholder: true}
+      holiday_distance_km_one_way: {value: 450, low: 200, high: 800, placeholder: true}
+      taxi_trips_per_year: {value: 4, low: 0, high: 15, placeholder: true}
+      rail_trips_per_year: {value: 6, low: 0, high: 20, placeholder: true}
+      flights_per_year: {value: 1, low: 0, high: 4, placeholder: true}
+      car_sharing_trips_per_year: {value: 1, low: 0, high: 12, placeholder: true}
+      car_rental_days_per_year: {value: 3, low: 0, high: 10, placeholder: true}
+      bike_scooter_sharing_trips_per_year: {value: 2, low: 0, high: 20, placeholder: true}
+
+  - id: defaults_suburban
+    area_type: SUBURBAN
+    description: Periferia urbana / cintura - bassa densita', auto molto usata, trasporto pubblico di base.
+    values:
+      car_annual_km_first: {value: 12000, low: 8500, high: 16000, placeholder: true}
+      car_annual_km_second: {value: 7500, low: 4500, high: 11000, placeholder: true}
+      parking_cost_year_per_car: {value: 250, low: 0, high: 800, placeholder: true}
+      commute_distance_km_one_way: {value: 12, low: 5, high: 25, placeholder: true}
+      work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
+      local_trips_per_week_per_adult: {value: 4.0, low: 2.5, high: 7.0, placeholder: true}
+      local_trip_distance_km_one_way: {value: 5.0, low: 2.0, high: 10.0, placeholder: true}
+      school_escort_distance_km_one_way: {value: 4.0, low: 1.5, high: 8.0, placeholder: true}
+      weekend_trips_per_year: {value: 22, low: 10, high: 35, placeholder: true}
+      weekend_trip_distance_km_one_way: {value: 60, low: 30, high: 100, placeholder: true}
+      long_weekends_per_year: {value: 3, low: 1, high: 6, placeholder: true}
+      long_weekend_distance_km_one_way: {value: 250, low: 150, high: 400, placeholder: true}
+      holiday_trips_per_year: {value: 2, low: 1, high: 4, placeholder: true}
+      holiday_distance_km_one_way: {value: 450, low: 200, high: 800, placeholder: true}
+      taxi_trips_per_year: {value: 2, low: 0, high: 10, placeholder: true}
+      rail_trips_per_year: {value: 4, low: 0, high: 16, placeholder: true}
+      flights_per_year: {value: 1, low: 0, high: 4, placeholder: true}
+      car_sharing_trips_per_year: {value: 0, low: 0, high: 12, placeholder: true}
+      car_rental_days_per_year: {value: 3, low: 0, high: 10, placeholder: true}
+      bike_scooter_sharing_trips_per_year: {value: 0, low: 0, high: 20, placeholder: true}
+
+  - id: defaults_peripheral
+    area_type: PERIPHERAL
+    description: Zone periferiche o rurali - trasporto pubblico scarso, auto quasi indispensabile.
+    values:
+      car_annual_km_first: {value: 14500, low: 10000, high: 20000, placeholder: true, notes: "Sopra la media nazionale: distanze maggiori per ogni servizio."}
+      car_annual_km_second: {value: 9000, low: 5500, high: 13000, placeholder: true}
+      parking_cost_year_per_car: {value: 0, low: 0, high: 300, placeholder: true}
+      commute_distance_km_one_way: {value: 20, low: 8, high: 40, placeholder: true}
+      work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
+      local_trips_per_week_per_adult: {value: 4.5, low: 3.0, high: 8.0, placeholder: true}
+      local_trip_distance_km_one_way: {value: 7.0, low: 3.0, high: 14.0, placeholder: true}
+      school_escort_distance_km_one_way: {value: 6.0, low: 2.0, high: 12.0, placeholder: true}
+      weekend_trips_per_year: {value: 22, low: 10, high: 35, placeholder: true}
+      weekend_trip_distance_km_one_way: {value: 60, low: 30, high: 100, placeholder: true}
+      long_weekends_per_year: {value: 3, low: 1, high: 6, placeholder: true}
+      long_weekend_distance_km_one_way: {value: 250, low: 150, high: 400, placeholder: true}
+      holiday_trips_per_year: {value: 2, low: 1, high: 4, placeholder: true}
+      holiday_distance_km_one_way: {value: 450, low: 200, high: 800, placeholder: true}
+      taxi_trips_per_year: {value: 1, low: 0, high: 6, placeholder: true}
+      rail_trips_per_year: {value: 2, low: 0, high: 12, placeholder: true}
+      flights_per_year: {value: 1, low: 0, high: 4, placeholder: true}
+      car_sharing_trips_per_year: {value: 0, low: 0, high: 12, placeholder: true}
+      car_rental_days_per_year: {value: 2, low: 0, high: 10, placeholder: true}
+      bike_scooter_sharing_trips_per_year: {value: 0, low: 0, high: 20, placeholder: true}

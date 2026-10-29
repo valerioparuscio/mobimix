@@ -1,0 +1,66 @@
+# Rules of the candidate-portfolio generator (step 7). Schema: backend/app/models/portfolio_rules.py.
+# Method: docs/methodology.md, section 9.
+#
+# A candidate is built from three independent choices:
+#   1. how many cars the household keeps (or buys), among the ones it owns today;
+#   2. one ADD-ON SET from `addon_sets` below (what is added on top of the cars);
+#   3. the same layer of pay-per-use services (`service_layer`), added to every candidate.
+#
+# The point of this file is that the list of candidates stays editable by hand: add, remove or
+# change a set here and the generator follows, with no code change. CLAUDE.md section 20 asks
+# for a controlled set, not an unrestricted enumeration.
+#
+# Everything here is a modelling choice, not a measured fact: it is flagged as a placeholder
+# until the developer has reviewed it.
+
+meta:
+  placeholder: true
+
+# Which catalogue option is bought when the generator adds a vehicle the household does not own.
+new_vehicles:
+  car_compact: car_small_petrol      # household of up to two adults, no children
+  car_family: car_medium_petrol      # children, or three or more adults
+  e_bike: e_bike
+  scooter: scooter_125
+
+# Pay-per-use services (and tickets) treated as available to every candidate, wherever the
+# option exists in the household's area (`available_in_area_types` in the catalogue).
+# They carry no fixed cost, so having them is not a decision: how much they are used is decided
+# later, when needs are assigned to modes.
+# Left out on purpose: ride_hailing_ncc (placeholder prices, same mode as taxi_milano).
+service_layer:
+  - pt_ticket_urban_milano
+  - taxi_milano
+  - car_sharing_free2move_milano
+  - bikemi_day_pass
+  - kick_scooter_sharing
+  - car_rental_daily
+  - rail_regional_ticket
+  - rail_high_speed_ticket
+  - air_domestic
+
+# Add-on sets. `addons`:
+#   PT            a transit pass for each person who commutes (passes already held are kept)
+#   DROP_TRANSIT  cancel the transit passes held today
+#   E_BIKE, SCOOTER
+# A set without add-ons changes nothing but the cars: bicycles and held passes stay as they are.
+# `applies_to`: WITH_CARS = the household keeps or buys at least one car; CAR_FREE = no car.
+addon_sets:
+  - id: cars_only
+    addons: []
+    applies_to: [WITH_CARS]
+  - id: no_transit
+    addons: [DROP_TRANSIT]
+    applies_to: [WITH_CARS]
+  - id: pt
+    addons: [PT]
+    applies_to: [WITH_CARS, CAR_FREE]
+  - id: e_bike
+    addons: [E_BIKE]
+    applies_to: [WITH_CARS]
+  - id: scooter
+    addons: [SCOOTER]
+    applies_to: [WITH_CARS]
+  - id: pt_e_bike
+    addons: [PT, E_BIKE]
+    applies_to: [WITH_CARS, CAR_FREE]

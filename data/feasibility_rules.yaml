@@ -1,0 +1,36 @@
+# Categorical rules of the feasibility check (step 8). Schema: backend/app/models/feasibility_rules.py.
+# Method: docs/methodology.md, section 10. The numeric thresholds are in model_parameters.yaml
+# (feasibility.*); distance limits of each option are in mobility_options.yaml / tariffs.yaml
+# (min_practical_distance_km, max_practical_distance_km).
+#
+# What the check does, mission by mission: an option of the portfolio serves a mission if the
+# distance is within its practical range, the traveller may use it (licence, passes held by
+# someone else, accessibility, children, hours of service), it has the seats and the luggage
+# space, and - for a regular mission - it is not a means meant for the occasional trip.
+#
+# These are modelling choices, not measured facts: everything here is a placeholder until the
+# developer has reviewed it.
+
+meta:
+  placeholder: true
+
+# Option types that make sense for an occasional trip but not as the everyday solution to a
+# regular mission (see feasibility.regular_min_occurrences_per_year): a daily commute by taxi
+# is not "reasonable" even if some taxi could do it.
+occasional_only_types: [TAXI, RIDE_HAILING, CAR_RENTAL, AIR]
+
+# Modes that cannot carry children. Bicycles are not listed: children ride their own.
+modes_not_with_children: [MOTORCYCLE, KICK_SCOOTER]
+
+# Modes not in service at some hours.
+unavailable_time_bands:
+  PUBLIC_TRANSPORT: [NIGHT]
+  RAIL: [NIGHT]
+
+# Modes a person with each constraint cannot use. A mission shared by the whole household
+# (a weekend away) takes the constraints of every adult.
+accessibility_exclusions:
+  CANNOT_CYCLE: [BICYCLE, E_BIKE]
+  REDUCED_MOBILITY: [BICYCLE, KICK_SCOOTER]
+  WHEELCHAIR: [WALK, BICYCLE, E_BIKE, KICK_SCOOTER, MOTORCYCLE]
+  OTHER: []

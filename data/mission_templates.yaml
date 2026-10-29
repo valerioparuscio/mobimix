@@ -1,0 +1,88 @@
+# Default characteristics of each kind of mobility mission (schema:
+# backend/app/models/templates.py). The demand estimator fills a mission from three sources:
+# what the user said, the statistical defaults (default_profiles.yaml) and these templates.
+#
+# Passenger rules:  ONE = one traveller;  HOUSEHOLD = all adults and children;
+#                   ADULT_PLUS_CHILDREN = one adult plus the children.
+#
+# These are modelling assumptions about how people typically travel for each purpose, not
+# measurements: ALL ARE PLACEHOLDERS to be reviewed with the product owner. They matter later
+# for feasibility (luggage, children, passengers, time criticality) and for comfort.
+
+meta:
+  placeholder: true
+  notes: PLACEHOLDER - caratteristiche tipiche di ogni tipo di spostamento, da rivedere con il product owner.
+
+templates:
+  COMMUTE:
+    legs_per_occurrence: 2
+    passengers: ONE
+    luggage: NONE
+    start_time_window: MORNING_PEAK
+    duration_tolerance: MEDIUM
+    weather_sensitivity: MEDIUM
+    notes: Un'occorrenza = una giornata in presenza (andata e ritorno). time_critical e orario vengono dalle risposte.
+
+  STUDY:
+    legs_per_occurrence: 2
+    passengers: ONE
+    luggage: NONE
+    start_time_window: MORNING_PEAK
+    duration_tolerance: MEDIUM
+    weather_sensitivity: MEDIUM
+    notes: Come COMMUTE, ma su calendario scolastico/universitario.
+
+  SCHOOL_ESCORT:
+    legs_per_occurrence: 2
+    passengers: ADULT_PLUS_CHILDREN
+    luggage: SMALL
+    time_critical: true
+    start_time_window: MORNING_PEAK
+    duration_tolerance: LOW
+    weather_sensitivity: MEDIUM
+    notes: Solo l'accompagnamento del mattino (andata e ritorno a casa); il ritiro del pomeriggio non e' incluso.
+
+  SHOPPING:
+    legs_per_occurrence: 2
+    passengers: ONE
+    luggage: SMALL
+    start_time_window: ANY
+    duration_tolerance: MEDIUM
+    weather_sensitivity: MEDIUM
+
+  LOCAL_LEISURE:
+    legs_per_occurrence: 2
+    passengers: HOUSEHOLD
+    luggage: NONE
+    start_time_window: ANY
+    duration_tolerance: HIGH
+    weather_sensitivity: MEDIUM
+    notes: Si assume che lo svago locale sia fatto in famiglia.
+
+  WEEKEND:
+    legs_per_occurrence: 2
+    passengers: HOUSEHOLD
+    luggage: SMALL
+    start_time_window: ANY
+    duration_tolerance: HIGH
+    weather_sensitivity: MEDIUM
+    days_away: {value: 0, confidence: HIGH, notes: "Gita di un giorno."}
+
+  LONG_DISTANCE:
+    legs_per_occurrence: 2
+    passengers: HOUSEHOLD
+    luggage: MEDIUM
+    start_time_window: ANY
+    duration_tolerance: HIGH
+    weather_sensitivity: LOW
+    days_away: {value: 3, low: 2, high: 4, placeholder: true, notes: "Weekend lungo fuori casa."}
+    notes: Weekend lunghi / viaggi lunghi fuori dalle vacanze.
+
+  HOLIDAY:
+    legs_per_occurrence: 2
+    passengers: HOUSEHOLD
+    luggage: LARGE
+    start_time_window: ANY
+    duration_tolerance: HIGH
+    weather_sensitivity: LOW
+    days_away: {value: 10, low: 5, high: 21, placeholder: true, notes: "Durata media di una vacanza; nessuna fonte."}

@@ -1,0 +1,34 @@
+# Tables of the mode assignment (step 9). Schema: backend/app/models/assignment_rules.py.
+# Method: docs/methodology.md, section 11. The numeric tunables (scale of the choice, value of
+# time, weight of discomfort, share of bad-weather days) are `assignment.*` and
+# `valuation.*` in model_parameters.yaml.
+#
+# These are modelling choices, not measured facts: everything here is a placeholder until the
+# developer has reviewed it.
+
+meta:
+  placeholder: true
+
+# Hours the traveller stays at the destination during one occurrence of a mission, when the
+# mission has no overnight stay (`days_away` = 0). It matters only for means paid by the time
+# the vehicle is kept (car sharing): a commute by car sharing is held for the whole working day.
+# With `days_away` > 0 the stay is `days_away` x 24 hours and this table is not used.
+stay_hours_by_purpose:
+  COMMUTE: 8
+  STUDY: 6
+  SCHOOL_ESCORT: 0.25
+  SHOPPING: 1.5
+  LOCAL_LEISURE: 3
+  WEEKEND: 8
+  FAMILY_VISIT: 6
+  HOLIDAY: 8
+  BUSINESS: 8
+  LONG_DISTANCE: 8
+  OTHER: 2
+
+# How much the weather weighs on a mission, as a multiple of `assignment.bad_weather_share`.
+# A holiday trip is made whatever the weather; an errand on foot or by bike is not.
+weather_factor:
+  LOW: 0.0
+  MEDIUM: 1.0
+  HIGH: 1.5

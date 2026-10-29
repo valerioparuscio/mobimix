@@ -1,0 +1,53 @@
+# Demo household E - two adults in the city centre, no car: PT subscriptions, bicycles, taxi and
+# car sharing for the occasional trip. Expected behaviour: the current setup is the baseline and is
+# probably already efficient; buying a car must not be recommended for small gains, and a
+# rental for holidays should be evaluated against the rail / air alternatives.
+id: car_free_household
+mode: QUICK
+household:
+  adults:
+    - id: p1
+      age_range: A25_34
+      has_license: true
+      occupation: WORKER
+      work_or_study:
+        one_way_distance_km: {exact: 4}
+        days_per_week: {exact: 5}
+        remote_days_per_week: {exact: 0}
+        time_critical: false
+    - id: p2
+      age_range: A25_34
+      has_license: true
+      occupation: WORKER
+      work_or_study:
+        one_way_distance_km: {exact: 7}
+        days_per_week: {exact: 5}
+        remote_days_per_week: {exact: 2}
+        time_critical: false
+  n_children: 0
+  location:
+    area_type: CITY_CENTER
+    municipality: Milano
+    pt_quality: HIGH
+    sharing_availability: HIGH
+vehicles:
+  - id: bike1
+    option_id: bicycle
+    primary_user_id: p1
+  - id: bike2
+    option_id: bicycle
+    primary_user_id: p2
+subscriptions:
+  - id: sub1
+    option_id: pt_annual_urban_milano
+    holder_id: p1
+  - id: sub2
+    option_id: pt_annual_urban_milano
+    holder_id: p2
+other_mobility:
+  taxi_trips_per_year: {exact: 15}
+  car_sharing_trips_per_year: {exact: 12}
+  rail_trips_per_year: {exact: 10}
+  flights_per_year: {exact: 2}
+  holiday_trips_per_year: {exact: 2}
+  holiday_distance_km_one_way: {exact: 450}

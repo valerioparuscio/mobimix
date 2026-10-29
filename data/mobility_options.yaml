@@ -1,0 +1,233 @@
+# Mobility options catalogue - OWNED assets and walking. Tariff-based options (subscriptions,
+# pay-per-use services) are in tariffs.yaml; comfort / flexibility / reliability scores are in
+# comfort_scores.yaml. Schema: backend/app/models/options.py (MobilityOption).
+#
+# Cost conventions: purchase_price - residual_value over expected_lifetime_years gives the
+# annual depreciation. Energy cost is NOT stored here: it is consumption x the price in
+# model_parameters.yaml. Parking is NOT stored here: it is user-specific (see
+# default_profiles.yaml). All prices EUR incl. VAT, 2026, for a NEW vehicle held 8 years
+# unless stated. A bare number is an unsourced LOW-confidence assumption.
+#
+# Speeds are door-to-door averages in km/h per trip band (see bands.* in
+# model_parameters.yaml), WITHOUT the fixed per-trip overhead (fixed_time_min_per_trip).
+
+meta:
+  geographic_scope: IT
+  valid_from: 2026-01-01
+
+options:
+  # ============================ CARS ======================================================
+  - id: car_small_petrol
+    uses_motorways: true
+    name: Utilitaria a benzina
+    type: CAR_SMALL_PETROL
+    mode: CAR
+    ownership: OWNED
+    description: Segmento A/B nuova (tipo Panda, Yaris, Clio), tenuta 8 anni.
+    purchase_price: {value: 17000, low: 14000, high: 20000, confidence: MEDIUM, source: sum_money_costo_auto, notes: "Il simulatore usa 16.000 EUR; 17.000 e' una stima per un'auto nuova nel 2026."}
+    residual_value: {value: 7000, low: 5000, high: 8500, confidence: LOW, source: sum_money_costo_auto, notes: "Svalutazione ~10%/anno composta su 8 anni = ~43% del prezzo."}
+    expected_lifetime_years: {value: 8, low: 6, high: 12, notes: "Periodo di detenzione assunto. Eta' media del parco: 13 anni (ACI)."}
+    maintenance_cost_year: {value: 420, low: 320, high: 550, notes: "Tagliandi, revisione, ricambi. Stima; per un'auto media diesel Alvolante riporta 314-600."}
+    insurance_cost_year: {value: 560, low: 430, high: 900, confidence: LOW, source: ivass_rc_auto_2025, notes: "RC media 438 EUR + garanzie accessorie (furto/incendio). Milano e' sopra la media."}
+    tax_cost_year: {value: 150, low: 100, high: 200, notes: "Bollo: varia per regione e potenza."}
+    energy: {carrier: PETROL, consumption_per_100km: {value: 6.0, low: 5.0, high: 7.0, notes: "Consumo reale, non omologato."}}
+    cost_per_km: {value: 0.03, low: 0.02, high: 0.04, notes: "Pneumatici e usura non coperti dalla manutenzione fissa."}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 85, low: 75, high: 100}
+    fixed_time_min_per_trip: {value: 8, low: 3, high: 15, notes: "Ricerca parcheggio e tragitto a piedi."}
+    capacity: 5
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 1000
+    weather_sensitivity: LOW
+    requires_license: true
+
+  - id: car_medium_petrol
+    uses_motorways: true
+    name: Auto media a benzina
+    type: CAR_MEDIUM_PETROL
+    mode: CAR
+    ownership: OWNED
+    description: Berlina / SUV compatto nuovo (segmento C), tenuto 8 anni.
+    purchase_price: {value: 27000, low: 23000, high: 32000, confidence: MEDIUM, source: sum_money_costo_auto, notes: "Il simulatore usa 25.000 EUR per una berlina media."}
+    residual_value: {value: 11500, low: 9000, high: 14000, confidence: LOW, source: sum_money_costo_auto, notes: "~43% del prezzo dopo 8 anni."}
+    expected_lifetime_years: {value: 8, low: 6, high: 12}
+    maintenance_cost_year: {value: 560, low: 420, high: 750}
+    insurance_cost_year: {value: 700, low: 500, high: 1100, confidence: LOW, source: ivass_rc_auto_2025}
+    tax_cost_year: {value: 250, low: 180, high: 350}
+    energy: {carrier: PETROL, consumption_per_100km: {value: 7.5, low: 6.5, high: 9.0}}
+    cost_per_km: {value: 0.04, low: 0.03, high: 0.05}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 90, low: 80, high: 105}
+    fixed_time_min_per_trip: {value: 8, low: 3, high: 15}
+    capacity: 5
+    luggage_capacity: LARGE
+    max_practical_distance_km: 1500
+    weather_sensitivity: LOW
+    requires_license: true
+
+  - id: car_diesel
+    uses_motorways: true
+    name: Auto media a gasolio
+    type: CAR_DIESEL
+    mode: CAR
+    ownership: OWNED
+    description: Berlina / SUV compatto diesel nuovo, tenuto 8 anni.
+    purchase_price: {value: 30000, low: 25000, high: 36000, confidence: LOW}
+    residual_value: {value: 14000, low: 11000, high: 17000, confidence: LOW, source: alvolante_costi_2026, notes: "Il diesel perde meno dell'elettrica (37% a 3 anni vs 48,5%)."}
+    expected_lifetime_years: {value: 8, low: 6, high: 12}
+    maintenance_cost_year: {value: 500, low: 314, high: 600, confidence: MEDIUM, source: alvolante_costi_2026}
+    insurance_cost_year: {value: 700, low: 500, high: 1100, confidence: LOW, source: ivass_rc_auto_2025}
+    tax_cost_year: {value: 280, low: 200, high: 380}
+    energy: {carrier: DIESEL, consumption_per_100km: {value: 5.8, low: 5.0, high: 7.0}}
+    cost_per_km: {value: 0.04, low: 0.03, high: 0.05}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 90, low: 80, high: 105}
+    fixed_time_min_per_trip: {value: 8, low: 3, high: 15}
+    capacity: 5
+    luggage_capacity: LARGE
+    max_practical_distance_km: 1500
+    weather_sensitivity: LOW
+    requires_license: true
+    notes: Eventuali limitazioni alla circolazione (Area B Milano per Euro 6 ok) non modellate.
+
+  - id: car_electric
+    uses_motorways: true
+    name: Auto elettrica
+    type: CAR_ELECTRIC
+    mode: CAR
+    ownership: OWNED
+    description: Elettrica compatta/media nuova, tenuta 8 anni.
+    purchase_price: {value: 32000, low: 28000, high: 38000, confidence: MEDIUM, source: sum_money_costo_auto, notes: "Il simulatore usa 30.000 EUR."}
+    residual_value: {value: 10000, low: 7000, high: 14000, confidence: LOW, source: alvolante_costi_2026, notes: "Svalutazione a 3 anni 48,5% (Alvolante): mercato dell'usato elettrico incerto."}
+    expected_lifetime_years: {value: 8, low: 6, high: 12}
+    maintenance_cost_year: {value: 290, low: 180, high: 400, confidence: MEDIUM, source: alvolante_costi_2026}
+    insurance_cost_year: {value: 750, low: 550, high: 1100, confidence: LOW, source: ivass_rc_auto_2025}
+    tax_cost_year: {value: 40, low: 0, high: 80, notes: "Esenzione bollo per i primi anni in molte regioni, poi 25% della tariffa."}
+    energy: {carrier: ELECTRICITY, consumption_per_100km: {value: 16, low: 14, high: 20, confidence: MEDIUM, source: ev_ricarica_2026}}
+    cost_per_km: {value: 0.025, low: 0.015, high: 0.035, notes: "Pneumatici."}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 80, low: 70, high: 95, notes: "Include le soste di ricarica sui lunghi viaggi."}
+    fixed_time_min_per_trip: {value: 8, low: 3, high: 15}
+    capacity: 5
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 600
+    weather_sensitivity: LOW
+    requires_license: true
+
+  # ============================ TWO-WHEELERS ==============================================
+  - id: motorcycle
+    uses_motorways: true
+    name: Moto
+    type: MOTORCYCLE
+    mode: MOTORCYCLE
+    ownership: OWNED
+    description: Moto media (naked / stradale 500-700 cc), tenuta 8 anni.
+    purchase_price: {value: 9000, low: 6500, high: 13000}
+    residual_value: {value: 4000, low: 2800, high: 5500}
+    expected_lifetime_years: {value: 8, low: 6, high: 12}
+    maintenance_cost_year: {value: 350, low: 250, high: 550}
+    insurance_cost_year: {value: 450, low: 300, high: 800}
+    tax_cost_year: {value: 80, low: 40, high: 150}
+    energy: {carrier: PETROL, consumption_per_100km: {value: 5.0, low: 4.0, high: 6.5}}
+    cost_per_km: {value: 0.05, low: 0.03, high: 0.07, notes: "Pneumatici, catena."}
+    average_speed_kmh:
+      URBAN: {value: 26, low: 20, high: 32}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 85, low: 75, high: 100}
+    fixed_time_min_per_trip: {value: 5, low: 2, high: 10, notes: "Casco, parcheggio facile."}
+    capacity: 2
+    luggage_capacity: SMALL
+    max_practical_distance_km: 500
+    weather_sensitivity: HIGH
+    requires_license: true
+
+  - id: scooter_125
+    name: Scooter 125 cc
+    type: SCOOTER
+    mode: MOTORCYCLE
+    ownership: OWNED
+    description: Scooter 125 cc (tipo Honda SH, Vespa), tenuto 8 anni.
+    purchase_price: {value: 4500, low: 3000, high: 6500}
+    residual_value: {value: 1800, low: 1000, high: 2500}
+    expected_lifetime_years: {value: 8, low: 6, high: 12}
+    maintenance_cost_year: {value: 220, low: 150, high: 350}
+    insurance_cost_year: {value: 320, low: 220, high: 500}
+    tax_cost_year: {value: 25, low: 0, high: 40}
+    energy: {carrier: PETROL, consumption_per_100km: {value: 2.8, low: 2.2, high: 3.5}}
+    cost_per_km: {value: 0.025, low: 0.015, high: 0.035}
+    average_speed_kmh:
+      URBAN: {value: 26, low: 20, high: 32}
+      REGIONAL: {value: 45, low: 35, high: 55}
+    fixed_time_min_per_trip: {value: 4, low: 2, high: 8}
+    capacity: 2
+    luggage_capacity: SMALL
+    max_practical_distance_km: 60
+    weather_sensitivity: HIGH
+    requires_license: true
+
+  # ============================ HUMAN-POWERED =============================================
+  - id: bicycle
+    name: Bicicletta
+    type: BICYCLE
+    mode: BICYCLE
+    ownership: OWNED
+    description: Bici da citta', tenuta 8 anni.
+    purchase_price: {value: 600, low: 300, high: 1200}
+    residual_value: {value: 100, low: 0, high: 250}
+    expected_lifetime_years: {value: 8, low: 5, high: 12}
+    maintenance_cost_year: {value: 80, low: 40, high: 150}
+    insurance_cost_year: {value: 25, low: 0, high: 60, notes: "Assicurazione furto, se sottoscritta."}
+    average_speed_kmh:
+      URBAN: {value: 14, low: 11, high: 17}
+      REGIONAL: {value: 17, low: 14, high: 21}
+    fixed_time_min_per_trip: {value: 3, low: 1, high: 6, notes: "Sblocco / parcheggio."}
+    capacity: 1
+    luggage_capacity: SMALL
+    max_practical_distance_km: {value: 10, low: 6, high: 15, notes: "Tratta singola realistica per uso quotidiano."}
+    weather_sensitivity: HIGH
+    requires_license: false
+
+  - id: e_bike
+    name: E-bike
+    type: E_BIKE
+    mode: E_BIKE
+    ownership: OWNED
+    description: E-bike urbana / trekking, tenuta 6 anni.
+    purchase_price: {value: 2200, low: 1350, high: 3500, confidence: MEDIUM, source: ebike_prezzi_italia, notes: "Modello e-city di riferimento 2.200 EUR; campione 1.350-3.500."}
+    residual_value: {value: 500, low: 250, high: 900}
+    expected_lifetime_years: {value: 6, low: 4, high: 8}
+    maintenance_cost_year: {value: 150, low: 80, high: 250, notes: "Stima; include un accantonamento per la sostituzione della batteria. Nessuna fonte trovata."}
+    insurance_cost_year: {value: 80, low: 40, high: 150, notes: "Assicurazione furto."}
+    energy: {carrier: ELECTRICITY, consumption_per_100km: {value: 1.0, low: 0.7, high: 1.5}}
+    cost_per_km: {value: 0.015, low: 0.01, high: 0.03}
+    average_speed_kmh:
+      URBAN: {value: 17, low: 14, high: 20}
+      REGIONAL: {value: 20, low: 17, high: 24}
+    fixed_time_min_per_trip: {value: 3, low: 1, high: 6}
+    capacity: 1
+    luggage_capacity: SMALL
+    max_practical_distance_km: {value: 20, low: 12, high: 30}
+    weather_sensitivity: HIGH
+    requires_license: false
+
+  - id: walking
+    name: A piedi
+    type: WALKING
+    mode: WALK
+    ownership: FREE
+    description: Sempre disponibile, gratuito.
+    average_speed_kmh:
+      URBAN: {value: 4.8, low: 4.0, high: 5.5}
+    fixed_time_min_per_trip: {value: 0, confidence: HIGH}
+    luggage_capacity: SMALL
+    max_practical_distance_km: {value: 2.5, low: 1.5, high: 4}
+    weather_sensitivity: MEDIUM
+    requires_license: false

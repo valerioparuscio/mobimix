@@ -1,0 +1,6 @@
+# Text files are stored with LF and checked out with LF on every system, so a file written on
+# Windows and one written on Linux are the same file (the tests compare generated JSON byte for byte).
+* text=auto eol=lf
+
+*.png binary
+*.ico binary

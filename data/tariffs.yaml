@@ -1,0 +1,356 @@
+# Tariff-based options: SUBSCRIPTIONS and PAY-PER-USE services (public transport, rail,
+# taxi, sharing, rental, air). Owned assets are in mobility_options.yaml; scores in
+# comfort_scores.yaml. Schema: backend/app/models/options.py (MobilityOption).
+#
+# Geographic scope: Milan area unless an entry overrides `geographic_scope`. Tariffs of
+# other cities are NOT modelled yet (Phase 3 of the data roadmap). Entries marked
+# `placeholder: true` have no verified source and exist only so the catalogue is complete.
+
+meta:
+  geographic_scope: IT-MI
+  valid_from: 2026-01-01
+
+options:
+  # ============================ SUBSCRIPTIONS =============================================
+  - id: pt_annual_urban_milano
+    name: Abbonamento annuale urbano ATM (ordinario)
+    type: PT_ANNUAL
+    mode: PUBLIC_TRANSPORT
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 360, confidence: MEDIUM, source: product_owner_2026_10, notes: "Era 330 EUR (ATM, stampa); 360 indicato dal product owner il 2026-10-30. Da verificare su atm.it."}
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 18, low: 14, high: 24, notes: "Velocita' commerciale media su un mix metro/tram/bus; stima."}
+      REGIONAL: {value: 30, low: 22, high: 38}
+    fixed_time_min_per_trip: {value: 12, low: 8, high: 20, notes: "Cammino alla fermata + attesa."}
+    luggage_capacity: SMALL
+    max_practical_distance_km: {value: 40, notes: "Entro l'area servita dall'abbonamento urbano."}
+    weather_sensitivity: MEDIUM
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN]
+    emissions: {co2_g_per_km: {value: 45, low: 20, high: 90, placeholder: true, notes: "Stima per passeggero-km su mix metro/tram/bus. Fattori ISPRA per modo non trovati."}, basis: passenger_km}
+
+  - id: pt_annual_urban_milano_under27
+    name: Abbonamento annuale urbano ATM (under 27)
+    type: PT_ANNUAL
+    mode: PUBLIC_TRANSPORT
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 200, confidence: HIGH, source: atm_tariffe_milano}
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 18, low: 14, high: 24}
+      REGIONAL: {value: 30, low: 22, high: 38}
+    fixed_time_min_per_trip: {value: 12, low: 8, high: 20}
+    luggage_capacity: SMALL
+    max_practical_distance_km: 40
+    weather_sensitivity: MEDIUM
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN]
+    max_age: 26
+    emissions: {co2_g_per_km: {value: 45, low: 20, high: 90, placeholder: true}, basis: passenger_km}
+
+  - id: pt_annual_urban_milano_senior
+    name: Abbonamento annuale urbano ATM (senior 65+)
+    type: PT_ANNUAL
+    mode: PUBLIC_TRANSPORT
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 300, confidence: HIGH, source: atm_tariffe_milano, notes: "Esiste anche una tariffa off-peak a 170 EUR/anno."}
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 18, low: 14, high: 24}
+      REGIONAL: {value: 30, low: 22, high: 38}
+    fixed_time_min_per_trip: {value: 12, low: 8, high: 20}
+    luggage_capacity: SMALL
+    max_practical_distance_km: 40
+    weather_sensitivity: MEDIUM
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN]
+    min_age: 65
+    emissions: {co2_g_per_km: {value: 45, low: 20, high: 90, placeholder: true}, basis: passenger_km}
+
+  - id: pt_annual_metro_mi1_mi3
+    name: Abbonamento annuale ATM area metropolitana (Mi1-Mi3)
+    type: PT_ANNUAL
+    mode: PUBLIC_TRANSPORT
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 460, confidence: MEDIUM, source: atm_tariffe_milano, notes: "Dato aggiornato ad aprile 2025."}
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 18, low: 14, high: 24}
+      REGIONAL: {value: 32, low: 24, high: 40}
+    fixed_time_min_per_trip: {value: 14, low: 8, high: 25}
+    luggage_capacity: SMALL
+    max_practical_distance_km: 50
+    weather_sensitivity: MEDIUM
+    available_in_area_types: [URBAN, SUBURBAN, PERIPHERAL]
+    emissions: {co2_g_per_km: {value: 45, low: 20, high: 90, placeholder: true}, basis: passenger_km}
+
+  - id: pt_monthly_urban_milano
+    name: Abbonamento mensile urbano ATM (ordinario)
+    type: PT_MONTHLY
+    mode: PUBLIC_TRANSPORT
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 468, confidence: HIGH, source: atm_tariffe_milano, notes: "39 EUR x 12 mesi. Acquistabile mese per mese (prorata_monthly)."}
+    prorata_monthly: true
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 18, low: 14, high: 24}
+      REGIONAL: {value: 30, low: 22, high: 38}
+    fixed_time_min_per_trip: {value: 12, low: 8, high: 20}
+    luggage_capacity: SMALL
+    max_practical_distance_km: 40
+    weather_sensitivity: MEDIUM
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN]
+    emissions: {co2_g_per_km: {value: 45, low: 20, high: 90, placeholder: true}, basis: passenger_km}
+
+  - id: rail_annual_lombardia
+    no_vehicle_at_destination: true
+    name: Abbonamento annuale treni regionali "Io viaggio ovunque in Lombardia"
+    type: RAIL_SUBSCRIPTION
+    mode: RAIL
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 1137, low: 1117, high: 1180, confidence: MEDIUM, source: trenord_tariffe_2026, notes: "Prima dell'aumento medio del 3,9% di settembre 2026: verificare. Esistono abbonamenti per fascia chilometrica piu' economici sulle tratte brevi (non modellati)."}
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 30, low: 22, high: 38, placeholder: true, notes: "Treno su tratta breve, con fermate ravvicinate. Stima propria: senza questo valore si userebbe la velocita' regionale per un tragitto urbano."}
+      REGIONAL: {value: 50, low: 40, high: 60}
+      LONG: {value: 60, low: 50, high: 75}
+    fixed_time_min_per_trip: {value: 20, low: 12, high: 30, notes: "Accesso alla stazione + attesa."}
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 150
+    min_practical_distance_km: {value: 10, placeholder: true, notes: "Sotto i 10 km il treno regionale non e' realistico: non sappiamo quanto la stazione sia vicina, e a 5-10 km prendeva una quota alta dei tragitti urbani. Era 5 km; portato a 10 dopo aver visto l'assegnazione (2026-10-29)."}
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN, PERIPHERAL]
+    emissions: {co2_g_per_km: {value: 40, low: 20, high: 70, placeholder: true}, basis: passenger_km}
+
+  - id: bikemi_annual
+    name: Abbonamento annuale BikeMi
+    type: BIKE_SHARING_SUBSCRIPTION
+    mode: BICYCLE
+    ownership: SUBSCRIPTION
+    fixed_cost_year: {value: 36, low: 24, high: 36, confidence: HIGH, source: bikemi, notes: "24 EUR con abbonamento ATM annuale attivo."}
+    cost_per_trip: {value: 0, notes: "Le corse entro 30 minuti sono gratuite; l'e-bike ha un costo oltre la soglia (non modellato)."}
+    average_speed_kmh:
+      URBAN: {value: 13, low: 10, high: 16}
+    fixed_time_min_per_trip: {value: 5, low: 2, high: 10, notes: "Cammino alla stazione + disponibilita' di bici/stalli."}
+    capacity: 1
+    luggage_capacity: SMALL
+    max_practical_distance_km: {value: 6, notes: "Corsa di 30 minuti a ~13 km/h."}
+    weather_sensitivity: HIGH
+    available_in_area_types: [CITY_CENTER, URBAN]
+
+  - id: car_sharing_subscription
+    uses_motorways: true
+    name: Abbonamento car sharing (ipotetico)
+    type: CAR_SHARING_SUBSCRIPTION
+    mode: CAR
+    ownership: SUBSCRIPTION
+    description: PLACEHOLDER - abbonamento con tariffa al minuto scontata. Nessun prodotto reale verificato.
+    fixed_cost_year: {value: 120, placeholder: true, notes: "Nessuna fonte. Da sostituire con un prodotto reale o eliminare."}
+    cost_per_minute: {value: 0.17, placeholder: true, notes: "Nessuna fonte."}
+    cost_per_hour: {value: 8.0, placeholder: true}
+    cost_per_day: {value: 36.0, placeholder: true}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+    fixed_time_min_per_trip: {value: 10, low: 5, high: 15}
+    capacity: 5
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 100
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN]
+    requires_license: true
+    emissions: {co2_g_per_km: {value: 120, low: 90, high: 160, placeholder: true}, basis: vehicle_km}
+
+  # ============================ PAY-PER-USE ===============================================
+  - id: pt_ticket_urban_milano
+    name: Biglietto urbano ATM
+    type: PT_TICKET
+    mode: PUBLIC_TRANSPORT
+    ownership: PAY_PER_USE
+    cost_per_trip: {value: 2.30, low: 2.20, high: 2.30, confidence: MEDIUM, source: product_owner_2026_10, notes: "Era 2,20 EUR (2,00 prima); 2,30 indicato dal product owner il 2026-10-30. Da verificare su atm.it."}
+    average_speed_kmh:
+      URBAN: {value: 18, low: 14, high: 24}
+      REGIONAL: {value: 30, low: 22, high: 38}
+    fixed_time_min_per_trip: {value: 12, low: 8, high: 20}
+    luggage_capacity: SMALL
+    max_practical_distance_km: 40
+    weather_sensitivity: MEDIUM
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN, PERIPHERAL]
+    emissions: {co2_g_per_km: {value: 45, low: 20, high: 90, placeholder: true}, basis: passenger_km}
+
+  - id: taxi_milano
+    uses_motorways: true
+    service_kind: TAXI
+    name: Taxi
+    type: TAXI
+    mode: TAXI
+    ownership: PAY_PER_USE
+    cost_per_trip: {value: 4.10, low: 4.10, high: 7.90, confidence: MEDIUM, source: taxi_milano_2026, notes: "Scatto diurno feriale; festivo 6,60, notturno 7,90."}
+    cost_per_km: {value: 1.50, low: 1.32, high: 1.70, confidence: MEDIUM, source: taxi_milano_2026, notes: "Tariffa 1,32 EUR/km piu' componente a tempo (34,48 EUR/h) quando si va piano: ~1,5 EUR/km effettivi in citta'. Stima propria."}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 85, low: 75, high: 100}
+    fixed_time_min_per_trip: {value: 7, low: 3, high: 15, notes: "Attesa / chiamata."}
+    capacity: 4
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 150
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN, PERIPHERAL]
+    emissions: {co2_g_per_km: {value: 170, low: 120, high: 220, placeholder: true}, basis: vehicle_km}
+
+  - id: ride_hailing_ncc
+    uses_motorways: true
+    name: Auto con conducente (NCC / app)
+    type: RIDE_HAILING
+    mode: TAXI
+    ownership: PAY_PER_USE
+    description: PLACEHOLDER - nessuna tariffa verificata.
+    cost_per_trip: {value: 4.0, placeholder: true}
+    cost_per_km: {value: 1.8, low: 1.4, high: 2.4, placeholder: true, notes: "Nessuna fonte. Da verificare."}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 85, low: 75, high: 100}
+    fixed_time_min_per_trip: {value: 6, low: 3, high: 12}
+    capacity: 4
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 150
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN]
+    emissions: {co2_g_per_km: {value: 170, low: 120, high: 220, placeholder: true}, basis: vehicle_km}
+
+  - id: car_sharing_free2move_milano
+    uses_motorways: true
+    service_kind: CAR_SHARING
+    name: Car sharing free-floating (Free2move)
+    type: CAR_SHARING
+    mode: CAR
+    ownership: PAY_PER_USE
+    cost_per_minute: {value: 0.23, low: 0.21, high: 0.25, confidence: MEDIUM, source: free2move_milano}
+    cost_per_hour: {value: 9.99, confidence: MEDIUM, source: free2move_milano}
+    cost_per_day: {value: 43.33, confidence: MEDIUM, source: free2move_milano, notes: "Carburante e assicurazione inclusi. Il costo al km oltre la soglia inclusa (0,48 EUR/km in una fonte non datata) non e' modellato."}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+    fixed_time_min_per_trip: {value: 10, low: 5, high: 15, notes: "Raggiungere l'auto + trovare parcheggio nell'area."}
+    capacity: 4
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: {value: 100, placeholder: true, notes: "Area di servizio e km inclusi limitano le tratte lunghe."}
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN]
+    requires_license: true
+    emissions: {co2_g_per_km: {value: 120, low: 90, high: 160, placeholder: true}, basis: vehicle_km}
+
+  - id: bikemi_day_pass
+    name: BikeMi giornaliero
+    type: BIKE_SHARING
+    mode: BICYCLE
+    ownership: PAY_PER_USE
+    cost_per_day: {value: 4.50, confidence: HIGH, source: bikemi}
+    cost_per_trip: {value: 0, confidence: HIGH, notes: "Costo marginale nullo: incluso nel titolo di viaggio."}
+    average_speed_kmh:
+      URBAN: {value: 13, low: 10, high: 16}
+    fixed_time_min_per_trip: {value: 5, low: 2, high: 10}
+    capacity: 1
+    luggage_capacity: SMALL
+    max_practical_distance_km: 6
+    weather_sensitivity: HIGH
+    available_in_area_types: [CITY_CENTER, URBAN]
+
+  - id: kick_scooter_sharing
+    service_kind: MICRO_SHARING
+    name: Monopattino in sharing
+    type: SCOOTER_SHARING
+    mode: KICK_SCOOTER
+    ownership: PAY_PER_USE
+    description: PLACEHOLDER - tariffe tipiche degli operatori italiani, non verificate per Milano.
+    cost_per_trip: {value: 1.0, placeholder: true}
+    cost_per_minute: {value: 0.22, placeholder: true, notes: "Nessuna fonte verificata."}
+    average_speed_kmh:
+      URBAN: {value: 14, low: 10, high: 18}
+    fixed_time_min_per_trip: {value: 4, low: 2, high: 8}
+    capacity: 1
+    luggage_capacity: NONE
+    max_practical_distance_km: {value: 5, placeholder: true}
+    weather_sensitivity: HIGH
+    available_in_area_types: [CITY_CENTER, URBAN]
+
+  - id: car_rental_daily
+    uses_motorways: true
+    service_kind: CAR_RENTAL
+    name: Noleggio auto (giornaliero)
+    type: CAR_RENTAL
+    mode: CAR
+    ownership: PAY_PER_USE
+    description: Utilitaria / compatta a noleggio breve. Il carburante e' a carico del noleggiatore (cliente).
+    geographic_scope: IT
+    cost_per_day: {value: 45, low: 35, high: 60, confidence: MEDIUM, source: noleggio_auto_2026, notes: "Kayak: ~37 EUR/giorno per la categoria piccola; con franchigia ed extra 45-50."}
+    energy: {carrier: PETROL, consumption_per_100km: {value: 6.0, low: 5.0, high: 7.0}}
+    average_speed_kmh:
+      URBAN: {value: 22, low: 18, high: 28}
+      REGIONAL: {value: 55, low: 45, high: 70}
+      LONG: {value: 85, low: 75, high: 100}
+    fixed_time_min_per_trip: {value: 15, low: 10, high: 30, notes: "Ritiro e riconsegna, ammortizzati per tratta."}
+    capacity: 5
+    luggage_capacity: LARGE
+    max_practical_distance_km: 1500
+    min_practical_distance_km: {value: 20, placeholder: true, notes: "Il noleggio giornaliero non ha senso per gli spostamenti brevi. Scelta di modellazione."}
+    weather_sensitivity: LOW
+    requires_license: true
+
+  - id: rail_regional_ticket
+    no_vehicle_at_destination: true
+    service_kind: RAIL
+    name: Biglietto treno regionale
+    type: RAIL
+    mode: RAIL
+    ownership: PAY_PER_USE
+    geographic_scope: IT-LOM
+    cost_per_km: {value: 0.15, low: 0.12, high: 0.20, confidence: LOW, source: trenord_tariffe_2026, notes: "Biglietto fascia 21-50 km = 5,40 EUR, ~0,15 EUR/km a 35 km. Calcolo proprio."}
+    average_speed_kmh:
+      URBAN: {value: 30, low: 22, high: 38, placeholder: true, notes: "Come l'abbonamento treni regionali."}
+      REGIONAL: {value: 50, low: 40, high: 60}
+      LONG: {value: 60, low: 50, high: 75}
+    fixed_time_min_per_trip: {value: 20, low: 12, high: 30}
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 150
+    min_practical_distance_km: {value: 10, placeholder: true, notes: "Come l'abbonamento treni regionali."}
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN, PERIPHERAL]
+    emissions: {co2_g_per_km: {value: 40, low: 20, high: 70, placeholder: true}, basis: passenger_km}
+
+  - id: rail_high_speed_ticket
+    no_vehicle_at_destination: true
+    name: Biglietto treno alta velocità
+    type: RAIL
+    mode: RAIL
+    ownership: PAY_PER_USE
+    geographic_scope: IT
+    cost_per_km: {value: 0.10, low: 0.05, high: 0.18, confidence: LOW, source: treno_av_prezzi, notes: "Milano-Roma (~570 km): ~30 EUR in anticipo, 60 EUR medio, 100+ EUR all'ultimo minuto. Calcolo proprio."}
+    average_speed_kmh:
+      LONG: {value: 150, low: 120, high: 190}
+    fixed_time_min_per_trip: {value: 35, low: 25, high: 50, notes: "Accesso in stazione + margine di anticipo."}
+    luggage_capacity: LARGE
+    max_practical_distance_km: 1500
+    min_practical_distance_km: {value: 100, placeholder: true, notes: "L'alta velocita' ha senso su tratte lunghe. Scelta di modellazione."}
+    weather_sensitivity: LOW
+    available_in_area_types: [CITY_CENTER, URBAN, SUBURBAN, PERIPHERAL]
+    emissions: {co2_g_per_km: {value: 25, low: 10, high: 45, placeholder: true}, basis: passenger_km}
+
+  - id: air_domestic
+    no_vehicle_at_destination: true
+    service_kind: AIR
+    name: Volo nazionale
+    type: AIR
+    mode: AIR
+    ownership: PAY_PER_USE
+    description: PLACEHOLDER - nessuna tariffa verificata.
+    geographic_scope: IT
+    cost_per_trip: {value: 90, low: 50, high: 160, placeholder: true, notes: "Nessuna fonte. Tratta nazionale, solo andata."}
+    average_speed_kmh:
+      LONG: {value: 600, low: 450, high: 700}
+    fixed_time_min_per_trip: {value: 150, low: 120, high: 200, notes: "Trasferimento aeroporto, controlli, imbarco."}
+    luggage_capacity: MEDIUM
+    max_practical_distance_km: 3000
+    min_practical_distance_km: {value: 300, placeholder: true, notes: "Sotto i 300 km il volo non e' competitivo. Scelta di modellazione."}
+    weather_sensitivity: LOW
+    emissions: {co2_g_per_km: {value: 200, low: 120, high: 280, placeholder: true}, basis: passenger_km}

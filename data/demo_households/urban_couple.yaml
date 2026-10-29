@@ -1,0 +1,47 @@
+# Demo household B - two adults in the city, one car, different commuting patterns, good PT.
+# Expected behaviour: keeping the single car should remain feasible; one commute is easily served
+# by PT, so a PT subscription for that person should be compared against tickets; a second car
+# must NOT be recommended.
+id: urban_couple
+mode: QUICK
+household:
+  adults:
+    - id: p1
+      age_range: A35_44
+      has_license: true
+      occupation: WORKER
+      work_or_study:
+        one_way_distance_km: {exact: 8}
+        days_per_week: {exact: 5}
+        remote_days_per_week: {exact: 0}
+        time_critical: true
+    - id: p2
+      age_range: A35_44
+      has_license: true
+      occupation: WORKER
+      work_or_study:
+        one_way_distance_km: {exact: 12}
+        days_per_week: {exact: 5}
+        remote_days_per_week: {exact: 2}
+        time_critical: false
+  n_children: 0
+  location:
+    area_type: URBAN
+    municipality: Milano
+    pt_quality: HIGH
+    sharing_availability: MEDIUM
+vehicles:
+  - id: car1
+    option_id: car_medium_petrol
+    primary_user_id: p1
+    annual_km: {low: 7000, high: 10000}
+    parking_cost_year: {exact: 900}
+subscriptions:
+  - id: sub1
+    option_id: pt_annual_urban_milano
+    holder_id: p2
+other_mobility:
+  weekend_trips_per_year: {exact: 15}
+  weekend_trip_distance_km_one_way: {exact: 60}
+  holiday_trips_per_year: {exact: 2}
+  holiday_distance_km_one_way: {exact: 400}

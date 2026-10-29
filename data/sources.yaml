@@ -1,0 +1,146 @@
+# Registry of the sources cited by model_parameters.yaml, tariffs.yaml, mobility_options.yaml
+# and default_profiles.yaml (the `source:` field of every value is an id from this file).
+#
+# All entries were retrieved on 2026-10-28 from web search results. Several are press
+# articles that report a primary source (ATM, IVASS, ISTAT...): where precision matters,
+# check the primary source before relying on the number. See docs/data_sources.md.
+
+sources:
+  - id: mimit_carburanti_2026_10
+    name: Prezzi medi carburanti self-service su rete stradale, 23/10/2026
+    publisher: MIMIT (via Teleborsa / Borsa Italiana)
+    url: https://www.borsaitaliana.it/borsa/notizie/teleborsa/economia/carburanti-prezzo-medio-self-benzina-a-2022-euroe-gasolio-a-2260-euro-63_2026-10-23_TLB.html?lang=it
+    retrieved_on: 2026-10-28
+    notes: Benzina self 2,022 EUR/l, gasolio self 2,260 EUR/l. Prezzi molto volatili in ottobre 2026.
+
+  - id: ev_ricarica_2026
+    name: Quanto costa ricaricare un'auto elettrica a casa e alle colonnine (2026)
+    publisher: auto.it; dati Osservatorio Adiconsum-TariffEV (luglio 2026) e ARERA come riportati nelle fonti
+    url: https://www.auto.it/news/attualita/2026/04/30-8763756/quanto-costa-ricaricare-auto-elettrica-casa-colonnine
+    retrieved_on: 2026-10-28
+    notes: Casa ~0,25 EUR/kWh (0,08 con tariffe notturne dedicate); pubblica AC 0,63, DC 0,74 EUR/kWh. 16 kWh/100 km come consumo di riferimento.
+
+  - id: ivass_rc_auto_2025
+    name: RC auto - premio medio 2025
+    publisher: IVASS (via Sicurauto / Segugio)
+    url: https://www.sicurauto.it/news/attualita-e-curiosita/rc-auto-premio-medio-2025-4-ancora-un-anno-di-rincari/
+    retrieved_on: 2026-10-28
+    notes: 438 EUR (annuale 2025); IPER Q4 2025 432 EUR. Varia molto per provincia e classe di merito.
+
+  - id: sum_money_costo_auto
+    name: Simulatore costo auto (utilitaria 16.000 EUR ~3.600 EUR/anno; berlina 25.000 EUR ~5.200; elettrica 30.000 EUR ~3.800)
+    publisher: sum.money
+    url: https://sum.money/it/costo-auto/
+    retrieved_on: 2026-10-28
+    notes: Simulatore con ipotesi dichiarate, non un dato ufficiale. Svalutazione assunta ~10%/anno.
+
+  - id: isfort_costo_auto_2026
+    name: Costo di mantenimento di un'auto in Italia nel 2026 (ISFORT)
+    publisher: ISFORT (via Geopop)
+    url: https://www.geopop.it/quanto-ci-costa-mantenere-unautomobile-in-italia-nel-2026-334-euro-mensili-in-media-i-dati-isfort/
+    retrieved_on: 2026-10-28
+    notes: Media 334 EUR/mese (~4.000 EUR/anno); forbice 2.329-4.486 EUR/anno. Usato solo per sanity check del TCO.
+
+  - id: alvolante_costi_2026
+    name: Auto diesel o elettrica, il confronto dei costi reali nel 2026
+    publisher: Alvolante
+    url: https://www.alvolante.it/news/auto-diesel-o-elettrica-il-confronto-dei-costi-reali-nel-2026-414637
+    retrieved_on: 2026-10-28
+    notes: Manutenzione elettrica 180-400 EUR/anno, diesel 314-600. Svalutazione a 3 anni 48,5% elettrica vs 37,3% diesel.
+
+  - id: atm_tariffe_milano
+    name: Tariffe ATM Milano - abbonamenti e biglietto urbano
+    publisher: ATM Milano (via Il Giorno / ATM)
+    url: https://www.ilgiorno.it/milano/cronaca/via-ai-rincari-dei-mezzi-pubblici-biglietti-carnet-e-settimanali-ecco-quanto-costa-viaggiare-5e46af38
+    retrieved_on: 2026-10-28
+    notes: Urbano ordinario mensile 39, annuale 330; biglietto 2,20 (da 2,00). Annuale ordinario e biglietto sono poi stati aggiornati a 360 e 2,30 dal product owner (vedi product_owner_2026_10). Under 27 annuale 200; senior (65+) annuale 300; Mi1-Mi3 annuale 460 (aggiornamento aprile 2025). Verificare su atm.it.
+
+  - id: trenord_tariffe_2026
+    name: Trenord - tariffe dal 1 settembre 2026
+    publisher: Trenord (via Affaritaliani / SaronnoNews)
+    url: https://www.trenord.it/fileadmin/contenuti/TRENORD/4-Info_e_assistenza/Informazioni_utili/Condizioni_di_trasporto/Condizioni_di_trasporto_IN_VIGORE/AvvisoA3Trenord_2026_179_Tariffario.pdf
+    retrieved_on: 2026-10-28
+    notes: 'Abbonamento "Io viaggio ovunque in Lombardia" annuale ~1.137 EUR (prima dell''aumento medio 3,9% di settembre 2026). Biglietto fascia 21-50 km 5,40 EUR. Il tariffario ufficiale per fascia chilometrica e'' nel PDF.'
+
+  - id: taxi_milano_2026
+    name: Tariffe taxi Milano (1,32 EUR/km e 34,48 EUR/h; scatto diurno feriale 4,10 EUR)
+    publisher: Sicurauto
+    url: https://www.sicurauto.it/news/attualita-e-curiosita/taxi-milano-per-malpensa-linate-e-orio-quanto-costa/
+    retrieved_on: 2026-10-28
+    notes: Fonti discordanti (altre riportano 1,20 EUR/km e 31,30 EUR/h). Verificare sul tariffario del Comune di Milano.
+
+  - id: free2move_milano
+    name: Free2move car sharing Milano - tariffe
+    publisher: Free2move
+    url: https://www.free2move.com/it/it/car-sharing/milan/
+    retrieved_on: 2026-10-28
+    notes: ~0,21 EUR/min, 9,99 EUR/h, 43,33 EUR/giorno, carburante e assicurazione inclusi. Una guida 2025 riporta 0,25 EUR/min. Data di aggiornamento della pagina non indicata.
+
+  - id: bikemi
+    name: BikeMi - abbonamenti
+    publisher: BikeMi / Fleet Magazine
+    url: https://www.fleetmagazine.com/servizi-sharing-mobility-milano-quanto-costa-noleggiare/3/
+    retrieved_on: 2026-10-28
+    notes: Annuale 36 EUR (24 con abbonamento ATM annuale), settimanale 9, giornaliero 4,50. Corse gratuite entro 30 minuti.
+
+  - id: noleggio_auto_2026
+    name: Noleggio auto - prezzi medi giornalieri Italia
+    publisher: Kayak / HDmotori
+    url: https://www.kayak.it/Italia-Auto-a-noleggio.118.crc.html
+    retrieved_on: 2026-10-28
+    notes: Categoria piccola ~37 EUR/giorno (Kayak); 35-45 EUR secondo altre guide; con franchigia e extra si arriva a 45-50 EUR. Fonti per lo piu' commerciali.
+
+  - id: ebike_prezzi_italia
+    name: Mercato e-bike in Italia - modelli e prezzi
+    publisher: BusinessOnline
+    url: https://www.businessonline.it/news/come-va-il-settore-delle-biciclette-elettriche-i-modelli-pi-venduti-in-italia-i-prezzi-e-le-aziende-leader_n82327.html
+    retrieved_on: 2026-10-28
+    notes: E-city/trekking di riferimento ~2.200 EUR; modelli campione da 1.350 a 3.500 EUR. Nessun prezzo medio di mercato ne' costi di manutenzione trovati.
+
+  - id: treno_av_prezzi
+    name: Frecciarossa / Italo Milano-Roma - prezzi indicativi
+    publisher: Topnegozi / UniqueVisitor
+    url: https://www.topnegozi.it/blog/frecciarossa-o-italo.html
+    retrieved_on: 2026-10-28
+    notes: Da ~20-30 EUR (anticipo) a 90-120 EUR (ultimo minuto) su ~570 km. Costo/km derivato con calcolo proprio.
+
+  - id: istat_percorrenze_2023
+    name: Le percorrenze dei veicoli stradali circolanti, anno 2023
+    publisher: ISTAT (UNRAE cita 10.712 km/auto)
+    url: https://www.istat.it/comunicato-stampa/le-percorrenze-dei-veicoli-stradali-circolanti-anno-2023/
+    retrieved_on: 2026-10-28
+    notes: ~10.949 km/anno per autoveicolo (2023); auto con meno di 5 anni ~13.600 km. ACI 2023 - 10.647 km/veicolo.
+
+  - id: aci_annuario_2025
+    name: Annuario statistico ACI 2025 - parco circolante
+    publisher: ACI (via Sicurauto)
+    url: https://www.sicurauto.it/news/novita-del-mercato/parco-circolante-italia-eta-media-13-anni-nel-2025-nessun-miglioramento/
+    retrieved_on: 2026-10-28
+    notes: Eta' media del parco 13 anni.
+
+  - id: audimob_2025
+    name: Rapporto Audimob / ISFORT sulla mobilita' degli italiani, 22esimo rapporto
+    publisher: ISFORT (via Assolombarda / MIT / SmartWorld)
+    url: https://www.assolombarda.it/servizi/mobilita-e-trasporti/documenti/22deg-rapporto-mobilita-degli-italiani
+    retrieved_on: 2026-10-28
+    notes: Primo semestre 2025 - 102,7 milioni di spostamenti nel giorno medio feriale (14-85 anni); piu' dell'80% entro 10 km; 27,3% degli spostamenti fino a 2 km in auto. La distanza media per spostamento e' un calcolo proprio (944,5 Mpkm / 102,7 M spostamenti).
+
+  - id: ispra_fattori_emissione
+    name: ISPRA - fattori di emissione del mix elettrico nazionale
+    publisher: ISPRA (rapporto 343/2021)
+    url: https://www.isprambiente.gov.it/it/servizi/mobilita-sostenibile/strumenti-e-indicatori/metodo-di-calcolo-delle-emissioni-evitate-utilizzando-modalita-di-trasporto-alternative-all2019auto-privata
+    retrieved_on: 2026-10-28
+    notes: Mix elettrico ~280 kgCO2eq/MWh (dato 2021, da aggiornare). Fattori per passeggero-km per modo non trovati.
+
+  - id: pedaggi_autostradali_2026
+    name: Pedaggi autostradali 2026 - costo medio al km per la classe A
+    publisher: Ayvens (blog); calcolopercorso.it
+    url: https://www.ayvens.com/it-it/blog/conducenti/costo-autostrada/
+    retrieved_on: 2026-10-29
+    notes: In pianura 7-9 EUR ogni 100 km per la classe A (IVA inclusa), in montagna 9-14. Milano-Roma 45,60 EUR su 572 km (calcolopercorso.it), cioe' 0,08 EUR/km. Le tariffe variano per concessionaria e tratta.
+
+  - id: product_owner_2026_10
+    name: Valori indicati dal product owner
+    publisher: Product owner del progetto (conoscenza diretta delle tariffe di Milano)
+    retrieved_on: 2026-10-30
+    notes: Abbonamento annuale urbano ATM circa 360 EUR e biglietto singolo 2,30 EUR, indicati il 2026-10-30. Da sostituire con la tariffa ufficiale di atm.it quando verificata. Gli altri abbonamenti (under 27, senior, mensile, Mi1-Mi3) sono rimasti ai valori precedenti.

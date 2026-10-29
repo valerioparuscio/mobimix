@@ -1,0 +1,892 @@
+/* The results screen. Computer first: a wide answer on top, the current setup, the alternatives as
+ * cards, then the comparison. Colours come from the tokens in ../index.css. */
+
+/* The sections on the left, the what-if panel (always in view) on the right. */
+.results-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21rem;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+}
+
+/* While the answer is recalculated, the old one stays where it is, a little faded. */
+.results > * {
+  transition: opacity 0.2s;
+}
+
+.results.is-loading > * {
+  opacity: 0.55;
+}
+
+.what-if {
+  position: sticky;
+  top: 1rem;
+}
+
+.block h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+}
+
+.block-lead {
+  margin: 0 0 1.25rem;
+  max-width: 46rem;
+  color: var(--muted);
+}
+
+.plain-list {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.plain-list li {
+  margin: 0.25rem 0;
+}
+
+/* --- the answer ------------------------------------------------------------------------ */
+
+.verdict {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 1fr);
+  align-items: center;
+  gap: 2rem;
+  padding: 2.75rem 3rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(120deg, var(--accent-wash), var(--accent-soft) 55%, var(--surface));
+}
+
+.verdict-keep {
+  background: linear-gradient(120deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.verdict h2 {
+  margin: 0 0 0.75rem;
+  text-wrap: balance;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.verdict-lead {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--ink-2);
+}
+
+.verdict-action {
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.verdict-action span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background: var(--accent-strong);
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero p {
+  margin: 0;
+}
+
+.hero-value {
+  font-size: clamp(3.25rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent-strong);
+}
+
+.hero-label {
+  margin-top: 0.6rem !important;
+  font-size: 1.1rem;
+  color: var(--ink-2);
+}
+
+.hero-range {
+  margin-top: 0.25rem !important;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero .pill {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* --- pills and small marks ----------------------------------------------------------------- */
+
+.pill {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pill-level-0 {
+  background: var(--surface-2);
+  color: var(--ink-2);
+}
+
+.pill-level-1 {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.pill-level-2 {
+  background: var(--accent-wash);
+  color: var(--accent-strong);
+}
+
+.pill-level-3 {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.pill-role {
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+}
+
+.pill-pick {
+  background: var(--accent-strong);
+  color: var(--surface);
+}
+
+.confidence {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.confidence-dots {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.confidence-dots span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.confidence-dots span.on {
+  background: var(--accent);
+}
+
+/* --- today ------------------------------------------------------------------------------- */
+
+.today {
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.today-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.composition {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.composition li {
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.9rem;
+  background: var(--surface-2);
+  font-size: 0.95rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.stat p {
+  margin: 0;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  margin-top: 0.15rem !important;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.stat-small {
+  font-size: 1.15rem;
+}
+
+.stat-detail {
+  margin-top: 0.15rem !important;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* --- the alternatives --------------------------------------------------------------------- */
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* A card left alone on the last row takes the whole row. */
+.option-grid > .option:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.option-pick {
+  border: 2px solid var(--accent);
+}
+
+.option-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.option h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.option-category {
+  margin: 0.15rem 0 0.6rem;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.option-action {
+  margin: 0 0 0.75rem;
+  color: var(--ink-2);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.metric dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.metric dd {
+  margin: 0;
+}
+
+.metric dd:nth-of-type(1) {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.change {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.change-good {
+  color: var(--good);
+}
+
+.change-bad {
+  color: var(--bad);
+}
+
+.change-neutral {
+  color: var(--muted);
+}
+
+.bottom-line {
+  margin: 0.75rem 0 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+}
+
+.reasons {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+.more summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.option-foot {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+/* --- comparison ----------------------------------------------------------------------------- */
+
+.compare {
+  padding: 1.5rem 2rem 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.compare-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.segmented button {
+  padding: 0.35rem 1rem;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.legend {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-2);
+  font-size: 0.875rem;
+}
+
+.key {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.35rem;
+  border-radius: 3px;
+}
+
+.key-today,
+.bar-today {
+  background: var(--viz-today);
+}
+
+.key-option,
+.bar-option {
+  background: var(--viz-option);
+}
+
+.key-pick,
+.bar-pick {
+  background: var(--viz-pick);
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+}
+
+.chart {
+  margin: 0;
+}
+
+.chart figcaption {
+  display: grid;
+  margin-bottom: 0.75rem;
+}
+
+.chart figcaption span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.bars {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bar-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.25rem;
+  border-radius: 0.4rem;
+}
+
+.bar-row:hover,
+.bar-row:focus-visible {
+  background: var(--surface-2);
+}
+
+.bar-label {
+  overflow: hidden;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-track {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 1.5rem;
+  border-left: 1px solid var(--line-strong);
+}
+
+.bar {
+  flex: none;
+  width: calc((100% - 4.75rem) * var(--share, 0));
+  height: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.bar-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tip {
+  position: absolute;
+  left: 7.5rem;
+  bottom: calc(100% - 0.2rem);
+  z-index: 2;
+  display: none;
+  max-width: 20rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  background: var(--ink);
+  color: var(--page);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.bar-row:hover .tip,
+.bar-row:focus-visible .tip {
+  display: block;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 0.75rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-table thead th {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.compare-table th:first-child {
+  text-align: left;
+}
+
+.row-label {
+  display: block;
+  font-weight: 700;
+}
+
+.row-name {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* --- folds and notes ---------------------------------------------------------------------------- */
+
+.fold {
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.fold summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.count {
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 0.8rem;
+}
+
+.fold .block-lead {
+  margin-top: 0.75rem;
+}
+
+.rejected {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rejected li {
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.rejected .reason {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.precision h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.results-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+/* --- smaller screens -------------------------------------------------------------------------------- */
+
+@media (max-width: 52rem) {
+  .option-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 64rem) {
+  /* No room beside the sections: the panel comes right after the answer */
+  .results-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .results {
+    display: contents;
+  }
+
+  .results > .verdict {
+    order: 1;
+  }
+
+  .what-if {
+    order: 2;
+    position: static;
+  }
+
+  .results > :not(.verdict) {
+    order: 3;
+  }
+}
+
+@media (max-width: 52rem) {
+  .verdict {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.75rem 1.5rem;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+
+  .compare {
+    padding: 1.25rem;
+  }
+
+  .compare-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --- the assumptions in force ---------------------------------------------------------------- */
+
+.assumptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.assumptions li {
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  border: 1px solid var(--accent);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.answer-change {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius);
+  background: var(--accent-strong);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+/* --- the what-if panel ------------------------------------------------------------------------ */
+
+.what-if-panel {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.what-if-panel h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.4rem;
+}
+
+.what-if-lead {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.what-if-control {
+  margin-bottom: 1.1rem;
+}
+
+.what-if-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.what-if-row label {
+  font-weight: 600;
+}
+
+.what-if-value {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.what-if-value.changed {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.what-if-control input[type='range'] {
+  display: block;
+  width: 100%;
+  margin: 0.35rem 0 0;
+  accent-color: var(--accent);
+}
+
+.what-if-ends {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.what-if-hint {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.what-if-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+}
+
+.what-if-foot button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.what-if-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.what-if-summary {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+
+.what-if-summary p {
+  margin: 0;
+}
+
+.what-if-summary-label {
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.what-if-summary-title {
+  margin-top: 0.2rem !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.what-if-summary-figure {
+  margin-top: 0.15rem !important;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.what-if-summary-figure strong {
+  color: var(--accent-strong);
+  font-size: 1.15rem;
+}
+
+.what-if-summary-before {
+  margin-top: 0.6rem !important;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--accent-wash);
+  color: var(--muted);
+  font-size: 0.82rem;
+}
