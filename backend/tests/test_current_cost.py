@@ -98,10 +98,10 @@ class TestCosts:
     # catalogue or the defaults change. Hand-checked components are in the tests below.
     EXPECTED = {
         "urban_single": 4_764,
-        "urban_couple": 5_506,
+        "urban_couple": 5_476,
         "family_two_cars": 8_332,
         "peripheral_family": 5_593,
-        "car_free_household": 1_791,
+        "car_free_household": 1_731,
     }
 
     @pytest.mark.parametrize("name", list(EXPECTED))

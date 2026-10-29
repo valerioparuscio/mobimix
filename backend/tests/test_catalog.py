@@ -192,7 +192,7 @@ class TestCarCostSanity:
         ticket = catalog.option("pt_ticket_urban_milano").cost_per_trip
         assert annual and ticket
         break_even_trips = annual.value / ticket.value
-        # 360 / 2.30 = 157 trips: about 78 commuting days, well below a full working year
+        # 330 / 2.20 = 150 trips: about 75 commuting days, well below a full working year
         assert 120 <= break_even_trips <= 200
 
 

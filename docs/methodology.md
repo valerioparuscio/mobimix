@@ -527,11 +527,11 @@ regression values, not as findings):
 
 | Household | Current cost | Sell the car + passes | Hours | Keep car + e-bike |
 |---|---:|---:|---:|---:|
-| urban single | 4,764 | 1,257 (-3,507) | 283 -> 344 | 5,176 (+412) |
-| urban couple | 5,506 | 2,962 (-2,544) | 868 -> 1,013 | 5,750 (+243) |
-| peripheral family | 5,593 | 4,460 (-1,134) | 1,860 -> 2,461 | 5,867 (+273) |
+| urban single | 4,764 | 1,227 (-3,537) | 283 -> 344 | 5,177 (+413) |
+| urban couple | 5,476 | 2,902 (-2,574) | 868 -> 1,013 | 5,721 (+245) |
+| peripheral family | 5,593 | 4,460 (-1,133) | 1,860 -> 2,461 | 5,869 (+275) |
 
-(The peripheral family saves 1,134 EUR by giving up the car and spends 600 hours more: about 1.9 EUR per
+(The peripheral family saves 1,133 EUR by giving up the car and spends 600 hours more: about 1.9 EUR per
 extra hour, far under the 10 EUR/h the household's time is worth - the number that will keep that option
 from winning in step 11.)
 
@@ -645,11 +645,11 @@ on about 40 days a year"); the services fact from the use cost the candidate add
 
 | Household | Headline | Net benefit, EUR/year |
 |---|---|---|
-| urban single | sell the car, buy an e-bike, take a pass: STRONG_OPPORTUNITY | +2,050 (1,350 to 3,050) |
-| urban couple | cancel one of the two passes: SMALL_IMPROVEMENT | +480 (220 to 880) |
+| urban single | sell the car, buy an e-bike, take a pass: STRONG_OPPORTUNITY | +2,100 (1,400 to 3,100) |
+| urban couple | cancel one of the two passes: SMALL_IMPROVEMENT | +440 (180 to 840) |
 | family with two cars | keep (all one-car and car-free setups are infeasible) | - |
 | peripheral family | keep (the cheapest, car-free, nets -12,500) | - |
-| car-free household | keep (buying a car nets -3,000 to -4,200) | - |
+| car-free household | keep (buying a car nets -3,100 to -4,200) | - |
 
 **Known simplifications.**
 

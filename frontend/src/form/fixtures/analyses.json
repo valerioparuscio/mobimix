@@ -2,7 +2,7 @@
   "car_free_household": {
     "profile_id": "car_free_household",
     "scenario": null,
-    "parameters_version": "ce4e4adb5bc6",
+    "parameters_version": "b569f5f9d2ea",
     "portfolios": [
       {
         "id": "current",
@@ -661,9 +661,9 @@
     "current": {
       "portfolio_id": "current",
       "annual_cost": {
-        "low": 1561.589168032882,
-        "expected": 1790.873883700941,
-        "high": 2298.70276155549
+        "low": 1501.589168032882,
+        "expected": 1730.873883700941,
+        "high": 2238.70276155549
       },
       "annual_travel_hours": {
         "low": 522.0655913454821,
@@ -717,9 +717,9 @@
       {
         "portfolio_id": "car-free+pt_e_bike",
         "annual_cost": {
-          "low": 2027.4484584933273,
-          "expected": 2325.1874657212134,
-          "high": 2909.8457673143216
+          "low": 1967.4484584933273,
+          "expected": 2265.1874657212134,
+          "high": 2849.8457673143216
         },
         "annual_travel_hours": {
           "low": 501.78187253839195,
@@ -812,9 +812,9 @@
       {
         "portfolio_id": "buy-car_small_petrol+cars_only",
         "annual_cost": {
-          "low": 5441.283709806041,
-          "expected": 6579.667918054623,
-          "high": 7975.271949666456
+          "low": 5381.283709806041,
+          "expected": 6519.667918054623,
+          "high": 7915.271949666456
         },
         "annual_travel_hours": {
           "low": 481.9110414099787,
@@ -905,88 +905,88 @@
       {
         "portfolio_id": "buy-car_small_petrol+no_transit",
         "annual_cost": {
-          "low": 4971.1694766783585,
-          "expected": 6111.145562469741,
-          "high": 7511.3757752292895
+          "low": 4969.699030314177,
+          "expected": 6109.663221819842,
+          "high": 7509.870469831039
         },
         "annual_travel_hours": {
-          "low": 468.2400469729839,
-          "expected": 619.3603998726278,
-          "high": 905.6521113887308
+          "low": 468.5720657509478,
+          "expected": 619.7220649686224,
+          "high": 906.0755537480875
         },
         "perceived_hours": {
-          "low": 619.6393500332747,
-          "expected": 821.1114552045043,
-          "high": 1205.477765520021
+          "low": 620.2582974035346,
+          "expected": 821.7861993678981,
+          "high": 1206.2679513592066
         },
         "comfort": {
-          "low": 6.742590333941805,
-          "expected": 6.742590333941805,
-          "high": 6.742590333941805
+          "low": 6.739439406445749,
+          "expected": 6.739439406445749,
+          "high": 6.739439406445749
         },
         "flexibility": {
-          "low": 8.554068223353582,
-          "expected": 8.554068223353582,
-          "high": 8.554068223353582
+          "low": 8.546253201006477,
+          "expected": 8.546253201006477,
+          "high": 8.546253201006477
         },
         "reliability": {
-          "low": 8.236338183714285,
-          "expected": 8.236338183714285,
-          "high": 8.236338183714285
+          "low": 8.231347516973699,
+          "expected": 8.231347516973699,
+          "high": 8.231347516973699
         },
         "car_km_per_year": {
-          "low": 3495.5048565795387,
-          "expected": 4990.347115206642,
-          "high": 6957.321591726066
+          "low": 3484.4722752894972,
+          "expected": 4979.0455937348925,
+          "high": 6945.237090249457
         },
         "co2_kg_per_year": {
-          "low": 646.1170820613524,
-          "expected": 864.4013472660237,
-          "high": 1156.3809839655046
+          "low": 645.3118603236987,
+          "expected": 863.5798022775672,
+          "high": 1155.5131644111468
         },
         "private_vehicles_owned": 1,
         "uses_by_option": {
-          "car_small_petrol": 386.17682388182317,
-          "bicycle": 218.9875640321506,
-          "pt_ticket_urban_milano": 39.92370308027186,
-          "walking": 10.240258677199202,
+          "car_small_petrol": 384.9479434828233,
+          "bicycle": 218.39102615012078,
+          "pt_ticket_urban_milano": 41.79019085192171,
+          "walking": 10.199189186579046,
           "rail_high_speed_ticket": 4.6716503285551605
         },
         "delta": {
           "cost": {
-            "low": 3034.407385023349,
-            "expected": 4320.2716787688005,
-            "high": 5625.168026967247
+            "low": 3092.935589176817,
+            "expected": 4378.789338118901,
+            "high": 5683.661043766655
           },
           "travel_hours": {
-            "low": -104.24980830639046,
-            "expected": -70.17020550650136,
-            "high": -52.96507772251982
+            "low": -103.82034011640822,
+            "expected": -69.80854041050674,
+            "high": -52.63749617883724
           },
           "perceived_hours": {
-            "low": -246.4471737233422,
-            "expected": -162.47267292458866,
-            "high": -120.3017745515657
+            "low": -245.663801985769,
+            "expected": -161.79792876119484,
+            "high": -119.68200583729947
           },
           "comfort": {
-            "low": 1.0071366855614325,
-            "expected": 1.0071366855614325,
-            "high": 1.0071366855614325
+            "low": 1.0039857580653768,
+            "expected": 1.0039857580653768,
+            "high": 1.0039857580653768
           },
           "flexibility": {
-            "low": 1.6586659581614684,
-            "expected": 1.6586659581614684,
-            "high": 1.6586659581614684
+            "low": 1.650850935814364,
+            "expected": 1.650850935814364,
+            "high": 1.650850935814364
           },
           "car_km": {
-            "low": 2766.6570411888633,
-            "expected": 3279.4933497391544,
-            "high": 4277.517716540349
+            "low": 2756.1399701524383,
+            "expected": 3268.1918282674046,
+            "high": 4264.672157434141
           },
           "co2_kg": {
-            "low": 315.3738491352505,
-            "expected": 374.38069063180734,
-            "high": 481.1388380924002
+            "low": 314.59816704142327,
+            "expected": 373.5591456433508,
+            "high": 480.22108191380045
           },
           "saving_per_extra_hour": null
         },
@@ -998,9 +998,9 @@
       {
         "portfolio_id": "buy-car_small_petrol+e_bike",
         "annual_cost": {
-          "low": 5891.678462331521,
-          "expected": 7045.295295875602,
-          "high": 8469.412527733484
+          "low": 5831.678462331521,
+          "expected": 6985.295295875602,
+          "high": 8409.412527733484
         },
         "annual_travel_hours": {
           "low": 474.0153553820288,
@@ -1093,9 +1093,9 @@
       {
         "portfolio_id": "buy-car_small_petrol+scooter",
         "annual_cost": {
-          "low": 6294.7564368564435,
-          "expected": 7455.986171855301,
-          "high": 8888.325447726245
+          "low": 6234.7564368564435,
+          "expected": 7395.986171855301,
+          "high": 8828.325447726245
         },
         "annual_travel_hours": {
           "low": 450.0599461914013,
@@ -1209,9 +1209,9 @@
             {
               "code": "current_cost",
               "values": {
-                "eur": 1790.873883700941,
-                "low": 1561.589168032882,
-                "high": 2298.70276155549,
+                "eur": 1730.873883700941,
+                "low": 1501.589168032882,
+                "high": 2238.70276155549,
                 "hours": 689.5306053791292
               }
             },
@@ -1230,7 +1230,7 @@
           ],
           "explanation": [
             "Tenere la configurazione attuale è la scelta migliore.",
-            "La configurazione attuale costa circa 1.800 € l'anno (tra 1.550 e 2.300 €) e ti porta a passare circa 690 ore l'anno in viaggio.",
+            "La configurazione attuale costa circa 1.750 € l'anno (tra 1.500 e 2.250 €) e ti porta a passare circa 690 ore l'anno in viaggio.",
             "È già la più economica tra quelle realistiche.",
             "Affidabilità della stima: bassa."
           ],
@@ -1374,47 +1374,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": 3034.407385023349,
-              "expected": 4320.2716787688005,
-              "high": 5625.168026967247
+              "low": 3092.935589176817,
+              "expected": 4378.789338118901,
+              "high": 5683.661043766655
             },
             "travel_hours": {
-              "low": -104.24980830639046,
-              "expected": -70.17020550650136,
-              "high": -52.96507772251982
+              "low": -103.82034011640822,
+              "expected": -69.80854041050674,
+              "high": -52.63749617883724
             },
             "perceived_hours": {
-              "low": -246.4471737233422,
-              "expected": -162.47267292458866,
-              "high": -120.3017745515657
+              "low": -245.663801985769,
+              "expected": -161.79792876119484,
+              "high": -119.68200583729947
             },
             "comfort": {
-              "low": 1.0071366855614325,
-              "expected": 1.0071366855614325,
-              "high": 1.0071366855614325
+              "low": 1.0039857580653768,
+              "expected": 1.0039857580653768,
+              "high": 1.0039857580653768
             },
             "flexibility": {
-              "low": 1.6586659581614684,
-              "expected": 1.6586659581614684,
-              "high": 1.6586659581614684
+              "low": 1.650850935814364,
+              "expected": 1.650850935814364,
+              "high": 1.650850935814364
             },
             "car_km": {
-              "low": 2766.6570411888633,
-              "expected": 3279.4933497391544,
-              "high": 4277.517716540349
+              "low": 2756.1399701524383,
+              "expected": 3268.1918282674046,
+              "high": 4264.672157434141
             },
             "co2_kg": {
-              "low": 315.3738491352505,
-              "expected": 374.38069063180734,
-              "high": 481.1388380924002
+              "low": 314.59816704142327,
+              "expected": 373.5591456433508,
+              "high": 480.22108191380045
             },
             "saving_per_extra_hour": null
           },
           "change_penalty": 350.0,
           "net_benefit": {
-            "low": -4416.892077897209,
-            "expected": -3045.544949522914,
-            "high": -1509.7654535113695
+            "low": -4481.964769921661,
+            "expected": -3110.8100505069524,
+            "high": -1575.6330793272627
           },
           "facts": [
             {
@@ -1432,50 +1432,50 @@
             {
               "code": "saving",
               "values": {
-                "eur": -4320.2716787688005,
-                "low": -5625.168026967247,
-                "high": -3034.407385023349
+                "eur": -4378.789338118901,
+                "low": -5683.661043766655,
+                "high": -3092.935589176817
               }
             },
             {
               "code": "dropped_item_cost",
               "values": {
                 "name": "Abbonamento annuale urbano ATM (ordinario)",
-                "eur": 360.0
+                "eur": 330.0
               }
             },
             {
               "code": "dropped_item_cost",
               "values": {
                 "name": "Abbonamento annuale urbano ATM (ordinario)",
-                "eur": 360.0
+                "eur": 330.0
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": -70.17020550650136,
-                "low": -104.24980830639046,
-                "high": -52.96507772251982,
+                "hours": -69.80854041050674,
+                "low": -103.82034011640822,
+                "high": -52.63749617883724,
                 "from_hours": 689.5306053791292,
-                "to_hours": 619.3603998726278
+                "to_hours": 619.7220649686224
               }
             },
             {
               "code": "comfort",
               "values": {
                 "from_score": 5.735453648380372,
-                "to_score": 6.742590333941805
+                "to_score": 6.739439406445749
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -3045.544949522914,
-                "low": -4416.892077897209,
-                "high": -1509.7654535113695,
-                "time_eur": 701.7020550650136,
-                "comfort_eur": 923.024674180873,
+                "eur": -3110.8100505069524,
+                "low": -4481.964769921661,
+                "high": -1575.6330793272627,
+                "time_eur": 698.0854041050674,
+                "comfort_eur": 919.893883506881,
                 "penalty_eur": 350.0,
                 "value_of_time": 10.0
               }
@@ -1484,9 +1484,9 @@
               "code": "environment",
               "values": {
                 "car_km_from": 1710.8537654674876,
-                "car_km_to": 4990.347115206642,
+                "car_km_to": 4979.0455937348925,
                 "co2_from": 490.0206566342164,
-                "co2_to": 864.4013472660237
+                "co2_to": 863.5798022775672
               }
             },
             {
@@ -1499,12 +1499,12 @@
           "explanation": [
             "Non conviene cambiare.",
             "Cosa cambia: Acquistare «Utilitaria a benzina»; disdire 2 × «Abbonamento annuale urbano ATM (ordinario)».",
-            "Spenderesti circa 4.300 € l'anno in più (tra 3.050 e 5.650 €).",
-            "«Abbonamento annuale urbano ATM (ordinario)» ti costa oggi circa 360 € l'anno.",
-            "«Abbonamento annuale urbano ATM (ordinario)» ti costa oggi circa 360 € l'anno.",
-            "Passeresti circa 70 ore in meno l'anno in viaggio: da 690 a 619 ore, con una differenza tra -105 ore e -53 ore.",
+            "Spenderesti circa 4.400 € l'anno in più (tra 3.100 e 5.700 €).",
+            "«Abbonamento annuale urbano ATM (ordinario)» ti costa oggi circa 330 € l'anno.",
+            "«Abbonamento annuale urbano ATM (ordinario)» ti costa oggi circa 330 € l'anno.",
+            "Passeresti circa 70 ore in meno l'anno in viaggio: da 690 a 620 ore, con una differenza tra -105 ore e -53 ore.",
             "Il comfort passa da 5,7 a 6,7 su 10.",
-            "Contando anche il tempo guadagnato (700 €), il comfort (920 €) e lo sforzo del cambiamento (350 €), il saldo è negativo: circa 3.050 € l'anno (tra -4.400 e -1.500 €).",
+            "Contando anche il tempo guadagnato (700 €), il comfort (920 €) e lo sforzo del cambiamento (350 €), il saldo è negativo: circa 3.100 € l'anno (tra -4.500 e -1.600 €).",
             "Km in auto: da 1.700 a 5.000 l'anno. CO2: da 490 a 860 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
@@ -1540,7 +1540,7 @@
   "family_two_cars": {
     "profile_id": "family_two_cars",
     "scenario": null,
-    "parameters_version": "ce4e4adb5bc6",
+    "parameters_version": "b569f5f9d2ea",
     "portfolios": [
       {
         "id": "current",
@@ -1959,46 +1959,46 @@
         "high": 10171.112192452578
       },
       "annual_travel_hours": {
-        "low": 1489.3892220987113,
-        "expected": 2052.1991630562784,
-        "high": 3175.860236933706
+        "low": 1489.9474093953363,
+        "expected": 2052.804071949451,
+        "high": 3176.56545508863
       },
       "perceived_hours": {
-        "low": 1779.1781861506865,
-        "expected": 2427.7449192777644,
-        "high": 3722.739708865888
+        "low": 1780.4366082600395,
+        "expected": 2429.1182427616454,
+        "high": 3724.359705037573
       },
       "comfort": {
-        "low": 8.17003260218566,
-        "expected": 8.17003260218566,
-        "high": 8.17003260218566
+        "low": 8.166828603107616,
+        "expected": 8.166828603107616,
+        "high": 8.166828603107616
       },
       "flexibility": {
-        "low": 9.083895281309672,
-        "expected": 9.083895281309672,
-        "high": 9.083895281309672
+        "low": 9.08021408437189,
+        "expected": 9.08021408437189,
+        "high": 9.08021408437189
       },
       "reliability": {
-        "low": 8.26720636278392,
-        "expected": 8.26720636278392,
-        "high": 8.26720636278392
+        "low": 8.265085534809495,
+        "expected": 8.265085534809495,
+        "high": 8.265085534809495
       },
       "car_km_per_year": {
-        "low": 15954.56558521549,
-        "expected": 18579.721215950463,
-        "high": 23726.964959531277
+        "low": 15931.264329782982,
+        "expected": 18551.35751176197,
+        "high": 23687.540595083658
       },
       "co2_kg_per_year": {
-        "low": 2806.9658887210903,
-        "expected": 3266.982274833024,
-        "high": 4169.935673068746
+        "low": 2804.3429776414587,
+        "expected": 3263.6964367494716,
+        "high": 4165.202080675527
       },
       "private_vehicles_owned": 2,
       "uses_by_option": {
-        "car_medium_petrol": 709.4862980008029,
-        "rail_regional_ticket": 94.7049245041116,
-        "pt_ticket_urban_milano": 44.23235224217789,
-        "car_small_petrol": 118.57642525290765
+        "car_medium_petrol": 708.189589541597,
+        "rail_regional_ticket": 94.39830160223914,
+        "pt_ticket_urban_milano": 46.28918182555935,
+        "car_small_petrol": 118.12292703060452
       },
       "delta": null,
       "confidence": "LOW",
@@ -2008,9 +2008,9 @@
       {
         "portfolio_id": "keep-car1-car2+pt",
         "annual_cost": {
-          "low": 7727.1290761644905,
-          "expected": 8817.186062648045,
-          "high": 10659.274222111904
+          "low": 7673.664190242807,
+          "expected": 8763.382156206646,
+          "high": 10605.418305161698
         },
         "annual_travel_hours": {
           "low": 1512.6724417772161,
@@ -2056,39 +2056,39 @@
         },
         "delta": {
           "cost": {
-            "low": 266.07490380629656,
-            "expected": 485.1282015690026,
-            "high": 590.8067400391499
+            "low": 214.15849957082304,
+            "expected": 431.3242951276044,
+            "high": 536.0923260979242
           },
           "travel_hours": {
-            "low": 18.580168063170028,
-            "expected": 26.051744915562523,
-            "high": 41.12479624496005
+            "low": 18.165751657510334,
+            "expected": 25.446836022389732,
+            "high": 40.113658216952956
           },
           "perceived_hours": {
-            "low": 41.681966382320304,
-            "expected": 59.37116965944031,
-            "high": 95.0926817788546
+            "low": 40.76163484852843,
+            "expected": 57.99784617555906,
+            "high": 92.75396137883821
           },
           "comfort": {
-            "low": -0.13738495313145727,
-            "expected": -0.13738495313145727,
-            "high": -0.13738495313145727
+            "low": -0.1341809540534129,
+            "expected": -0.1341809540534129,
+            "high": -0.1341809540534129
           },
           "flexibility": {
-            "low": -0.15792247317927988,
-            "expected": -0.15792247317927988,
-            "high": -0.15792247317927988
+            "low": -0.15424127624149797,
+            "expected": -0.15424127624149797,
+            "high": -0.15424127624149797
           },
           "car_km": {
-            "low": -1695.3641755809172,
-            "expected": -1076.4572331467634,
-            "high": -776.9888550194739
+            "low": -1648.959611836764,
+            "expected": -1048.0935289582687,
+            "high": -757.3061165613493
           },
           "co2_kg": {
-            "low": -199.5021501362541,
-            "expected": -120.41070528453508,
-            "high": -82.24979130603484
+            "low": -193.8947198798203,
+            "expected": -117.12486720098269,
+            "high": -80.08325156061188
           },
           "saving_per_extra_hour": null
         },
@@ -2098,88 +2098,88 @@
       {
         "portfolio_id": "keep-car1-car2+e_bike",
         "annual_cost": {
-          "low": 7361.57684482852,
-          "expected": 8492.818149280914,
-          "high": 10359.635354714126
+          "low": 7364.371945373233,
+          "expected": 8495.08868138293,
+          "high": 10361.82751012783
         },
         "annual_travel_hours": {
-          "low": 1495.2223066682932,
-          "expected": 2057.049278922451,
-          "high": 3178.569549222291
+          "low": 1495.6405848388717,
+          "expected": 2057.4957597569532,
+          "high": 3179.0764772109615
         },
         "perceived_hours": {
-          "low": 1803.7786054527742,
-          "expected": 2453.0273828887657,
-          "high": 3749.451019842807
+          "low": 1804.6756610250413,
+          "expected": 2453.9884413737627,
+          "high": 3750.5491242587022
         },
         "comfort": {
-          "low": 8.075018872791704,
-          "expected": 8.075018872791704,
-          "high": 8.075018872791704
+          "low": 8.072935607587125,
+          "expected": 8.072935607587125,
+          "high": 8.072935607587125
         },
         "flexibility": {
-          "low": 9.088167205967753,
-          "expected": 9.088167205967753,
-          "high": 9.088167205967753
+          "low": 9.085470253625209,
+          "expected": 9.085470253625209,
+          "high": 9.085470253625209
         },
         "reliability": {
-          "low": 8.310383606402436,
-          "expected": 8.310383606402436,
-          "high": 8.310383606402436
+          "low": 8.308728949477604,
+          "expected": 8.308728949477604,
+          "high": 8.308728949477604
         },
         "car_km_per_year": {
-          "low": 14555.414151333485,
-          "expected": 16859.200106265984,
-          "high": 21298.17888316337
+          "low": 14539.006294609058,
+          "expected": 16841.64064282566,
+          "high": 21278.09515603879
         },
         "co2_kg_per_year": {
-          "low": 2548.856233291757,
-          "expected": 2950.6726549597174,
-          "high": 3725.620009230435
+          "low": 2547.2783228014387,
+          "expected": 2948.975986830908,
+          "high": 3723.6628849498297
         },
         "private_vehicles_owned": 2,
         "uses_by_option": {
-          "car_medium_petrol": 602.2804180851834,
-          "e_bike": 133.42513089364434,
-          "rail_regional_ticket": 80.62099368331383,
-          "pt_ticket_urban_milano": 32.09703208495071,
-          "car_small_petrol": 118.57642525290765
+          "car_medium_petrol": 601.7691687986613,
+          "e_bike": 133.09991704265659,
+          "rail_regional_ticket": 80.37843410800266,
+          "pt_ticket_urban_milano": 33.62955302007491,
+          "car_small_petrol": 118.12292703060452
         },
         "delta": {
           "cost": {
-            "low": -175.28561391083346,
-            "expected": 160.76028820187324,
-            "high": 481.5182105634308
+            "low": -171.17841665230605,
+            "expected": 163.03082030388845,
+            "high": 483.33227362579316
           },
           "travel_hours": {
-            "low": -4.412303577429833,
-            "expected": 4.8501158661727,
-            "high": 9.328143147436801
+            "low": -4.730299880195311,
+            "expected": 4.69168780750212,
+            "high": 9.246025753897776
           },
           "perceived_hours": {
-            "low": 22.3369305681036,
-            "expected": 25.282463611001617,
-            "high": 31.117240624019594
+            "low": 22.133109246138055,
+            "expected": 24.870198612117264,
+            "high": 30.254195511529897
           },
           "comfort": {
-            "low": -0.09501372939395658,
-            "expected": -0.09501372939395658,
-            "high": -0.09501372939395658
+            "low": -0.09389299552049124,
+            "expected": -0.09389299552049124,
+            "high": -0.09389299552049124
           },
           "flexibility": {
-            "low": 0.004271924658080906,
-            "expected": 0.004271924658080906,
-            "high": 0.004271924658080906
+            "low": 0.005256169253318177,
+            "expected": 0.005256169253318177,
+            "high": 0.005256169253318177
           },
           "car_km": {
-            "low": -3101.971141099315,
-            "expected": -1720.5211096844778,
-            "high": -1054.0898079570043
+            "low": -3079.387305107519,
+            "expected": -1709.7168689363098,
+            "high": -1048.9592320902377
           },
           "co2_kg": {
-            "low": -559.219381090138,
-            "expected": -316.3096198733067,
-            "high": -199.09324534036028
+            "low": -555.9361597273468,
+            "expected": -314.72044991856365,
+            "high": -198.3199945692555
           },
           "saving_per_extra_hour": null
         },
@@ -2191,88 +2191,88 @@
       {
         "portfolio_id": "keep-car1-car2+scooter",
         "annual_cost": {
-          "low": 7785.147106980372,
-          "expected": 8945.9707648484,
-          "high": 10834.493111103453
+          "low": 7788.097677095596,
+          "expected": 8948.250631772835,
+          "high": 10836.647364529446
         },
         "annual_travel_hours": {
-          "low": 1434.7621496188758,
-          "expected": 1993.322367920283,
-          "high": 3107.8644392412834
+          "low": 1435.2028845265022,
+          "expected": 1993.7915039118843,
+          "high": 3108.394505027358
         },
         "perceived_hours": {
-          "low": 1740.6288202628646,
-          "expected": 2385.8926118107,
-          "high": 3673.801206087925
+          "low": 1741.4837323606112,
+          "expected": 2386.8059338431917,
+          "high": 3674.8397134189627
         },
         "comfort": {
-          "low": 8.03057322684839,
-          "expected": 8.03057322684839,
-          "high": 8.03057322684839
+          "low": 8.028808783866314,
+          "expected": 8.028808783866314,
+          "high": 8.028808783866314
         },
         "flexibility": {
-          "low": 9.12499832217282,
-          "expected": 9.12499832217282,
-          "high": 9.12499832217282
+          "low": 9.122585064158137,
+          "expected": 9.122585064158137,
+          "high": 9.122585064158137
         },
         "reliability": {
-          "low": 8.295459049237643,
-          "expected": 8.295459049237643,
-          "high": 8.295459049237643
+          "low": 8.294059046586145,
+          "expected": 8.294059046586145,
+          "high": 8.294059046586145
         },
         "car_km_per_year": {
-          "low": 13536.858919804348,
-          "expected": 15800.436637326962,
-          "high": 20152.31998806982
+          "low": 13523.380484994137,
+          "expected": 15786.125993135503,
+          "high": 20136.18282882736
         },
         "co2_kg_per_year": {
-          "low": 2574.5497092414726,
-          "expected": 2990.892844762165,
-          "high": 3798.220587801694
+          "low": 2573.11580163321,
+          "expected": 2989.2943358233333,
+          "high": 3796.260253146106
         },
         "private_vehicles_owned": 3,
         "uses_by_option": {
-          "scooter_125": 194.63832733717567,
-          "car_medium_petrol": 558.6925515777489,
-          "rail_regional_ticket": 67.0925798579838,
-          "pt_ticket_urban_milano": 28.000115974184006,
-          "car_small_petrol": 118.57642525290765
+          "scooter_125": 194.31898039330582,
+          "car_medium_petrol": 558.3317435728684,
+          "rail_regional_ticket": 66.88790698652434,
+          "pt_ticket_urban_milano": 29.338442016696938,
+          "car_small_petrol": 118.12292703060452
         },
         "delta": {
           "cost": {
-            "low": 185.90990894154123,
-            "expected": 613.9129037693582,
-            "high": 1043.326246087605
+            "low": 190.0649895135756,
+            "expected": 616.1927706937926,
+            "high": 1045.0533384102537
           },
           "travel_hours": {
-            "low": -100.61584562238019,
-            "expected": -58.87679513599505,
-            "high": -38.723431348850674
+            "low": -100.87263509943062,
+            "expected": -59.012568037566794,
+            "high": -38.80087223721293
           },
           "perceived_hours": {
-            "low": -72.20510275516767,
-            "expected": -41.85230746706435,
-            "high": -27.19940970634783
+            "low": -73.10990966766802,
+            "expected": -42.31230891845382,
+            "high": -27.44510138470589
           },
           "comfort": {
-            "low": -0.13945937533727104,
-            "expected": -0.13945937533727104,
-            "high": -0.13945937533727104
+            "low": -0.13801981924130224,
+            "expected": -0.13801981924130224,
+            "high": -0.13801981924130224
           },
           "flexibility": {
-            "low": 0.0411030408631472,
-            "expected": 0.0411030408631472,
-            "high": 0.0411030408631472
+            "low": 0.04237097978624682,
+            "expected": 0.04237097978624682,
+            "high": 0.04237097978624682
           },
           "car_km": {
-            "low": -4392.109367554075,
-            "expected": -2779.2845786235002,
-            "high": -1998.8448536865715
+            "low": -4365.111386017061,
+            "expected": -2765.231518626465,
+            "high": -1991.0236729996263
           },
           "co2_kg": {
-            "low": -447.1099823947799,
-            "expected": -276.08943007085895,
-            "high": -193.40223069146032
+            "low": -443.8443376951953,
+            "expected": -274.4021009261385,
+            "high": -192.47496277933584
           },
           "saving_per_extra_hour": null
         },
@@ -2285,9 +2285,9 @@
       {
         "portfolio_id": "keep-car1-car2+pt_e_bike",
         "annual_cost": {
-          "low": 7936.930268808188,
-          "expected": 9079.224818663344,
-          "high": 10949.257757321679
+          "low": 7882.933046480477,
+          "expected": 9024.29493090496,
+          "high": 10894.194386937314
         },
         "annual_travel_hours": {
           "low": 1513.9317188457871,
@@ -2334,39 +2334,39 @@
         },
         "delta": {
           "cost": {
-            "low": 340.33121313319316,
-            "expected": 747.1669575843026,
-            "high": 1086.139460780893
+            "low": 288.04648018188755,
+            "expected": 692.2370698259181,
+            "high": 1030.4724049497509
           },
           "travel_hours": {
-            "low": 22.956917884699486,
-            "expected": 25.75814733187957,
-            "high": 30.146083316261567
+            "low": 22.36479061766572,
+            "expected": 25.15323843870678,
+            "high": 29.512189477105686
           },
           "perceived_hours": {
-            "low": 56.9864179902055,
-            "expected": 71.0710484948751,
-            "high": 98.9400657238304
+            "low": 56.04447533425644,
+            "expected": 69.69772501099385,
+            "high": 96.63031724112247
           },
           "comfort": {
-            "low": -0.1953805498096015,
-            "expected": -0.1953805498096015,
-            "high": -0.1953805498096015
+            "low": -0.19217655073155715,
+            "expected": -0.19217655073155715,
+            "high": -0.19217655073155715
           },
           "flexibility": {
-            "low": -0.12282722148965597,
-            "expected": -0.12282722148965597,
-            "high": -0.12282722148965597
+            "low": -0.11914602455187406,
+            "expected": -0.11914602455187406,
+            "high": -0.11914602455187406
           },
           "car_km": {
-            "low": -4035.478779816409,
-            "expected": -2424.273702655867,
-            "high": -1646.5159637825805
+            "low": -3989.016740598636,
+            "expected": -2395.9099984673726,
+            "high": -1626.8768291842757
           },
           "co2_kg": {
-            "low": -646.4063336592363,
-            "expected": -381.06817043214653,
-            "high": -253.01244068390997
+            "low": -640.7984667647678,
+            "expected": -377.7823323485942,
+            "high": -250.84588469520412
           },
           "saving_per_extra_hour": null
         },
@@ -2561,7 +2561,7 @@
                 "eur": 8332.057861079042,
                 "low": 7246.500554502351,
                 "high": 10171.112192452578,
-                "hours": 2052.1991630562784
+                "hours": 2052.804071949451
               }
             },
             {
@@ -2585,7 +2585,7 @@
           ],
           "explanation": [
             "Tenere la configurazione attuale è la scelta migliore.",
-            "La configurazione attuale costa circa 8.350 € l'anno (tra 7.250 e 10.150 €) e ti porta a passare circa 2.050 ore l'anno in viaggio.",
+            "La configurazione attuale costa circa 8.350 € l'anno (tra 7.250 e 10.150 €) e ti porta a passare circa 2.055 ore l'anno in viaggio.",
             "È già la più economica tra quelle realistiche.",
             "È già la più comoda tra quelle realistiche.",
             "Affidabilità della stima: bassa."
@@ -2601,47 +2601,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": 185.90990894154123,
-              "expected": 613.9129037693582,
-              "high": 1043.326246087605
+              "low": 190.0649895135756,
+              "expected": 616.1927706937926,
+              "high": 1045.0533384102537
             },
             "travel_hours": {
-              "low": -100.61584562238019,
-              "expected": -58.87679513599505,
-              "high": -38.723431348850674
+              "low": -100.87263509943062,
+              "expected": -59.012568037566794,
+              "high": -38.80087223721293
             },
             "perceived_hours": {
-              "low": -72.20510275516767,
-              "expected": -41.85230746706435,
-              "high": -27.19940970634783
+              "low": -73.10990966766802,
+              "expected": -42.31230891845382,
+              "high": -27.44510138470589
             },
             "comfort": {
-              "low": -0.13945937533727104,
-              "expected": -0.13945937533727104,
-              "high": -0.13945937533727104
+              "low": -0.13801981924130224,
+              "expected": -0.13801981924130224,
+              "high": -0.13801981924130224
             },
             "flexibility": {
-              "low": 0.0411030408631472,
-              "expected": 0.0411030408631472,
-              "high": 0.0411030408631472
+              "low": 0.04237097978624682,
+              "expected": 0.04237097978624682,
+              "high": 0.04237097978624682
             },
             "car_km": {
-              "low": -4392.109367554075,
-              "expected": -2779.2845786235002,
-              "high": -1998.8448536865715
+              "low": -4365.111386017061,
+              "expected": -2765.231518626465,
+              "high": -1991.0236729996263
             },
             "co2_kg": {
-              "low": -447.1099823947799,
-              "expected": -276.08943007085895,
-              "high": -193.40223069146032
+              "low": -443.8443376951953,
+              "expected": -274.4021009261385,
+              "high": -192.47496277933584
             },
             "saving_per_extra_hour": null
           },
           "change_penalty": 250.0,
           "net_benefit": {
-            "low": -899.1150321010705,
-            "expected": -445.3898290987147,
-            "high": 79.31559469803915
+            "low": -896.9691996046568,
+            "expected": -443.06968150925434,
+            "high": 82.70033197988971
           },
           "facts": [
             {
@@ -2659,36 +2659,36 @@
             {
               "code": "saving",
               "values": {
-                "eur": -613.9129037693582,
-                "low": -1043.326246087605,
-                "high": -185.90990894154123
+                "eur": -616.1927706937926,
+                "low": -1045.0533384102537,
+                "high": -190.0649895135756
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": -58.87679513599505,
-                "low": -100.61584562238019,
-                "high": -38.723431348850674,
-                "from_hours": 2052.1991630562784,
-                "to_hours": 1993.322367920283
+                "hours": -59.012568037566794,
+                "low": -100.87263509943062,
+                "high": -38.80087223721293,
+                "from_hours": 2052.804071949451,
+                "to_hours": 1993.7915039118843
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 8.17003260218566,
-                "to_score": 8.03057322684839
+                "from_score": 8.166828603107616,
+                "to_score": 8.028808783866314
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -445.3898290987147,
-                "low": -899.1150321010705,
-                "high": 79.31559469803915,
-                "time_eur": 588.7679513599505,
-                "comfort_eur": -170.24487668930703,
+                "eur": -443.06968150925434,
+                "low": -896.9691996046568,
+                "high": 82.70033197988971,
+                "time_eur": 590.1256803756679,
+                "comfort_eur": -167.00259119112968,
                 "penalty_eur": 250.0,
                 "value_of_time": 10.0
               }
@@ -2696,10 +2696,10 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 18579.721215950463,
-                "car_km_to": 15800.436637326962,
-                "co2_from": 3266.982274833024,
-                "co2_to": 2990.892844762165
+                "car_km_from": 18551.35751176197,
+                "car_km_to": 15786.125993135503,
+                "co2_from": 3263.6964367494716,
+                "co2_to": 2989.2943358233333
               }
             },
             {
@@ -2712,11 +2712,11 @@
           "explanation": [
             "Non conviene cambiare.",
             "Cosa cambia: Acquistare «Scooter 125 cc».",
-            "Spenderesti circa 610 € l'anno in più (tra 190 e 1.050 €).",
-            "Passeresti circa 59 ore in meno l'anno in viaggio: da 2.052 a 1.993 ore, con una differenza tra -100 ore e -39 ore.",
+            "Spenderesti circa 620 € l'anno in più (tra 190 e 1.050 €).",
+            "Passeresti circa 59 ore in meno l'anno in viaggio: da 2.053 a 1.994 ore, con una differenza tra -100 ore e -39 ore.",
             "Il comfort passa da 8,2 a 8,0 su 10.",
-            "Contando anche il tempo guadagnato (590 €), il minor comfort (170 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 450 € l'anno (tra -900 e 80 €).",
-            "Km in auto: da 18.600 a 15.800 l'anno. CO2: da 3.270 a 2.990 kg l'anno.",
+            "Contando anche il tempo guadagnato (590 €), il minor comfort (170 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 440 € l'anno (tra -900 e 85 €).",
+            "Km in auto: da 18.600 a 15.800 l'anno. CO2: da 3.260 a 2.990 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"
@@ -2749,7 +2749,7 @@
   "peripheral_family": {
     "profile_id": "peripheral_family",
     "scenario": null,
-    "parameters_version": "ce4e4adb5bc6",
+    "parameters_version": "b569f5f9d2ea",
     "portfolios": [
       {
         "id": "current",
@@ -3316,59 +3316,59 @@
         "high": 7079.648098526227
       },
       "annual_travel_hours": {
-        "low": 1286.59105572749,
-        "expected": 1858.997975051848,
-        "high": 3068.626285987155
+        "low": 1287.3725180049182,
+        "expected": 1859.8482174777268,
+        "high": 3069.6334763911223
       },
       "perceived_hours": {
-        "low": 1525.2374849267217,
-        "expected": 2185.4736999119273,
-        "high": 3581.0008480137712
+        "low": 1526.8509954762687,
+        "expected": 2187.25939992489,
+        "high": 3583.1800214858163
       },
       "comfort": {
-        "low": 8.243808066273049,
-        "expected": 8.243808066273049,
-        "high": 8.243808066273049
+        "low": 8.23958116920321,
+        "expected": 8.23958116920321,
+        "high": 8.23958116920321
       },
       "flexibility": {
-        "low": 9.151753770480056,
-        "expected": 9.151753770480056,
-        "high": 9.151753770480056
+        "low": 9.14694186051867,
+        "expected": 9.14694186051867,
+        "high": 9.14694186051867
       },
       "reliability": {
-        "low": 8.303228724793348,
-        "expected": 8.303228724793348,
-        "high": 8.303228724793348
+        "low": 8.300473672336311,
+        "expected": 8.300473672336311,
+        "high": 8.300473672336311
       },
       "car_km_per_year": {
-        "low": 23590.688930935285,
-        "expected": 27634.425191558264,
-        "high": 35871.05587211622
+        "low": 23552.378578814132,
+        "expected": 27589.28525975655,
+        "high": 35809.94052551137
       },
       "co2_kg_per_year": {
-        "low": 3771.9112849076373,
-        "expected": 4400.748133409616,
-        "high": 5682.780412749542
+        "low": 3767.7815388803833,
+        "expected": 4395.860700578972,
+        "high": 5676.12287974567
       },
       "private_vehicles_owned": 1,
       "uses_by_option": {
-        "car_diesel": 902.9040912847856,
-        "rail_regional_ticket": 28.039671179335738,
-        "pt_ticket_urban_milano": 78.05623753587861
+        "car_diesel": 901.1781923132397,
+        "rail_regional_ticket": 27.984591875898865,
+        "pt_ticket_urban_milano": 79.83721581086147
       },
       "delta": null,
       "confidence": "LOW",
       "data_quality_notes": [
-        "Il modello attribuisce alle vostre auto circa 27.634 km l'anno, contro 18.000 dichiarati: gli spostamenti stimati richiedono più auto di quanta ne usiate, e i confronti potrebbero sovrastimare quanto pesa l'auto."
+        "Il modello attribuisce alle vostre auto circa 27.589 km l'anno, contro 18.000 dichiarati: gli spostamenti stimati richiedono più auto di quanta ne usiate, e i confronti potrebbero sovrastimare quanto pesa l'auto."
       ]
     },
     "evaluations": [
       {
         "portfolio_id": "keep-car1+pt",
         "annual_cost": {
-          "low": 5123.486312967674,
-          "expected": 6089.512348657098,
-          "high": 7579.261143469919
+          "low": 5133.086946843629,
+          "expected": 6098.620706822003,
+          "high": 7588.302003603687
         },
         "annual_travel_hours": {
           "low": 1328.6483841150348,
@@ -3413,39 +3413,39 @@
         },
         "delta": {
           "cost": {
-            "low": 281.4899331039685,
-            "expected": 496.31912350210405,
-            "high": 595.3311484140572
+            "low": 292.7636153670138,
+            "expected": 505.42748166700875,
+            "high": 603.4186823539662
           },
           "travel_hours": {
-            "low": 36.839038241804175,
-            "expected": 46.152741757148135,
-            "high": 65.54306175076442
+            "low": 36.195090866837624,
+            "expected": 45.302499331269246,
+            "high": 64.21551314891309
           },
           "perceived_hours": {
-            "low": 70.74044089949194,
-            "expected": 90.6763935288497,
-            "high": 132.10090435094517
+            "low": 69.45237895073367,
+            "expected": 88.89069351588648,
+            "high": 129.1574106337925
           },
           "comfort": {
-            "low": -0.1911572883502437,
-            "expected": -0.1911572883502437,
-            "high": -0.1911572883502437
+            "low": -0.18693039128040567,
+            "expected": -0.18693039128040567,
+            "high": -0.18693039128040567
           },
           "flexibility": {
-            "low": -0.2798148037492627,
-            "expected": -0.2798148037492627,
-            "high": -0.2798148037492627
+            "low": -0.27500289378787635,
+            "expected": -0.27500289378787635,
+            "high": -0.27500289378787635
           },
           "car_km": {
-            "low": -2684.4788079652917,
-            "expected": -2024.358710106196,
-            "high": -1714.6998513532794
+            "low": -2614.1770972787963,
+            "expected": -1979.2187783044824,
+            "high": -1680.7816617777273
           },
           "co2_kg": {
-            "low": -285.101932963387,
-            "expected": -214.0118325030122,
-            "high": -180.99383761738812
+            "low": -277.45297908891774,
+            "expected": -209.12439967236836,
+            "high": -177.35046330260204
           },
           "saving_per_extra_hour": null
         },
@@ -3455,87 +3455,87 @@
       {
         "portfolio_id": "keep-car1+e_bike",
         "annual_cost": {
-          "low": 4824.631823548685,
-          "expected": 5866.5936565562215,
-          "high": 7390.694919992688
+          "low": 4827.524732810827,
+          "expected": 5868.562282562997,
+          "high": 7392.526722312621
         },
         "annual_travel_hours": {
-          "low": 1279.2940364450358,
-          "expected": 1851.5560594275141,
-          "high": 3060.8575868158973
+          "low": 1279.9857853434946,
+          "expected": 1852.28920559929,
+          "high": 3061.6847222820206
         },
         "perceived_hours": {
-          "low": 1527.2921169147692,
-          "expected": 2190.9033605226823,
-          "high": 3594.1964360919656
+          "low": 1528.6219375137944,
+          "expected": 2192.331747976714,
+          "high": 3595.849003369037
         },
         "comfort": {
-          "low": 8.167231829858332,
-          "expected": 8.167231829858332,
-          "high": 8.167231829858332
+          "low": 8.164203833021817,
+          "expected": 8.164203833021817,
+          "high": 8.164203833021817
         },
         "flexibility": {
-          "low": 9.17095997719543,
-          "expected": 9.17095997719543,
-          "high": 9.17095997719543
+          "low": 9.167166826082058,
+          "expected": 9.167166826082058,
+          "high": 9.167166826082058
         },
         "reliability": {
-          "low": 8.360817016329243,
-          "expected": 8.360817016329243,
-          "high": 8.360817016329243
+          "low": 8.358482482419127,
+          "expected": 8.358482482419127,
+          "high": 8.358482482419127
         },
         "car_km_per_year": {
-          "low": 22413.34714640245,
-          "expected": 25996.315806576633,
-          "high": 33121.78675844696
+          "low": 22382.33020468868,
+          "expected": 25963.40859946287,
+          "high": 33084.62475586226
         },
         "co2_kg_per_year": {
-          "low": 3570.1734540241746,
-          "expected": 4125.469258139068,
-          "high": 5230.31966978761
+          "low": 3567.0821902352463,
+          "expected": 4122.210897801191,
+          "high": 5226.694117182299
         },
         "private_vehicles_owned": 1,
         "uses_by_option": {
-          "car_diesel": 790.6111199271003,
-          "rail_regional_ticket": 28.039671179335738,
-          "pt_ticket_urban_milano": 35.3848035451334,
-          "e_bike": 154.96440534843063
+          "car_diesel": 789.7247628013811,
+          "rail_regional_ticket": 27.984591875898865,
+          "pt_ticket_urban_milano": 36.798203976198295,
+          "e_bike": 154.4924413465218
         },
         "delta": {
           "cost": {
-            "low": -138.36387262408874,
-            "expected": 273.40043140122737,
-            "high": 610.0554040951506
+            "low": -134.0179850128481,
+            "expected": 275.3690574080035,
+            "high": 611.4040601269164
           },
           "travel_hours": {
-            "low": -8.530434089765542,
-            "expected": -7.441915624333973,
-            "high": -6.8747775756325336
+            "low": -8.841149364815841,
+            "expected": -7.5590118784370475,
+            "high": -6.91377911468317
           },
           "perceived_hours": {
-            "low": -5.2908121960221965,
-            "expected": 5.429660610754979,
-            "high": 29.05483685965127
+            "low": -5.3956954454703325,
+            "expected": 5.072348051823354,
+            "high": 28.14067411083878
           },
           "comfort": {
-            "low": -0.07657623641471645,
-            "expected": -0.07657623641471645,
-            "high": -0.07657623641471645
+            "low": -0.07537733618139342,
+            "expected": -0.07537733618139342,
+            "high": -0.07537733618139342
           },
           "flexibility": {
-            "low": 0.019206206715374208,
-            "expected": 0.019206206715374208,
-            "high": 0.019206206715374208
+            "low": 0.020224965563388153,
+            "expected": 0.020224965563388153,
+            "high": 0.020224965563388153
           },
           "car_km": {
-            "low": -3725.711876176436,
-            "expected": -1638.1093849816318,
-            "high": -690.9137430980481
+            "low": -3697.682559984588,
+            "expected": -1625.8766602936826,
+            "high": -685.848164447151
           },
           "co2_kg": {
-            "low": -599.8358287453302,
-            "expected": -275.27887527054787,
-            "high": -127.99833024799776
+            "low": -596.2356057644063,
+            "expected": -273.6498027777809,
+            "high": -127.26369619468417
           },
           "saving_per_extra_hour": null
         },
@@ -3545,87 +3545,87 @@
       {
         "portfolio_id": "keep-car1+scooter",
         "annual_cost": {
-          "low": 4565.388823690184,
-          "expected": 5676.796657670719,
-          "high": 7250.1799876125915
+          "low": 4573.1280567407475,
+          "expected": 5683.212737943431,
+          "high": 7256.32804067347
         },
         "annual_travel_hours": {
-          "low": 1264.3098170511723,
-          "expected": 1829.807218708911,
-          "high": 3023.5369023465146
+          "low": 1264.5715145596835,
+          "expected": 1830.109771551819,
+          "high": 3023.9333989067686
         },
         "perceived_hours": {
-          "low": 1546.2112697831099,
-          "expected": 2201.8464189894107,
-          "high": 3586.6996636658873
+          "low": 1546.7698893292327,
+          "expected": 2202.4902404422014,
+          "high": 3587.5391917066136
         },
         "comfort": {
-          "low": 7.966784716572459,
-          "expected": 7.966784716572459,
-          "high": 7.966784716572459
+          "low": 7.965256102782145,
+          "expected": 7.965256102782145,
+          "high": 7.965256102782145
         },
         "flexibility": {
-          "low": 9.139005401788182,
-          "expected": 9.139005401788182,
-          "high": 9.139005401788182
+          "low": 9.137067107475023,
+          "expected": 9.137067107475023,
+          "high": 9.137067107475023
         },
         "reliability": {
-          "low": 8.30546379088058,
-          "expected": 8.30546379088058,
-          "high": 8.30546379088058
+          "low": 8.304349684531465,
+          "expected": 8.304349684531465,
+          "high": 8.304349684531465
         },
         "car_km_per_year": {
-          "low": 16186.840357218029,
-          "expected": 19639.53629841906,
-          "high": 26517.85979834773
+          "low": 16176.534972471205,
+          "expected": 19628.178766095298,
+          "high": 26503.954277367564
         },
         "co2_kg_per_year": {
-          "low": 3158.6310006088906,
-          "expected": 3728.493479092891,
-          "high": 4875.596080371772
+          "low": 3157.553038541345,
+          "expected": 3727.228340312678,
+          "high": 4873.881295469061
         },
         "private_vehicles_owned": 2,
         "uses_by_option": {
-          "scooter_125": 229.08178514517894,
-          "car_diesel": 707.5828179712871,
-          "rail_regional_ticket": 13.687041161049779,
-          "pt_ticket_urban_milano": 58.64835572248418
+          "scooter_125": 228.88473362178672,
+          "car_diesel": 706.8996626487043,
+          "rail_regional_ticket": 13.684304104449371,
+          "pt_ticket_urban_milano": 59.53129962505959
         },
         "delta": {
           "cost": {
-            "low": -485.5017033567267,
-            "expected": 83.60343251572499,
-            "high": 599.3427197237938
+            "low": -476.47509931686056,
+            "expected": 90.0195127884374,
+            "high": 604.9405408251014
           },
           "travel_hours": {
-            "low": -83.70851348573706,
-            "expected": -29.190756342937107,
-            "high": -4.461041502668952
+            "low": -84.41082136575577,
+            "expected": -29.738445925908024,
+            "high": -4.9385816016640405
           },
           "perceived_hours": {
-            "low": -18.159786929521566,
-            "expected": 16.372719077483538,
-            "high": 32.099959351256985
+            "low": -19.866522789431656,
+            "expected": 15.23084051731098,
+            "high": 31.210335502593843
           },
           "comfort": {
-            "low": -0.27702334970059006,
-            "expected": -0.27702334970059006,
-            "high": -0.27702334970059006
+            "low": -0.27432506642106613,
+            "expected": -0.27432506642106613,
+            "high": -0.27432506642106613
           },
           "flexibility": {
-            "low": -0.01274836869187368,
-            "expected": -0.01274836869187368,
-            "high": -0.01274836869187368
+            "low": -0.009874753043646933,
+            "expected": -0.009874753043646933,
+            "high": -0.009874753043646933
           },
           "car_km": {
-            "low": -10680.779281089059,
-            "expected": -7994.888893139205,
-            "high": -6747.768205432352
+            "low": -10628.556627329948,
+            "expected": -7961.106493661253,
+            "high": -6722.364636152771
           },
           "co2_kg": {
-            "low": -905.5259324603135,
-            "expected": -672.2546543167247,
-            "high": -564.1296543484168
+            "low": -900.0108402574319,
+            "expected": -668.6323602662935,
+            "high": -561.3693720592738
           },
           "saving_per_extra_hour": null
         },
@@ -3638,9 +3638,9 @@
       {
         "portfolio_id": "keep-car1+pt_e_bike",
         "annual_cost": {
-          "low": 5354.144942615718,
-          "expected": 6411.56448339342,
-          "high": 7939.80243059824
+          "low": 5364.903760004326,
+          "expected": 6420.672841558326,
+          "high": 7948.674106847183
         },
         "annual_travel_hours": {
           "low": 1316.2106840072795,
@@ -3686,39 +3686,39 @@
         },
         "delta": {
           "cost": {
-            "low": 337.6620273765481,
-            "expected": 818.3712582384264,
-            "high": 1173.2841105102416
+            "low": 350.38546223974976,
+            "expected": 827.4796164033312,
+            "high": 1181.3719392294447
           },
           "travel_hours": {
-            "low": 26.32218788189807,
-            "expected": 32.59718125835886,
-            "high": 44.68425300485579
+            "low": 25.646226867370014,
+            "expected": 31.74693883247997,
+            "high": 43.39958431701325
           },
           "perceived_hours": {
-            "low": 59.80458817866899,
-            "expected": 82.66250384006588,
-            "high": 130.88106254854802
+            "low": 58.531149876138684,
+            "expected": 80.87680382710266,
+            "high": 127.92021822299652
           },
           "comfort": {
-            "low": -0.23440867753850014,
-            "expected": -0.23440867753850014,
-            "high": -0.23440867753850014
+            "low": -0.2301817804686621,
+            "expected": -0.2301817804686621,
+            "high": -0.2301817804686621
           },
           "flexibility": {
-            "low": -0.21546637654265766,
-            "expected": -0.21546637654265766,
-            "high": -0.21546637654265766
+            "low": -0.2106544665812713,
+            "expected": -0.2106544665812713,
+            "high": -0.2106544665812713
           },
           "car_km": {
-            "low": -5706.4639632560775,
-            "expected": -3358.925348648756,
-            "high": -2290.8914673639433
+            "low": -5635.78344430252,
+            "expected": -3313.7854168470426,
+            "high": -2257.362703987241
           },
           "co2_kg": {
-            "low": -794.1268398301058,
-            "expected": -448.39000858279866,
-            "high": -291.3438965174438
+            "low": -786.4610829349356,
+            "expected": -443.5025757521548,
+            "high": -287.72006397844757
           },
           "saving_per_extra_hour": null
         },
@@ -3728,9 +3728,9 @@
       {
         "portfolio_id": "car-free+pt",
         "annual_cost": {
-          "low": 3984.0436922738672,
-          "expected": 4459.600675850997,
-          "high": 5310.267763030963
+          "low": 3984.6202041706074,
+          "expected": 4460.179008537084,
+          "high": 5310.847370945062
         },
         "annual_travel_hours": {
           "low": 1673.913762836713,
@@ -3776,41 +3776,41 @@
         },
         "delta": {
           "cost": {
-            "low": -2617.0533191088252,
-            "expected": -1133.5925493039972,
-            "high": 39.83271841618807
+            "low": -2616.485651608512,
+            "expected": -1133.0142166179103,
+            "high": 40.411975570934146
           },
           "travel_hours": {
-            "low": 385.9491152634236,
-            "expected": 601.8271221887951,
-            "high": 1055.78817874588
+            "low": 385.16059111569825,
+            "expected": 600.9768797629163,
+            "high": 1054.7967018454358
           },
           "perceived_hours": {
-            "low": 837.4020341015173,
-            "expected": 1319.389512731221,
-            "high": 2335.785974460549
+            "low": 835.7656499412178,
+            "expected": 1317.6038127182578,
+            "high": 2333.6584035406004
           },
           "comfort": {
-            "low": -2.4864424435524386,
-            "expected": -2.4864424435524386,
-            "high": -2.4864424435524386
+            "low": -2.4822155464826006,
+            "expected": -2.4822155464826006,
+            "high": -2.4822155464826006
           },
           "flexibility": {
-            "low": -3.7197395104907507,
-            "expected": -3.7197395104907507,
-            "high": -3.7197395104907507
+            "low": -3.7149276005293643,
+            "expected": -3.7149276005293643,
+            "high": -3.7149276005293643
           },
           "car_km": {
-            "low": -34021.324858302134,
-            "expected": -25784.694177744175,
-            "high": -21740.957917121195
+            "low": -33960.20951169728,
+            "expected": -25739.55424594246,
+            "high": -21702.647565000043
           },
           "co2_kg": {
-            "low": -2970.6882662633616,
-            "expected": -2363.2084053592084,
-            "high": -2064.1502703455217
+            "low": -2963.238433295044,
+            "expected": -2358.3209725285647,
+            "high": -2060.3553197533147
           },
-          "saving_per_extra_hour": 1.8835850155460185
+          "saving_per_extra_hour": 1.8852875289726307
         },
         "confidence": "LOW",
         "data_quality_notes": []
@@ -3818,9 +3818,9 @@
       {
         "portfolio_id": "car-free+pt_e_bike",
         "annual_cost": {
-          "low": 4520.262094930165,
-          "expected": 5033.374153370242,
-          "high": 5935.130441407199
+          "low": 4520.8387400914535,
+          "expected": 5033.95248605633,
+          "high": 5935.709977073074
         },
         "annual_travel_hours": {
           "low": 1610.0617734291216,
@@ -3867,41 +3867,41 @@
         },
         "delta": {
           "cost": {
-            "low": -2055.741996081845,
-            "expected": -559.8190717847517,
-            "high": 651.1544079938644
+            "low": -2055.174239733205,
+            "expected": -559.2407390986646,
+            "high": 651.7336364839705
           },
           "travel_hours": {
-            "low": 318.5679517962117,
-            "expected": 527.3069635117567,
-            "high": 964.7506120303069
+            "low": 317.73816902713065,
+            "expected": 526.4567210858779,
+            "high": 963.8543225279866
           },
           "perceived_hours": {
-            "low": 720.454990172392,
-            "expected": 1188.679081426334,
-            "high": 2173.3314421006357
+            "low": 718.7411414896899,
+            "expected": 1186.893381413371,
+            "high": 2171.3819052120425
           },
           "comfort": {
-            "low": -2.3834627550374883,
-            "expected": -2.3834627550374883,
-            "high": -2.3834627550374883
+            "low": -2.3792358579676502,
+            "expected": -2.3792358579676502,
+            "high": -2.3792358579676502
           },
           "flexibility": {
-            "low": -3.4370347657366525,
-            "expected": -3.4370347657366525,
-            "high": -3.4370347657366525
+            "low": -3.432222855775266,
+            "expected": -3.432222855775266,
+            "high": -3.432222855775266
           },
           "car_km": {
-            "low": -34021.324858302134,
-            "expected": -25784.694177744175,
-            "high": -21740.957917121195
+            "low": -33960.20951169728,
+            "expected": -25739.55424594246,
+            "high": -21702.647565000043
           },
           "co2_kg": {
-            "low": -3267.384900889458,
-            "expected": -2508.9554959103803,
-            "high": -2145.782511610039
+            "low": -3259.8536782417696,
+            "expected": -2504.0680630797365,
+            "high": -2142.049065470549
           },
-          "saving_per_extra_hour": 1.061656891569326
+          "saving_per_extra_hour": 1.062272959390025
         },
         "confidence": "LOW",
         "data_quality_notes": []
@@ -3933,7 +3933,7 @@
                 "eur": 5593.193225154994,
                 "low": 4633.148718173542,
                 "high": 7079.648098526227,
-                "hours": 1858.997975051848
+                "hours": 1859.8482174777268
               }
             },
             {
@@ -3966,47 +3966,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": -2617.0533191088252,
-              "expected": -1133.5925493039972,
-              "high": 39.83271841618807
+              "low": -2616.485651608512,
+              "expected": -1133.0142166179103,
+              "high": 40.411975570934146
             },
             "travel_hours": {
-              "low": 385.9491152634236,
-              "expected": 601.8271221887951,
-              "high": 1055.78817874588
+              "low": 385.16059111569825,
+              "expected": 600.9768797629163,
+              "high": 1054.7967018454358
             },
             "perceived_hours": {
-              "low": 837.4020341015173,
-              "expected": 1319.389512731221,
-              "high": 2335.785974460549
+              "low": 835.7656499412178,
+              "expected": 1317.6038127182578,
+              "high": 2333.6584035406004
             },
             "comfort": {
-              "low": -2.4864424435524386,
-              "expected": -2.4864424435524386,
-              "high": -2.4864424435524386
+              "low": -2.4822155464826006,
+              "expected": -2.4822155464826006,
+              "high": -2.4822155464826006
             },
             "flexibility": {
-              "low": -3.7197395104907507,
-              "expected": -3.7197395104907507,
-              "high": -3.7197395104907507
+              "low": -3.7149276005293643,
+              "expected": -3.7149276005293643,
+              "high": -3.7149276005293643
             },
             "car_km": {
-              "low": -34021.324858302134,
-              "expected": -25784.694177744175,
-              "high": -21740.957917121195
+              "low": -33960.20951169728,
+              "expected": -25739.55424594246,
+              "high": -21702.647565000043
             },
             "co2_kg": {
-              "low": -2970.6882662633616,
-              "expected": -2363.2084053592084,
-              "high": -2064.1502703455217
+              "low": -2963.238433295044,
+              "expected": -2358.3209725285647,
+              "high": -2060.3553197533147
             },
-            "saving_per_extra_hour": 1.8835850155460185
+            "saving_per_extra_hour": 1.8852875289726307
           },
           "change_penalty": 500.0,
           "net_benefit": {
-            "low": -22791.778698320173,
-            "expected": -12560.302578008212,
-            "high": -7517.302596733987
+            "low": -22771.103993436067,
+            "expected": -12543.023910564669,
+            "high": -7501.447866382809
           },
           "facts": [
             {
@@ -4024,9 +4024,9 @@
             {
               "code": "saving",
               "values": {
-                "eur": 1133.5925493039972,
-                "low": -39.83271841618807,
-                "high": 2617.0533191088252
+                "eur": 1133.0142166179103,
+                "low": -40.411975570934146,
+                "high": 2616.485651608512
               }
             },
             {
@@ -4039,41 +4039,41 @@
             {
               "code": "services_cost",
               "values": {
-                "eur": 3295.942275850997,
+                "eur": 3296.5206085370837,
                 "names": "biglietto treno alta velocità, noleggio auto (giornaliero) e biglietto treno regionale"
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": 601.8271221887951,
-                "low": 385.9491152634236,
-                "high": 1055.78817874588,
-                "from_hours": 1858.997975051848,
+                "hours": 600.9768797629163,
+                "low": 385.16059111569825,
+                "high": 1054.7967018454358,
+                "from_hours": 1859.8482174777268,
                 "to_hours": 2460.825097240643
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 8.243808066273049,
+                "from_score": 8.23958116920321,
                 "to_score": 5.75736562272061
               }
             },
             {
               "code": "saving_per_extra_hour",
               "values": {
-                "eur_per_hour": 1.8835850155460185
+                "eur_per_hour": 1.8852875289726307
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -12560.302578008212,
-                "low": -22791.778698320173,
-                "high": -7517.302596733987,
-                "time_eur": -6018.2712218879515,
-                "comfort_eur": -7175.623905424258,
+                "eur": -12543.023910564669,
+                "low": -22771.103993436067,
+                "high": -7501.447866382809,
+                "time_eur": -6009.768797629163,
+                "comfort_eur": -7166.269329553416,
                 "penalty_eur": 500.0,
                 "value_of_time": 10.0
               }
@@ -4081,16 +4081,16 @@
             {
               "code": "not_worth_the_time",
               "values": {
-                "eur_per_hour": 1.8835850155460185,
+                "eur_per_hour": 1.8852875289726307,
                 "value_of_time": 10.0
               }
             },
             {
               "code": "environment",
               "values": {
-                "car_km_from": 27634.425191558264,
+                "car_km_from": 27589.28525975655,
                 "car_km_to": 1849.7310138140892,
-                "co2_from": 4400.748133409616,
+                "co2_from": 4395.860700578972,
                 "co2_to": 2037.5397280504071
               }
             },
@@ -4107,10 +4107,10 @@
             "Risparmi circa 1.150 € l'anno (tra -40 e 2.600 €).",
             "«Auto media a gasolio» ti costa oggi circa 5.350 € l'anno.",
             "Per gli spostamenti che l'auto non copre più useresti biglietto treno alta velocità, noleggio auto (giornaliero) e biglietto treno regionale, per circa 3.300 € l'anno.",
-            "Passeresti circa 600 ore in più l'anno in viaggio: da 1.859 a 2.461 ore, con una differenza tra +385 ore e +1.055 ore.",
+            "Passeresti circa 600 ore in più l'anno in viaggio: da 1.860 a 2.461 ore, con una differenza tra +385 ore e +1.055 ore.",
             "Il comfort passa da 8,2 a 5,8 su 10.",
             "Ogni ora di viaggio in più ti fa risparmiare circa 1,9 €.",
-            "Contando anche il tempo in più (6.000 €), il minor comfort (7.200 €) e lo sforzo del cambiamento (500 €), il saldo è negativo: circa 12.550 € l'anno (tra -22.800 e -7.500 €).",
+            "Contando anche il tempo in più (6.000 €), il minor comfort (7.150 €) e lo sforzo del cambiamento (500 €), il saldo è negativo: circa 12.550 € l'anno (tra -22.750 e -7.500 €).",
             "Il risparmio non compensa il tempo che perderesti: circa 1,9 € per ogni ora in più, meno di quanto vale per te (10 € l'ora).",
             "Km in auto: da 27.600 a 1.800 l'anno. CO2: da 4.400 a 2.040 kg l'anno.",
             "Affidabilità della stima: bassa."
@@ -4126,47 +4126,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": -485.5017033567267,
-              "expected": 83.60343251572499,
-              "high": 599.3427197237938
+              "low": -476.47509931686056,
+              "expected": 90.0195127884374,
+              "high": 604.9405408251014
             },
             "travel_hours": {
-              "low": -83.70851348573706,
-              "expected": -29.190756342937107,
-              "high": -4.461041502668952
+              "low": -84.41082136575577,
+              "expected": -29.738445925908024,
+              "high": -4.9385816016640405
             },
             "perceived_hours": {
-              "low": -18.159786929521566,
-              "expected": 16.372719077483538,
-              "high": 32.099959351256985
+              "low": -19.866522789431656,
+              "expected": 15.23084051731098,
+              "high": 31.210335502593843
             },
             "comfort": {
-              "low": -0.27702334970059006,
-              "expected": -0.27702334970059006,
-              "high": -0.27702334970059006
+              "low": -0.27432506642106613,
+              "expected": -0.27432506642106613,
+              "high": -0.27432506642106613
             },
             "flexibility": {
-              "low": -0.01274836869187368,
-              "expected": -0.01274836869187368,
-              "high": -0.01274836869187368
+              "low": -0.009874753043646933,
+              "expected": -0.009874753043646933,
+              "high": -0.009874753043646933
             },
             "car_km": {
-              "low": -10680.779281089059,
-              "expected": -7994.888893139205,
-              "high": -6747.768205432352
+              "low": -10628.556627329948,
+              "expected": -7961.106493661253,
+              "high": -6722.364636152771
             },
             "co2_kg": {
-              "low": -905.5259324603135,
-              "expected": -672.2546543167247,
-              "high": -564.1296543484168
+              "low": -900.0108402574319,
+              "expected": -668.6323602662935,
+              "high": -561.3693720592738
             },
             "saving_per_extra_hour": null
           },
           "change_penalty": 250.0,
           "net_benefit": {
-            "low": -1036.5166960268534,
-            "expected": -497.33062329056037,
-            "high": 168.3495197126586
+            "low": -1031.4736228621825,
+            "expected": -492.3279179615472,
+            "high": 174.07934239272026
           },
           "facts": [
             {
@@ -4184,36 +4184,36 @@
             {
               "code": "saving",
               "values": {
-                "eur": -83.60343251572499,
-                "low": -599.3427197237938,
-                "high": 485.5017033567267
+                "eur": -90.0195127884374,
+                "low": -604.9405408251014,
+                "high": 476.47509931686056
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": -29.190756342937107,
-                "low": -83.70851348573706,
-                "high": -4.461041502668952,
-                "from_hours": 1858.997975051848,
-                "to_hours": 1829.807218708911
+                "hours": -29.738445925908024,
+                "low": -84.41082136575577,
+                "high": -4.9385816016640405,
+                "from_hours": 1859.8482174777268,
+                "to_hours": 1830.109771551819
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 8.243808066273049,
-                "to_score": 7.966784716572459
+                "from_score": 8.23958116920321,
+                "to_score": 7.965256102782145
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -497.33062329056037,
-                "low": -1036.5166960268534,
-                "high": 168.3495197126586,
-                "time_eur": 291.90756342937107,
-                "comfort_eur": -455.63475420420644,
+                "eur": -492.3279179615472,
+                "low": -1031.4736228621825,
+                "high": 174.07934239272026,
+                "time_eur": 297.38445925908024,
+                "comfort_eur": -449.69286443219005,
                 "penalty_eur": 250.0,
                 "value_of_time": 10.0
               }
@@ -4221,10 +4221,10 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 27634.425191558264,
-                "car_km_to": 19639.53629841906,
-                "co2_from": 4400.748133409616,
-                "co2_to": 3728.493479092891
+                "car_km_from": 27589.28525975655,
+                "car_km_to": 19628.178766095298,
+                "co2_from": 4395.860700578972,
+                "co2_to": 3727.228340312678
               }
             },
             {
@@ -4237,10 +4237,10 @@
           "explanation": [
             "Non conviene cambiare.",
             "Cosa cambia: Acquistare «Scooter 125 cc».",
-            "Spenderesti circa 85 € l'anno in più (tra -490 e 600 €).",
-            "Passeresti circa 29 ore in meno l'anno in viaggio: da 1.859 a 1.830 ore, con una differenza tra -84 ore e -4 ore.",
+            "Spenderesti circa 90 € l'anno in più (tra -480 e 600 €).",
+            "Passeresti circa 30 ore in meno l'anno in viaggio: da 1.860 a 1.830 ore, con una differenza tra -84 ore e -5 ore.",
             "Il comfort passa da 8,2 a 8,0 su 10.",
-            "Contando anche il tempo guadagnato (290 €), il minor comfort (460 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 500 € l'anno (tra -1.050 e 170 €).",
+            "Contando anche il tempo guadagnato (300 €), il minor comfort (450 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 490 € l'anno (tra -1.050 e 170 €).",
             "Km in auto: da 27.600 a 19.600 l'anno. CO2: da 4.400 a 3.730 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
@@ -4277,7 +4277,7 @@
   "urban_couple": {
     "profile_id": "urban_couple",
     "scenario": null,
-    "parameters_version": "ce4e4adb5bc6",
+    "parameters_version": "b569f5f9d2ea",
     "portfolios": [
       {
         "id": "current",
@@ -5042,49 +5042,49 @@
     "current": {
       "portfolio_id": "current",
       "annual_cost": {
-        "low": 4665.284536761277,
-        "expected": 5506.153098050671,
-        "high": 7006.581717837523
+        "low": 4635.284536761277,
+        "expected": 5476.153098050671,
+        "high": 6976.581717837523
       },
       "annual_travel_hours": {
-        "low": 659.5414265678197,
-        "expected": 868.1708611185395,
-        "high": 1287.8618174726514
+        "low": 659.8384634943791,
+        "expected": 868.468562276382,
+        "high": 1288.1598488219383
       },
       "perceived_hours": {
-        "low": 801.4050570364925,
-        "expected": 1055.0069940723022,
-        "high": 1565.2018068677953
+        "low": 802.1360889716187,
+        "expected": 1055.739624387459,
+        "high": 1565.9352316897237
       },
       "comfort": {
-        "low": 7.847933611673563,
-        "expected": 7.847933611673563,
-        "high": 7.847933611673563
+        "low": 7.843663314418521,
+        "expected": 7.843663314418521,
+        "high": 7.843663314418521
       },
       "flexibility": {
-        "low": 8.577886392256026,
-        "expected": 8.577886392256026,
-        "high": 8.577886392256026
+        "low": 8.572959694419243,
+        "expected": 8.572959694419243,
+        "high": 8.572959694419243
       },
       "reliability": {
-        "low": 8.022995832388082,
-        "expected": 8.022995832388082,
-        "high": 8.022995832388082
+        "low": 8.020163465194338,
+        "expected": 8.020163465194338,
+        "high": 8.020163465194338
       },
       "car_km_per_year": {
-        "low": 9245.199408262843,
-        "expected": 10405.083209328075,
-        "high": 12723.596310188614
+        "low": 9229.141052269644,
+        "expected": 10388.933941039628,
+        "high": 12707.401562493471
       },
       "co2_kg_per_year": {
-        "low": 1737.7741628918989,
-        "expected": 1966.2584672734345,
-        "high": 2413.7884138146082
+        "low": 1735.7135767509103,
+        "expected": 1964.187323615441,
+        "high": 2411.7118801581514
       },
       "private_vehicles_owned": 1,
       "uses_by_option": {
-        "car_medium_petrol": 549.487185078985,
-        "pt_ticket_urban_milano": 21.983731980364468,
+        "car_medium_petrol": 548.477855810957,
+        "pt_ticket_urban_milano": 22.99306124839247,
         "rail_regional_ticket": 29.700757456699332,
         "pt_annual_urban_milano": 88.6972997575086,
         "bikemi_day_pass": 15.434607718671659,
@@ -5098,88 +5098,88 @@
       {
         "portfolio_id": "keep-car1+no_transit",
         "annual_cost": {
-          "low": 4560.667409290672,
-          "expected": 5405.696216239592,
-          "high": 6915.620018784987
+          "low": 4557.665604528557,
+          "expected": 5402.658939222606,
+          "high": 6912.502045548307
         },
         "annual_travel_hours": {
-          "low": 649.581750776291,
-          "expected": 849.7239130574742,
-          "high": 1252.2171084990364
+          "low": 650.1065311020251,
+          "expected": 850.3136142468752,
+          "high": 1252.937028673317
         },
         "perceived_hours": {
-          "low": 778.378411251646,
-          "expected": 1012.4920951381226,
-          "high": 1483.1979747524283
+          "low": 779.6284117922141,
+          "expected": 1013.895884146488,
+          "high": 1484.910108743683
         },
         "comfort": {
-          "low": 8.084458027137584,
-          "expected": 8.084458027137584,
-          "high": 8.084458027137584
+          "low": 8.07621250373019,
+          "expected": 8.07621250373019,
+          "high": 8.07621250373019
         },
         "flexibility": {
-          "low": 8.842402460350012,
-          "expected": 8.842402460350012,
-          "high": 8.842402460350012
+          "low": 8.833109247365595,
+          "expected": 8.833109247365595,
+          "high": 8.833109247365595
         },
         "reliability": {
-          "low": 8.174907791955626,
-          "expected": 8.174907791955626,
-          "high": 8.174907791955626
+          "low": 8.169572615186938,
+          "expected": 8.169572615186938,
+          "high": 8.169572615186938
         },
         "car_km_per_year": {
-          "low": 9624.620263755538,
-          "expected": 10973.06987995814,
-          "high": 13674.589713272542
+          "low": 9599.327682328514,
+          "expected": 10944.967078804084,
+          "high": 13640.920761683967
         },
         "co2_kg_per_year": {
-          "low": 1784.3015658735503,
-          "expected": 2031.3344306393353,
-          "high": 2517.2315009996623
+          "low": 1781.0784395311703,
+          "expected": 2027.7748890949304,
+          "high": 2512.9943425792453
         },
         "private_vehicles_owned": 1,
         "uses_by_option": {
-          "car_medium_petrol": 604.4723961013162,
-          "pt_ticket_urban_milano": 48.18875091548172,
-          "rail_regional_ticket": 33.74123350019023,
-          "bikemi_day_pass": 18.901201475240857,
+          "car_medium_petrol": 602.459044695795,
+          "pt_ticket_urban_milano": 50.411112174416,
+          "rail_regional_ticket": 33.6325391400759,
+          "bikemi_day_pass": 18.80088598194225,
           "rail_high_speed_ticket": 2.6964180077709914
         },
         "delta": {
           "cost": {
-            "low": -184.20499945332597,
-            "expected": -100.45688181107981,
-            "high": 68.61069762882694
+            "low": -156.88359648340918,
+            "expected": -73.4941588280649,
+            "high": 94.85120833054548
           },
           "travel_hours": {
-            "low": -35.78174675958947,
-            "expected": -18.446948061065285,
-            "high": -9.861663896794722
+            "low": -35.33801188514474,
+            "expected": -18.15494802950687,
+            "high": -9.644898296206264
           },
           "perceived_hours": {
-            "low": -82.19102775955511,
-            "expected": -42.51489893417957,
-            "high": -22.86441735987377
+            "low": -81.18729827710023,
+            "expected": -41.84374024097079,
+            "high": -22.35818536228969
           },
           "comfort": {
-            "low": 0.2365244154640216,
-            "expected": 0.2365244154640216,
-            "high": 0.2365244154640216
+            "low": 0.23254918931166912,
+            "expected": 0.23254918931166912,
+            "high": 0.23254918931166912
           },
           "flexibility": {
-            "low": 0.264516068093986,
-            "expected": 0.264516068093986,
-            "high": 0.264516068093986
+            "low": 0.260149552946352,
+            "expected": 0.260149552946352,
+            "high": 0.260149552946352
           },
           "car_km": {
-            "low": 371.0887454804058,
-            "expected": 567.9866706300662,
-            "high": 965.1247518752041
+            "low": 362.61224687324363,
+            "expected": 556.0331377644575,
+            "high": 946.167975027573
           },
           "co2_kg": {
-            "low": 43.70680519689983,
-            "expected": 65.07596336590092,
-            "high": 108.15633461404394
+            "low": 42.6959061469539,
+            "expected": 63.58756547948934,
+            "high": 105.7060119967108
           },
           "saving_per_extra_hour": null
         },
@@ -5189,9 +5189,9 @@
       {
         "portfolio_id": "keep-car1+pt",
         "annual_cost": {
-          "low": 4917.552684395584,
-          "expected": 5758.43550065021,
-          "high": 7258.879150075509
+          "low": 4860.648499052837,
+          "expected": 5701.5305079176915,
+          "high": 7201.973711033957
         },
         "annual_travel_hours": {
           "low": 669.8788853818272,
@@ -5238,39 +5238,39 @@
         },
         "delta": {
           "cost": {
-            "low": 245.56659846058253,
-            "expected": 252.28240259953907,
-            "high": 258.99820673849564
+            "low": 218.76207145379317,
+            "expected": 225.3774098670201,
+            "high": 231.99274828024704
           },
           "travel_hours": {
-            "low": 9.890132787622102,
-            "expected": 10.361091491794582,
-            "high": 10.832050195967062
+            "low": 9.605963500590533,
+            "expected": 10.063390333951986,
+            "high": 10.520817167313439
           },
           "perceived_hours": {
-            "low": 24.339210346524826,
-            "expected": 25.498220363026007,
-            "high": 26.65723037952719
+            "low": 23.639881409329945,
+            "expected": 24.765590047869466,
+            "high": 25.891298686408987
           },
           "comfort": {
-            "low": -0.1469195646019923,
-            "expected": -0.1469195646019923,
-            "high": -0.1469195646019923
+            "low": -0.14264926734695038,
+            "expected": -0.14264926734695038,
+            "high": -0.14264926734695038
           },
           "flexibility": {
-            "low": -0.16950302470191048,
-            "expected": -0.16950302470191048,
-            "high": -0.16950302470191048
+            "low": -0.16457632686512724,
+            "expected": -0.16457632686512724,
+            "high": -0.16457632686512724
           },
           "car_km": {
-            "low": -587.6016270688996,
-            "expected": -562.053730239817,
-            "high": -536.5058334107345
+            "low": -570.718301130977,
+            "expected": -545.9044619513693,
+            "high": -521.0906227717616
           },
           "co2_kg": {
-            "low": -75.35990867158644,
-            "expected": -72.0833909032566,
-            "high": -68.80687313492676
+            "low": -73.19462212004778,
+            "expected": -70.0122472452631,
+            "high": -66.82987237047841
           },
           "saving_per_extra_hour": null
         },
@@ -5280,50 +5280,50 @@
       {
         "portfolio_id": "keep-car1+e_bike",
         "annual_cost": {
-          "low": 4882.069439912349,
-          "expected": 5749.591269285834,
-          "high": 7278.91360637109
+          "low": 4853.93180567478,
+          "expected": 5721.452308122506,
+          "high": 7250.773170141748
         },
         "annual_travel_hours": {
-          "low": 655.7922029952035,
-          "expected": 860.790322232548,
-          "high": 1273.1117345929736
+          "low": 655.9631884120162,
+          "expected": 860.9616994665927,
+          "high": 1273.2833066310013
         },
         "perceived_hours": {
-          "low": 813.1072391416164,
-          "expected": 1062.6366647985672,
-          "high": 1564.5133095755823
+          "low": 813.4931653219608,
+          "expected": 1063.0235032246997,
+          "high": 1564.900601564325
         },
         "comfort": {
-          "low": 7.655104415643171,
-          "expected": 7.655104415643171,
-          "high": 7.655104415643171
+          "low": 7.653068610563118,
+          "expected": 7.653068610563118,
+          "high": 7.653068610563118
         },
         "flexibility": {
-          "low": 8.541883991214567,
-          "expected": 8.541883991214567,
-          "high": 8.541883991214567
+          "low": 8.539118618638149,
+          "expected": 8.539118618638149,
+          "high": 8.539118618638149
         },
         "reliability": {
-          "low": 8.088666244708199,
-          "expected": 8.088666244708199,
-          "high": 8.088666244708199
+          "low": 8.086894025491803,
+          "expected": 8.086894025491803,
+          "high": 8.086894025491803
         },
         "car_km_per_year": {
-          "low": 7793.207192107135,
-          "expected": 8823.865957922126,
-          "high": 10888.45426650538
+          "low": 7787.139912906719,
+          "expected": 8817.77594034946,
+          "high": 10882.352897851973
         },
         "co2_kg_per_year": {
-          "low": 1480.8688034676618,
-          "expected": 1685.712764038145,
-          "high": 2085.468122217302
+          "low": 1480.250984681344,
+          "expected": 1685.09284265353,
+          "high": 2084.8471234164026
         },
         "private_vehicles_owned": 1,
         "uses_by_option": {
-          "car_medium_petrol": 428.281478249241,
-          "e_bike": 154.26813995542287,
-          "pt_ticket_urban_milano": 12.94453086113033,
+          "car_medium_petrol": 427.9008521509494,
+          "e_bike": 154.02950937325588,
+          "pt_ticket_urban_milano": 13.563787541588935,
           "rail_regional_ticket": 29.700757456699332,
           "pt_annual_urban_milano": 71.57092044079513,
           "bikemi_day_pass": 8.537755028940339,
@@ -5331,39 +5331,39 @@
         },
         "delta": {
           "cost": {
-            "low": 22.829389495015363,
-            "expected": 243.43817123516243,
-            "high": 539.3110622414788
+            "low": 24.695681993182035,
+            "expected": 245.29921007183526,
+            "high": 541.1644765898915
           },
           "travel_hours": {
-            "low": -23.583050676496544,
-            "expected": -7.380538885991541,
-            "high": 0.641986827372925
+            "low": -23.709349732710066,
+            "expected": -7.506862809789368,
+            "high": 0.515612680204768
           },
           "perceived_hours": {
-            "low": -9.622295933064137,
-            "expected": 7.6296707262650045,
-            "high": 16.19848960256548
+            "low": -9.96738310773857,
+            "expected": 7.283878837240962,
+            "high": 15.851278793735231
           },
           "comfort": {
-            "low": -0.19282919603039161,
-            "expected": -0.19282919603039161,
-            "high": -0.19282919603039161
+            "low": -0.19059470385540322,
+            "expected": -0.19059470385540322,
+            "high": -0.19059470385540322
           },
           "flexibility": {
-            "low": -0.036002401041459464,
-            "expected": -0.036002401041459464,
-            "high": -0.036002401041459464
+            "low": -0.03384107578109408,
+            "expected": -0.03384107578109408,
+            "high": -0.03384107578109408
           },
           "car_km": {
-            "low": -2086.7737280548704,
-            "expected": -1581.2172514059487,
-            "high": -1325.6712092934672
+            "low": -2076.661126287074,
+            "expected": -1571.1580006901665,
+            "high": -1315.7175212317911
           },
           "co2_kg": {
-            "low": -375.5690563284677,
-            "expected": -280.5457032352894,
-            "high": -232.642247795366
+            "low": -374.1106575381776,
+            "expected": -279.0944809619111,
+            "high": -231.20526274751384
           },
           "saving_per_extra_hour": null
         },
@@ -5375,50 +5375,50 @@
       {
         "portfolio_id": "keep-car1+scooter",
         "annual_cost": {
-          "low": 5198.1814361750785,
-          "expected": 6111.213990624941,
-          "high": 7665.42166485636
+          "low": 5170.1844257529365,
+          "expected": 6083.213180346504,
+          "high": 7637.418309918782
         },
         "annual_travel_hours": {
-          "low": 609.9931045205842,
-          "expected": 781.3765869320564,
-          "high": 1125.6027526110236
+          "low": 610.1894806051005,
+          "expected": 781.573419599926,
+          "high": 1125.7998126030518
         },
         "perceived_hours": {
-          "low": 769.5808052451446,
-          "expected": 991.1366618650735,
-          "high": 1436.3908400291116
+          "low": 769.952163251088,
+          "expected": 991.5088793343856,
+          "high": 1436.7634851629582
         },
         "comfort": {
-          "low": 7.315506012835567,
-          "expected": 7.315506012835567,
-          "high": 7.315506012835567
+          "low": 7.313938083489047,
+          "expected": 7.313938083489047,
+          "high": 7.313938083489047
         },
         "flexibility": {
-          "low": 8.442491764334312,
-          "expected": 8.442491764334312,
-          "high": 8.442491764334312
+          "low": 8.440175880032049,
+          "expected": 8.440175880032049,
+          "high": 8.440175880032049
         },
         "reliability": {
-          "low": 7.972206090141766,
-          "expected": 7.972206090141766,
-          "high": 7.972206090141766
+          "low": 7.970848371913731,
+          "expected": 7.970848371913731,
+          "high": 7.970848371913731
         },
         "car_km_per_year": {
-          "low": 6871.106060980344,
-          "expected": 7463.219078128703,
-          "high": 8632.997505209363
+          "low": 6866.912222603559,
+          "expected": 7459.003989735988,
+          "high": 8628.771660725735
         },
         "co2_kg_per_year": {
-          "low": 1482.2443987918193,
-          "expected": 1654.813857432251,
-          "high": 1986.3424733977686
+          "low": 1481.6371543635164,
+          "expected": 1654.2038281384341,
+          "high": 1985.7309945159404
         },
         "private_vehicles_owned": 2,
         "uses_by_option": {
-          "scooter_125": 286.0173545694632,
-          "car_medium_petrol": 313.02178932866,
-          "pt_ticket_urban_milano": 10.039414479877832,
+          "scooter_125": 285.7968127520999,
+          "car_medium_petrol": 312.7583463041154,
+          "pt_ticket_urban_milano": 10.523399321785758,
           "rail_regional_ticket": 29.700757456699332,
           "pt_annual_urban_milano": 58.778391437684,
           "bikemi_day_pass": 7.745874719844652,
@@ -5426,39 +5426,39 @@
         },
         "delta": {
           "cost": {
-            "low": 243.8610066372122,
-            "expected": 605.0608925742696,
-            "high": 1010.3699740964553
+            "low": 245.86982594664784,
+            "expected": 607.0600822958322,
+            "high": 1012.35940589915
           },
           "travel_hours": {
-            "low": -162.69733727182614,
-            "expected": -86.7942741864831,
-            "high": -49.190377744504325
+            "low": -162.7982960539215,
+            "expected": -86.89514267645613,
+            "high": -49.29106398112677
           },
           "perceived_hours": {
-            "low": -129.1560971057105,
-            "expected": -63.8703322072287,
-            "high": -31.536040854417728
+            "low": -129.51674017936938,
+            "expected": -64.23074505307324,
+            "high": -31.895988852671856
           },
           "comfort": {
-            "low": -0.5324275988379954,
-            "expected": -0.5324275988379954,
-            "high": -0.5324275988379954
+            "low": -0.5297252309294738,
+            "expected": -0.5297252309294738,
+            "high": -0.5297252309294738
           },
           "flexibility": {
-            "low": -0.13539462792171442,
-            "expected": -0.13539462792171442,
-            "high": -0.13539462792171442
+            "low": -0.132783814387194,
+            "expected": -0.132783814387194,
+            "high": -0.132783814387194
           },
           "car_km": {
-            "low": -4117.692269088861,
-            "expected": -2941.864131199372,
-            "high": -2355.7261562668923
+            "low": -4105.722115690895,
+            "expected": -2929.9299513036385,
+            "high": -2343.8641447257814
           },
           "co2_kg": {
-            "low": -437.3926554758681,
-            "expected": -311.4446098411835,
-            "high": -248.66656227841227
+            "low": -435.92716910644367,
+            "expected": -309.98349547700695,
+            "high": -247.21421968163833
           },
           "saving_per_extra_hour": null
         },
@@ -5470,9 +5470,9 @@
       {
         "portfolio_id": "keep-car1+pt_e_bike",
         "annual_cost": {
-          "low": 5196.6593697619855,
-          "expected": 6064.202181936746,
-          "high": 7593.516254258484
+          "low": 5139.7565217630645,
+          "expected": 6007.297189204227,
+          "high": 7536.610050925554
         },
         "annual_travel_hours": {
           "low": 662.1441183984259,
@@ -5520,39 +5520,39 @@
         },
         "delta": {
           "cost": {
-            "low": 337.31803111054364,
-            "expected": 558.0490838860749,
-            "high": 853.8792526076274
+            "low": 310.42142606370044,
+            "expected": 531.1440911535559,
+            "high": 826.9680015306524
           },
           "travel_hours": {
-            "low": -17.220269568157548,
-            "expected": -1.013869208103813,
-            "high": 7.0165070676687105
+            "low": -17.51767374977617,
+            "expected": -1.3115703659464089,
+            "high": 6.718206554212628
           },
           "perceived_hours": {
-            "low": 4.678103962427667,
-            "expected": 21.971862714791683,
-            "high": 30.624515204358445
+            "low": 3.9482017269470155,
+            "expected": 21.239232399635142,
+            "high": 29.88643108152516
           },
           "comfort": {
-            "low": -0.2675861870901448,
-            "expected": -0.2675861870901448,
-            "high": -0.2675861870901448
+            "low": -0.2633158898351029,
+            "expected": -0.2633158898351029,
+            "high": -0.2633158898351029
           },
           "flexibility": {
-            "low": -0.1379295957844633,
-            "expected": -0.1379295957844633,
-            "high": -0.1379295957844633
+            "low": -0.13300289794768005,
+            "expected": -0.13300289794768005,
+            "high": -0.13300289794768005
           },
           "car_km": {
-            "low": -2311.6576665278085,
-            "expected": -1804.8102808114584,
-            "high": -1546.7197909340107
+            "low": -2295.408441587081,
+            "expected": -1788.6610125230106,
+            "high": -1530.7668764502268
           },
           "co2_kg": {
-            "low": -398.24326057942403,
-            "expected": -303.10254961536816,
-            "high": -254.9667179225438
+            "low": -396.16088653885834,
+            "expected": -301.03140595737466,
+            "high": -252.91777498114527
           },
           "saving_per_extra_hour": null
         },
@@ -5564,9 +5564,9 @@
       {
         "portfolio_id": "car-free+pt",
         "annual_cost": {
-          "low": 2682.2157427299326,
-          "expected": 2962.381075561921,
-          "high": 3626.581973813552
+          "low": 2622.2157427299326,
+          "expected": 2902.381075561921,
+          "high": 3566.5819877527133
         },
         "annual_travel_hours": {
           "low": 750.8412244498896,
@@ -5613,41 +5613,41 @@
         },
         "delta": {
           "cost": {
-            "low": -3957.2051596594592,
-            "expected": -2543.7720224887503,
-            "high": -1640.3251683012734
+            "low": -3987.2051662097538,
+            "expected": -2573.7720224887503,
+            "high": -1670.325158053406
           },
           "travel_hours": {
-            "low": 90.44296213767731,
-            "expected": 144.49782758794177,
-            "high": 253.54856147843452
+            "low": 90.14592387264062,
+            "expected": 144.20012643009917,
+            "high": 253.25053173577254
           },
           "perceived_hours": {
-            "low": 253.6706938248232,
-            "expected": 382.94995006209183,
-            "high": 643.7596041764954
+            "low": 252.93974215184454,
+            "expected": 382.2173197469353,
+            "high": 643.026141788806
           },
           "comfort": {
-            "low": -2.047611750938925,
-            "expected": -2.047611750938925,
-            "high": -2.047611750938925
+            "low": -2.043341453683883,
+            "expected": -2.043341453683883,
+            "high": -2.043341453683883
           },
           "flexibility": {
-            "low": -2.6524708977576843,
-            "expected": -2.6524708977576843,
-            "high": -2.6524708977576843
+            "low": -2.647544199920901,
+            "expected": -2.647544199920901,
+            "high": -2.647544199920901
           },
           "car_km": {
-            "low": -11012.742544721126,
-            "expected": -8694.229443860588,
-            "high": -7534.345642795355
+            "low": -10996.547797025982,
+            "expected": -8678.080175572139,
+            "high": -7518.287286802155
           },
           "co2_kg": {
-            "low": -1433.895802990166,
-            "expected": -1173.477593688489,
-            "high": -1042.8081199447422
+            "low": -1431.8179994117827,
+            "expected": -1171.4064500304953,
+            "high": -1040.7502497040725
           },
-          "saving_per_extra_hour": 17.604223294918423
+          "saving_per_extra_hour": 17.84861141391844
         },
         "confidence": "LOW",
         "data_quality_notes": []
@@ -5655,9 +5655,9 @@
       {
         "portfolio_id": "car-free+pt_e_bike",
         "annual_cost": {
-          "low": 3077.5187460700135,
-          "expected": 3400.9903144467544,
-          "high": 4096.414780735761
+          "low": 3017.5187460700135,
+          "expected": 3340.9903144467544,
+          "high": 4036.4147940490734
         },
         "annual_travel_hours": {
           "low": 700.5226119845536,
@@ -5705,41 +5705,41 @@
         },
         "delta": {
           "cost": {
-            "low": -3527.813294122745,
-            "expected": -2105.162783603917,
-            "high": -1178.5190692150886
+            "low": -3557.8133006305998,
+            "expected": -2135.162783603917,
+            "high": -1208.5190592237586
           },
           "travel_hours": {
-            "low": 33.310204265956955,
-            "expected": 85.19153207407004,
-            "high": 188.4155346116223
+            "low": 33.01278295119518,
+            "expected": 84.89383091622744,
+            "high": 188.1176928023712
           },
           "perceived_hours": {
-            "low": 154.45767277875555,
-            "expected": 276.41984127695605,
-            "high": 522.6200671121778
+            "low": 153.72601744008333,
+            "expected": 275.6872109617995,
+            "high": 521.8869538166049
           },
           "comfort": {
-            "low": -1.8135236628039708,
-            "expected": -1.8135236628039708,
-            "high": -1.8135236628039708
+            "low": -1.809253365548929,
+            "expected": -1.809253365548929,
+            "high": -1.809253365548929
           },
           "flexibility": {
-            "low": -2.154787539043734,
-            "expected": -2.154787539043734,
-            "high": -2.154787539043734
+            "low": -2.1498608412069506,
+            "expected": -2.1498608412069506,
+            "high": -2.1498608412069506
           },
           "car_km": {
-            "low": -11012.742544721126,
-            "expected": -8694.229443860588,
-            "high": -7534.345642795355
+            "low": -10996.547797025982,
+            "expected": -8678.080175572139,
+            "high": -7518.287286802155
           },
           "co2_kg": {
-            "low": -1575.5857492065163,
-            "expected": -1287.898456180569,
-            "high": -1143.4262552558089
+            "low": -1573.5071719570042,
+            "expected": -1285.8273125225755,
+            "high": -1141.369914665423
           },
-          "saving_per_extra_hour": 24.71093936629261
+          "saving_per_extra_hour": 25.15097693860557
         },
         "confidence": "LOW",
         "data_quality_notes": [
@@ -5764,10 +5764,10 @@
             {
               "code": "current_cost",
               "values": {
-                "eur": 5506.153098050671,
-                "low": 4665.284536761277,
-                "high": 7006.581717837523,
-                "hours": 868.1708611185395
+                "eur": 5476.153098050671,
+                "low": 4635.284536761277,
+                "high": 6976.581717837523,
+                "hours": 868.468562276382
               }
             },
             {
@@ -5775,7 +5775,7 @@
               "values": {
                 "name": "Auto media a benzina",
                 "text": "Disdire «Abbonamento annuale urbano ATM (ordinario)».",
-                "net_eur": 475.6058711528755
+                "net_eur": 441.93156123777277
               }
             },
             {
@@ -5787,7 +5787,7 @@
           ],
           "explanation": [
             "La configurazione attuale costa circa 5.500 € l'anno (tra 4.650 e 7.000 €) e ti porta a passare circa 870 ore l'anno in viaggio.",
-            "Esiste un'alternativa che conviene valutare (disdire «Abbonamento annuale urbano ATM (ordinario)»), con un vantaggio netto di circa 480 € l'anno.",
+            "Esiste un'alternativa che conviene valutare (disdire «Abbonamento annuale urbano ATM (ordinario)»), con un vantaggio netto di circa 440 € l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"
@@ -5801,47 +5801,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": -3957.2051596594592,
-              "expected": -2543.7720224887503,
-              "high": -1640.3251683012734
+              "low": -3987.2051662097538,
+              "expected": -2573.7720224887503,
+              "high": -1670.325158053406
             },
             "travel_hours": {
-              "low": 90.44296213767731,
-              "expected": 144.49782758794177,
-              "high": 253.54856147843452
+              "low": 90.14592387264062,
+              "expected": 144.20012643009917,
+              "high": 253.25053173577254
             },
             "perceived_hours": {
-              "low": 253.6706938248232,
-              "expected": 382.94995006209183,
-              "high": 643.7596041764954
+              "low": 252.93974215184454,
+              "expected": 382.2173197469353,
+              "high": 643.026141788806
             },
             "comfort": {
-              "low": -2.047611750938925,
-              "expected": -2.047611750938925,
-              "high": -2.047611750938925
+              "low": -2.043341453683883,
+              "expected": -2.043341453683883,
+              "high": -2.043341453683883
             },
             "flexibility": {
-              "low": -2.6524708977576843,
-              "expected": -2.6524708977576843,
-              "high": -2.6524708977576843
+              "low": -2.647544199920901,
+              "expected": -2.647544199920901,
+              "high": -2.647544199920901
             },
             "car_km": {
-              "low": -11012.742544721126,
-              "expected": -8694.229443860588,
-              "high": -7534.345642795355
+              "low": -10996.547797025982,
+              "expected": -8678.080175572139,
+              "high": -7518.287286802155
             },
             "co2_kg": {
-              "low": -1433.895802990166,
-              "expected": -1173.477593688489,
-              "high": -1042.8081199447422
+              "low": -1431.8179994117827,
+              "expected": -1171.4064500304953,
+              "high": -1040.7502497040725
             },
-            "saving_per_extra_hour": 17.604223294918423
+            "saving_per_extra_hour": 17.84861141391844
           },
           "change_penalty": 600.0,
           "net_benefit": {
-            "low": -4645.8694647460325,
-            "expected": -1885.727478132168,
-            "high": 29.76354053076693
+            "low": -4608.535302581084,
+            "expected": -1848.4011749806027,
+            "high": 67.07851915726792
           },
           "facts": [
             {
@@ -5859,9 +5859,9 @@
             {
               "code": "saving",
               "values": {
-                "eur": 2543.7720224887503,
-                "low": 1640.3251683012734,
-                "high": 3957.2051596594592
+                "eur": 2573.7720224887503,
+                "low": 1670.325158053406,
+                "high": 3987.2051662097538
               }
             },
             {
@@ -5881,34 +5881,34 @@
             {
               "code": "extra_time",
               "values": {
-                "hours": 144.49782758794177,
-                "low": 90.44296213767731,
-                "high": 253.54856147843452,
-                "from_hours": 868.1708611185395,
+                "hours": 144.20012643009917,
+                "low": 90.14592387264062,
+                "high": 253.25053173577254,
+                "from_hours": 868.468562276382,
                 "to_hours": 1012.6686887064812
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 7.847933611673563,
+                "from_score": 7.843663314418521,
                 "to_score": 5.800321860734638
               }
             },
             {
               "code": "saving_per_extra_hour",
               "values": {
-                "eur_per_hour": 17.604223294918423
+                "eur_per_hour": 17.84861141391844
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -1885.727478132168,
-                "low": -4645.8694647460325,
-                "high": 29.76354053076693,
-                "time_eur": -1444.9782758794177,
-                "comfort_eur": -2384.5212247415006,
+                "eur": -1848.4011749806027,
+                "low": -4608.535302581084,
+                "high": 67.07851915726792,
+                "time_eur": -1442.0012643009918,
+                "comfort_eur": -2380.171933168361,
                 "penalty_eur": 600.0,
                 "value_of_time": 10.0
               }
@@ -5916,9 +5916,9 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 10405.083209328075,
+                "car_km_from": 10388.933941039628,
                 "car_km_to": 1710.8537654674876,
-                "co2_from": 1966.2584672734345,
+                "co2_from": 1964.187323615441,
                 "co2_to": 792.7808735849458
               }
             },
@@ -5932,14 +5932,14 @@
           "explanation": [
             "Non conviene cambiare.",
             "Cosa cambia: Vendere «Auto media a benzina»; sottoscrivere «Abbonamento annuale urbano ATM (ordinario)».",
-            "Risparmi circa 2.550 € l'anno (tra 1.650 e 3.950 €).",
+            "Risparmi circa 2.550 € l'anno (tra 1.650 e 4.000 €).",
             "«Auto media a benzina» ti costa oggi circa 4.700 € l'anno.",
             "Per gli spostamenti che l'auto non copre più useresti car sharing free-floating (Free2move), biglietto treno alta velocità e BikeMi giornaliero, per circa 1.800 € l'anno.",
             "Passeresti circa 145 ore in più l'anno in viaggio: da 868 a 1.013 ore, con una differenza tra +90 ore e +255 ore.",
             "Il comfort passa da 7,8 a 5,8 su 10.",
             "Ogni ora di viaggio in più ti fa risparmiare circa 18 €.",
-            "Contando anche il tempo in più (1.450 €), il minor comfort (2.400 €) e lo sforzo del cambiamento (600 €), il saldo è negativo: circa 1.900 € l'anno (tra -4.650 e 30 €).",
-            "Km in auto: da 10.400 a 1.700 l'anno. CO2: da 1.970 a 790 kg l'anno.",
+            "Contando anche il tempo in più (1.450 €), il minor comfort (2.400 €) e lo sforzo del cambiamento (600 €), il saldo è negativo: circa 1.850 € l'anno (tra -4.600 e 65 €).",
+            "Km in auto: da 10.400 a 1.700 l'anno. CO2: da 1.960 a 790 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"
@@ -5954,47 +5954,47 @@
           "strength": "SMALL_IMPROVEMENT",
           "delta": {
             "cost": {
-              "low": -184.20499945332597,
-              "expected": -100.45688181107981,
-              "high": 68.61069762882694
+              "low": -156.88359648340918,
+              "expected": -73.4941588280649,
+              "high": 94.85120833054548
             },
             "travel_hours": {
-              "low": -35.78174675958947,
-              "expected": -18.446948061065285,
-              "high": -9.861663896794722
+              "low": -35.33801188514474,
+              "expected": -18.15494802950687,
+              "high": -9.644898296206264
             },
             "perceived_hours": {
-              "low": -82.19102775955511,
-              "expected": -42.51489893417957,
-              "high": -22.86441735987377
+              "low": -81.18729827710023,
+              "expected": -41.84374024097079,
+              "high": -22.35818536228969
             },
             "comfort": {
-              "low": 0.2365244154640216,
-              "expected": 0.2365244154640216,
-              "high": 0.2365244154640216
+              "low": 0.23254918931166912,
+              "expected": 0.23254918931166912,
+              "high": 0.23254918931166912
             },
             "flexibility": {
-              "low": 0.264516068093986,
-              "expected": 0.264516068093986,
-              "high": 0.264516068093986
+              "low": 0.260149552946352,
+              "expected": 0.260149552946352,
+              "high": 0.260149552946352
             },
             "car_km": {
-              "low": 371.0887454804058,
-              "expected": 567.9866706300662,
-              "high": 965.1247518752041
+              "low": 362.61224687324363,
+              "expected": 556.0331377644575,
+              "high": 946.167975027573
             },
             "co2_kg": {
-              "low": 43.70680519689983,
-              "expected": 65.07596336590092,
-              "high": 108.15633461404394
+              "low": 42.6959061469539,
+              "expected": 63.58756547948934,
+              "high": 105.7060119967108
             },
             "saving_per_extra_hour": null
           },
           "change_penalty": 50.0,
           "net_benefit": {
-            "low": 216.38012199226,
-            "expected": 475.6058711528755,
-            "high": 881.1095913150945
+            "low": 184.42651752643764,
+            "expected": 441.93156123777277,
+            "high": 844.1073364986692
           },
           "facts": [
             {
@@ -6012,43 +6012,43 @@
             {
               "code": "saving",
               "values": {
-                "eur": 100.45688181107981,
-                "low": -68.61069762882694,
-                "high": 184.20499945332597
+                "eur": 73.4941588280649,
+                "low": -94.85120833054548,
+                "high": 156.88359648340918
               }
             },
             {
               "code": "dropped_item_cost",
               "values": {
                 "name": "Abbonamento annuale urbano ATM (ordinario)",
-                "eur": 360.0
+                "eur": 330.0
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": -18.446948061065285,
-                "low": -35.78174675958947,
-                "high": -9.861663896794722,
-                "from_hours": 868.1708611185395,
-                "to_hours": 849.7239130574742
+                "hours": -18.15494802950687,
+                "low": -35.33801188514474,
+                "high": -9.644898296206264,
+                "from_hours": 868.468562276382,
+                "to_hours": 850.3136142468752
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 7.847933611673563,
-                "to_score": 8.084458027137584
+                "from_score": 7.843663314418521,
+                "to_score": 8.07621250373019
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": 475.6058711528755,
-                "low": 216.38012199226,
-                "high": 881.1095913150945,
-                "time_eur": 184.46948061065285,
-                "comfort_eur": 240.67950873114285,
+                "eur": 441.93156123777277,
+                "low": 184.42651752643764,
+                "high": 844.1073364986692,
+                "time_eur": 181.5494802950687,
+                "comfort_eur": 236.8879221146392,
                 "penalty_eur": 50.0,
                 "value_of_time": 10.0
               }
@@ -6056,10 +6056,10 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 10405.083209328075,
-                "car_km_to": 10973.06987995814,
-                "co2_from": 1966.2584672734345,
-                "co2_to": 2031.3344306393353
+                "car_km_from": 10388.933941039628,
+                "car_km_to": 10944.967078804084,
+                "co2_from": 1964.187323615441,
+                "co2_to": 2027.7748890949304
               }
             },
             {
@@ -6072,12 +6072,12 @@
           "explanation": [
             "È un piccolo miglioramento.",
             "Cosa cambia: Disdire «Abbonamento annuale urbano ATM (ordinario)».",
-            "Risparmi circa 100 € l'anno (tra -70 e 180 €).",
-            "«Abbonamento annuale urbano ATM (ordinario)» ti costa oggi circa 360 € l'anno.",
-            "Passeresti circa 18 ore in meno l'anno in viaggio: da 868 a 850 ore, con una differenza tra -36 ore e -10 ore.",
+            "Risparmi circa 75 € l'anno (tra -95 e 160 €).",
+            "«Abbonamento annuale urbano ATM (ordinario)» ti costa oggi circa 330 € l'anno.",
+            "Passeresti circa 18 ore in meno l'anno in viaggio: da 868 a 850 ore, con una differenza tra -35 ore e -10 ore.",
             "Il comfort passa da 7,8 a 8,1 su 10.",
-            "Contando anche il tempo guadagnato (180 €), il comfort (240 €) e lo sforzo del cambiamento (50 €), il vantaggio netto è di circa 480 € l'anno (tra 220 e 880 €).",
-            "Km in auto: da 10.400 a 11.000 l'anno. CO2: da 1.970 a 2.030 kg l'anno.",
+            "Contando anche il tempo guadagnato (180 €), il comfort (240 €) e lo sforzo del cambiamento (50 €), il vantaggio netto è di circa 440 € l'anno (tra 180 e 840 €).",
+            "Km in auto: da 10.400 a 10.900 l'anno. CO2: da 1.960 a 2.030 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"
@@ -6091,47 +6091,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": 243.8610066372122,
-              "expected": 605.0608925742696,
-              "high": 1010.3699740964553
+              "low": 245.86982594664784,
+              "expected": 607.0600822958322,
+              "high": 1012.35940589915
             },
             "travel_hours": {
-              "low": -162.69733727182614,
-              "expected": -86.7942741864831,
-              "high": -49.190377744504325
+              "low": -162.7982960539215,
+              "expected": -86.89514267645613,
+              "high": -49.29106398112677
             },
             "perceived_hours": {
-              "low": -129.1560971057105,
-              "expected": -63.8703322072287,
-              "high": -31.536040854417728
+              "low": -129.51674017936938,
+              "expected": -64.23074505307324,
+              "high": -31.895988852671856
             },
             "comfort": {
-              "low": -0.5324275988379954,
-              "expected": -0.5324275988379954,
-              "high": -0.5324275988379954
+              "low": -0.5297252309294738,
+              "expected": -0.5297252309294738,
+              "high": -0.5297252309294738
             },
             "flexibility": {
-              "low": -0.13539462792171442,
-              "expected": -0.13539462792171442,
-              "high": -0.13539462792171442
+              "low": -0.132783814387194,
+              "expected": -0.132783814387194,
+              "high": -0.132783814387194
             },
             "car_km": {
-              "low": -4117.692269088861,
-              "expected": -2941.864131199372,
-              "high": -2355.7261562668923
+              "low": -4105.722115690895,
+              "expected": -2929.9299513036385,
+              "high": -2343.8641447257814
             },
             "co2_kg": {
-              "low": -437.3926554758681,
-              "expected": -311.4446098411835,
-              "high": -248.66656227841227
+              "low": -435.92716910644367,
+              "expected": -309.98349547700695,
+              "high": -247.21421968163833
             },
             "saving_per_extra_hour": null
           },
           "change_penalty": 250.0,
           "net_benefit": {
-            "low": -734.8419881012046,
-            "expected": -216.35757050198265,
-            "high": 529.7580153417438
+            "low": -733.232320438867,
+            "expected": -214.75263176509986,
+            "high": 531.3603069008009
           },
           "facts": [
             {
@@ -6149,36 +6149,36 @@
             {
               "code": "saving",
               "values": {
-                "eur": -605.0608925742696,
-                "low": -1010.3699740964553,
-                "high": -243.8610066372122
+                "eur": -607.0600822958322,
+                "low": -1012.35940589915,
+                "high": -245.86982594664784
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": -86.7942741864831,
-                "low": -162.69733727182614,
-                "high": -49.190377744504325,
-                "from_hours": 868.1708611185395,
-                "to_hours": 781.3765869320564
+                "hours": -86.89514267645613,
+                "low": -162.7982960539215,
+                "high": -49.29106398112677,
+                "from_hours": 868.468562276382,
+                "to_hours": 781.573419599926
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 7.847933611673563,
-                "to_score": 7.315506012835567
+                "from_score": 7.843663314418521,
+                "to_score": 7.313938083489047
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -216.35757050198265,
-                "low": -734.8419881012046,
-                "high": 529.7580153417438,
-                "time_eur": 867.942741864831,
-                "comfort_eur": -229.23941979254403,
+                "eur": -214.75263176509986,
+                "low": -733.232320438867,
+                "high": 531.3603069008009,
+                "time_eur": 868.9514267645613,
+                "comfort_eur": -226.643976233829,
                 "penalty_eur": 250.0,
                 "value_of_time": 10.0
               }
@@ -6186,10 +6186,10 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 10405.083209328075,
-                "car_km_to": 7463.219078128703,
-                "co2_from": 1966.2584672734345,
-                "co2_to": 1654.813857432251
+                "car_km_from": 10388.933941039628,
+                "car_km_to": 7459.003989735988,
+                "co2_from": 1964.187323615441,
+                "co2_to": 1654.2038281384341
               }
             },
             {
@@ -6202,11 +6202,11 @@
           "explanation": [
             "Non conviene cambiare.",
             "Cosa cambia: Acquistare «Scooter 125 cc».",
-            "Spenderesti circa 610 € l'anno in più (tra 240 e 1.000 €).",
-            "Passeresti circa 87 ore in meno l'anno in viaggio: da 868 a 781 ore, con una differenza tra -165 ore e -49 ore.",
+            "Spenderesti circa 610 € l'anno in più (tra 250 e 1.000 €).",
+            "Passeresti circa 87 ore in meno l'anno in viaggio: da 868 a 782 ore, con una differenza tra -165 ore e -49 ore.",
             "Il comfort passa da 7,8 a 7,3 su 10.",
-            "Contando anche il tempo guadagnato (870 €), il minor comfort (230 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 220 € l'anno (tra -730 e 530 €).",
-            "Km in auto: da 10.400 a 7.500 l'anno. CO2: da 1.970 a 1.650 kg l'anno.",
+            "Contando anche il tempo guadagnato (870 €), il minor comfort (230 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 210 € l'anno (tra -730 e 530 €).",
+            "Km in auto: da 10.400 a 7.500 l'anno. CO2: da 1.960 a 1.650 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"
@@ -6241,7 +6241,7 @@
   "urban_single": {
     "profile_id": "urban_single",
     "scenario": null,
-    "parameters_version": "ce4e4adb5bc6",
+    "parameters_version": "b569f5f9d2ea",
     "portfolios": [
       {
         "id": "current",
@@ -6886,62 +6886,62 @@
         "high": 5887.586662771184
       },
       "annual_travel_hours": {
-        "low": 222.0642857535006,
-        "expected": 283.1808970547535,
-        "high": 394.0954035294128
+        "low": 222.28859905697124,
+        "expected": 283.44623405661736,
+        "high": 394.4498016584175
       },
       "perceived_hours": {
-        "low": 287.4923557635075,
-        "expected": 367.5542672576217,
-        "high": 513.9391214202465
+        "low": 287.9507686192576,
+        "expected": 368.10057120726145,
+        "high": 514.6749662132215
       },
       "comfort": {
-        "low": 7.02051335099223,
-        "expected": 7.02051335099223,
-        "high": 7.02051335099223
+        "low": 7.0133899491592935,
+        "expected": 7.0133899491592935,
+        "high": 7.0133899491592935
       },
       "flexibility": {
-        "low": 8.380987974506686,
-        "expected": 8.380987974506686,
-        "high": 8.380987974506686
+        "low": 8.367548333670086,
+        "expected": 8.367548333670086,
+        "high": 8.367548333670086
       },
       "reliability": {
-        "low": 8.105566329307113,
-        "expected": 8.105566329307113,
-        "high": 8.105566329307113
+        "low": 8.097300966543944,
+        "expected": 8.097300966543944,
+        "high": 8.097300966543944
       },
       "car_km_per_year": {
-        "low": 2203.4707373306246,
-        "expected": 3489.981724298254,
-        "high": 5113.284034394248
+        "low": 2193.3917113257767,
+        "expected": 3479.523990427663,
+        "high": 5101.667197454144
       },
       "co2_kg_per_year": {
-        "low": 396.1046865269388,
-        "expected": 586.2497993719497,
-        "high": 830.5620697729387
+        "low": 395.23290524090027,
+        "expected": 585.3485254731025,
+        "high": 829.5725370189757
       },
       "private_vehicles_owned": 1,
       "uses_by_option": {
-        "car_small_petrol": 250.4981148425574,
-        "pt_ticket_urban_milano": 34.1948673588469,
-        "bikemi_day_pass": 34.41053169522318,
-        "walking": 14.233928537985445,
+        "car_small_petrol": 249.19868181374306,
+        "pt_ticket_urban_milano": 35.75145719123791,
+        "bikemi_day_pass": 34.22826470130347,
+        "walking": 14.1590387283285,
         "rail_regional_ticket": 1.6625575653870182,
         "rail_high_speed_ticket": 5.0
       },
       "delta": null,
       "confidence": "LOW",
       "data_quality_notes": [
-        "Il modello attribuisce alle vostre auto circa 3.490 km l'anno, contro 6.000 dichiarati: i km in più non sono legati a nessuno spostamento che conosciamo e restano nel costo attuale."
+        "Il modello attribuisce alle vostre auto circa 3.480 km l'anno, contro 6.000 dichiarati: i km in più non sono legati a nessuno spostamento che conosciamo e restano nel costo attuale."
       ]
     },
     "evaluations": [
       {
         "portfolio_id": "keep-car1+pt",
         "annual_cost": {
-          "low": 4458.68402846413,
-          "expected": 5069.714780134573,
-          "high": 6194.204546752606
+          "low": 4430.279177060116,
+          "expected": 5041.29724442387,
+          "high": 6165.783533273296
         },
         "annual_travel_hours": {
           "low": 229.74116851340915,
@@ -6989,39 +6989,39 @@
         },
         "delta": {
           "cost": {
-            "low": 218.11045407772502,
-            "expected": 305.75741710620355,
-            "high": 349.7395951803955
+            "low": 189.8678375674054,
+            "expected": 277.33988139550127,
+            "high": 321.23305364158483
           },
           "travel_hours": {
-            "low": 7.41246189633314,
-            "expected": 9.103332719264756,
-            "high": 12.448401352850052
+            "low": 7.195983000428717,
+            "expected": 8.837995717400915,
+            "high": 12.086435408407818
           },
           "perceived_hours": {
-            "low": 15.18029135561178,
-            "expected": 18.741814157448808,
-            "high": 25.792733321718444
+            "low": 14.736933853240684,
+            "expected": 18.195510207809072,
+            "high": 25.042674409310024
           },
           "comfort": {
-            "low": -0.23696644918840182,
-            "expected": -0.23696644918840182,
-            "high": -0.23696644918840182
+            "low": -0.22984304735546512,
+            "expected": -0.22984304735546512,
+            "high": -0.22984304735546512
           },
           "flexibility": {
-            "low": -0.44736608679725887,
-            "expected": -0.44736608679725887,
-            "high": -0.44736608679725887
+            "low": -0.4339264459606591,
+            "expected": -0.4339264459606591,
+            "high": -0.4339264459606591
           },
           "car_km": {
-            "low": -467.44809136179447,
-            "expected": -358.4627471173441,
-            "high": -302.95550229652497
+            "low": -453.83906191640096,
+            "expected": -348.0050132467536,
+            "high": -294.10345704437503
           },
           "co2_kg": {
-            "low": -39.44704890749456,
-            "expected": -30.875671810482444,
-            "high": -26.488576215973055
+            "low": -38.297769351355086,
+            "expected": -29.9743979116352,
+            "high": -25.714306632247204
           },
           "saving_per_extra_hour": null
         },
@@ -7031,90 +7031,90 @@
       {
         "portfolio_id": "keep-car1+e_bike",
         "annual_cost": {
-          "low": 4535.579120120774,
-          "expected": 5176.272175413085,
-          "high": 6337.15480641737
+          "low": 4536.514504227599,
+          "expected": 5177.191345311531,
+          "high": 6338.066494970165
         },
         "annual_travel_hours": {
-          "low": 210.6261016314153,
-          "expected": 266.3029834208315,
-          "high": 365.14156712879947
+          "low": 210.7898420482619,
+          "expected": 266.50395829533653,
+          "high": 365.4254670273634
         },
         "perceived_hours": {
-          "low": 274.78643930513226,
-          "expected": 347.6197153927576,
-          "high": 478.070308522233
+          "low": 275.0929323099529,
+          "expected": 347.99543051726357,
+          "high": 478.5987590134882
         },
         "comfort": {
-          "low": 6.946458093433241,
-          "expected": 6.946458093433241,
-          "high": 6.946458093433241
+          "low": 6.942204057936764,
+          "expected": 6.942204057936764,
+          "high": 6.942204057936764
         },
         "flexibility": {
-          "low": 8.334336999007892,
-          "expected": 8.334336999007892,
-          "high": 8.334336999007892
+          "low": 8.326038683612113,
+          "expected": 8.326038683612113,
+          "high": 8.326038683612113
         },
         "reliability": {
-          "low": 8.230017699769059,
-          "expected": 8.230017699769059,
-          "high": 8.230017699769059
+          "low": 8.224362444375629,
+          "expected": 8.224362444375629,
+          "high": 8.224362444375629
         },
         "car_km_per_year": {
-          "low": 1437.221445589253,
-          "expected": 2700.2830515413607,
-          "high": 4250.76623830334
+          "low": 1433.2613208727394,
+          "expected": 2696.2296008550925,
+          "high": 4246.418263187523
         },
         "co2_kg_per_year": {
-          "low": 287.8560373540479,
-          "expected": 474.71923211400866,
-          "high": 709.0364582368643
+          "low": 287.6238269912823,
+          "expected": 474.4823258200456,
+          "high": 708.7851501910212
         },
         "private_vehicles_owned": 1,
         "uses_by_option": {
-          "car_small_petrol": 152.04016032876706,
-          "e_bike": 135.47567034715414,
-          "pt_ticket_urban_milano": 20.015269833754516,
-          "bikemi_day_pass": 17.32602532829129,
-          "walking": 8.480316596645977,
+          "car_small_petrol": 151.5314249941457,
+          "e_bike": 135.11211824144294,
+          "pt_ticket_urban_milano": 20.964363109468625,
+          "bikemi_day_pass": 17.279744164817064,
+          "walking": 8.44979192473865,
           "rail_regional_ticket": 1.6625575653870182,
           "rail_high_speed_ticket": 5.0
         },
         "delta": {
           "cost": {
-            "low": 209.61065785690548,
-            "expected": 412.3148123847167,
-            "high": 704.0435900651195
+            "low": 210.68956400904526,
+            "expected": 413.2339822831625,
+            "high": 704.9329878598494
           },
           "travel_hours": {
-            "low": -30.131579308562486,
-            "expected": -16.87791363392204,
-            "high": -10.248894023872909
+            "low": -30.200368125552814,
+            "expected": -16.942275761280783,
+            "high": -10.310957279760686
           },
           "perceived_hours": {
-            "low": -37.24341191376135,
-            "expected": -19.934551864864112,
-            "high": -11.279896566123565
+            "low": -37.44993872038749,
+            "expected": -20.105140689997903,
+            "high": -11.432377573625986
           },
           "comfort": {
-            "low": -0.07405525755898879,
-            "expected": -0.07405525755898879,
-            "high": -0.07405525755898879
+            "low": -0.07118589122252938,
+            "expected": -0.07118589122252938,
+            "high": -0.07118589122252938
           },
           "flexibility": {
-            "low": -0.04665097549879427,
-            "expected": -0.04665097549879427,
-            "high": -0.04665097549879427
+            "low": -0.041509650057973246,
+            "expected": -0.041509650057973246,
+            "high": -0.041509650057973246
           },
           "car_km": {
-            "low": -1031.7351092950817,
-            "expected": -789.6986727568931,
-            "high": -666.4754663802767
+            "low": -1023.4629244292965,
+            "expected": -783.2943895725707,
+            "high": -661.0244780284024
           },
           "co2_kg": {
-            "low": -145.70926701951242,
-            "expected": -111.53056725794112,
-            "high": -94.12973295655537
+            "low": -144.86077602470385,
+            "expected": -110.8661996530569,
+            "high": -93.5595823380729
           },
           "saving_per_extra_hour": null
         },
@@ -7124,90 +7124,90 @@
       {
         "portfolio_id": "keep-car1+scooter",
         "annual_cost": {
-          "low": 4837.87608958931,
-          "expected": 5525.049417568219,
-          "high": 6718.763738342313
+          "low": 4838.721251394137,
+          "expected": 5525.876403674196,
+          "high": 6719.580545285053
         },
         "annual_travel_hours": {
-          "low": 193.4072984542163,
-          "expected": 247.71177739301865,
-          "high": 341.9931844222101
+          "low": 193.5976054328853,
+          "expected": 247.9418882650861,
+          "high": 342.31396432441903
         },
         "perceived_hours": {
-          "low": 256.5362163432403,
-          "expected": 329.26088665322436,
-          "high": 455.70183187329906
+          "low": 256.86422392575844,
+          "expected": 329.6580609538996,
+          "high": 456.2563402161799
         },
         "comfort": {
-          "low": 6.707903430412185,
-          "expected": 6.707903430412185,
-          "high": 6.707903430412185
+          "low": 6.7042207647686,
+          "expected": 6.7042207647686,
+          "high": 6.7042207647686
         },
         "flexibility": {
-          "low": 8.280805540847929,
-          "expected": 8.280805540847929,
-          "high": 8.280805540847929
+          "low": 8.272791206461829,
+          "expected": 8.272791206461829,
+          "high": 8.272791206461829
         },
         "reliability": {
-          "low": 8.079363272998059,
-          "expected": 8.079363272998059,
-          "high": 8.079363272998059
+          "low": 8.07429620327575,
+          "expected": 8.07429620327575,
+          "high": 8.07429620327575
         },
         "car_km_per_year": {
-          "low": 1105.0298323974105,
-          "expected": 1653.4737376601904,
-          "high": 2368.842614319511
+          "low": 1101.7322563191187,
+          "expected": 1649.9822944038854,
+          "high": 2364.7715946479557
         },
         "co2_kg_per_year": {
-          "low": 326.4391812875873,
-          "expected": 467.01898820285425,
-          "high": 653.0519907458139
+          "low": 326.0919586157558,
+          "expected": 466.6554878917486,
+          "high": 652.640683656331
         },
         "private_vehicles_owned": 2,
         "uses_by_option": {
-          "scooter_125": 160.52267571892025,
-          "car_small_petrol": 131.9057485901696,
-          "pt_ticket_urban_milano": 18.27897770693563,
-          "bikemi_day_pass": 15.444992071542366,
-          "walking": 8.155603765379347,
+          "scooter_125": 160.16612181702288,
+          "car_small_petrol": 131.45881307893964,
+          "pt_ticket_urban_milano": 19.148187630613222,
+          "bikemi_day_pass": 15.40814317503757,
+          "walking": 8.12673215133388,
           "rail_regional_ticket": 0.6920021470527968,
           "rail_high_speed_ticket": 5.0
         },
         "delta": {
           "cost": {
-            "low": 432.10046406747153,
-            "expected": 761.092054539849,
-            "high": 1164.0946306862415
+            "low": 433.03826155555225,
+            "expected": 761.9190406458264,
+            "high": 1164.8914645886864
           },
           "travel_hours": {
-            "low": -54.92681878465906,
-            "expected": -35.469119661734844,
-            "high": -25.475160355723155
+            "low": -54.95555013766396,
+            "expected": -35.50434579153123,
+            "high": -25.513405112449263
           },
           "perceived_hours": {
-            "low": -63.03728086472405,
-            "expected": -38.29338060439736,
-            "high": -24.749692646504478
+            "low": -63.21187327702868,
+            "expected": -38.44251025336185,
+            "high": -24.886831585985465
           },
           "comfort": {
-            "low": -0.3126099205800452,
-            "expected": -0.3126099205800452,
-            "high": -0.3126099205800452
+            "low": -0.30916918439069363,
+            "expected": -0.30916918439069363,
+            "high": -0.30916918439069363
           },
           "flexibility": {
-            "low": -0.10018243365875712,
-            "expected": -0.10018243365875712,
-            "high": -0.10018243365875712
+            "low": -0.09475712720825769,
+            "expected": -0.09475712720825769,
+            "high": -0.09475712720825769
           },
           "car_km": {
-            "low": -2753.858420848954,
-            "expected": -1836.5079866380636,
-            "high": -1095.132004370826
+            "low": -2746.3526908500585,
+            "expected": -1829.5416960237778,
+            "high": -1088.340285044243
           },
           "co2_kg": {
-            "low": -182.76734370049485,
-            "expected": -119.23081116909552,
-            "high": -67.16283792627817
+            "low": -182.2053387846038,
+            "expected": -118.69303758135392,
+            "high": -66.63300982743785
           },
           "saving_per_extra_hour": null
         },
@@ -7217,9 +7217,9 @@
       {
         "portfolio_id": "keep-car1+pt_e_bike",
         "annual_cost": {
-          "low": 4871.263626243399,
-          "expected": 5512.389412370706,
-          "high": 6674.020185436284
+          "low": 4842.878347525295,
+          "expected": 5483.9718766600035,
+          "high": 6645.592168118759
         },
         "annual_travel_hours": {
           "low": 216.64902084132675,
@@ -7268,39 +7268,39 @@
         },
         "delta": {
           "cost": {
-            "low": 529.0738451146906,
-            "expected": 748.4320493423372,
-            "high": 1043.1238369652776
+            "low": 500.87454251867086,
+            "expected": 720.0145136316349,
+            "high": 1014.6649816241295
           },
           "travel_hours": {
-            "low": -19.286060654380023,
-            "expected": -9.45893055674322,
-            "high": -4.5466612922225655
+            "low": -19.647710435931177,
+            "expected": -9.72426755860706,
+            "high": -4.763768396164363
           },
           "perceived_hours": {
-            "low": -17.224520567816292,
-            "expected": -6.11570476509246,
-            "high": -0.5620000390711191
+            "low": -17.97363739171068,
+            "expected": -6.662008714732195,
+            "high": -1.0072342872461606
           },
           "comfort": {
-            "low": -0.22510073273444675,
-            "expected": -0.22510073273444675,
-            "high": -0.22510073273444675
+            "low": -0.21797733090151006,
+            "expected": -0.21797733090151006,
+            "high": -0.21797733090151006
           },
           "flexibility": {
-            "low": -0.3421422450409466,
-            "expected": -0.3421422450409466,
-            "high": -0.3421422450409466
+            "low": -0.3287026042043468,
+            "expected": -0.3287026042043468,
+            "high": -0.3287026042043468
           },
           "car_km": {
-            "low": -1223.204034793003,
-            "expected": -935.0281810964076,
-            "high": -788.3539371097221
+            "low": -1209.5950207371889,
+            "expected": -924.570447225817,
+            "high": -779.5018627228644
           },
           "co2_kg": {
-            "low": -156.12376097613893,
-            "expected": -119.74783652326884,
-            "high": -101.22045074250643
+            "low": -154.9745120640043,
+            "expected": -118.84656262442161,
+            "high": -100.44612351397514
           },
           "saving_per_extra_hour": null
         },
@@ -7310,9 +7310,9 @@
       {
         "portfolio_id": "car-free+pt",
         "annual_cost": {
-          "low": 962.4308420882958,
-          "expected": 1256.5588372769603,
-          "high": 1876.3804204414914
+          "low": 933.2151086489157,
+          "expected": 1227.379038749599,
+          "high": 1847.2693043043741
         },
         "annual_travel_hours": {
           "low": 269.351038455512,
@@ -7359,41 +7359,41 @@
         },
         "delta": {
           "cost": {
-            "low": -4498.1412070315,
-            "expected": -3507.398525751409,
-            "high": -2888.7650185304624
+            "low": -4527.333618189487,
+            "expected": -3536.57832427877,
+            "high": -2917.8760027787835
           },
           "travel_hours": {
-            "low": 46.92389427341528,
-            "expected": 61.013301485376424,
-            "high": 87.13670039640458
+            "low": 46.70192609719282,
+            "expected": 60.74796448351258,
+            "high": 86.77916582445039
           },
           "perceived_hours": {
-            "low": 96.27079022879775,
-            "expected": 123.48163109106285,
-            "high": 173.63016209143177
+            "low": 95.81513493251433,
+            "expected": 122.93532714142312,
+            "high": 172.8901598065805
           },
           "comfort": {
-            "low": -1.2867589888144577,
-            "expected": -1.2867589888144577,
-            "high": -1.2867589888144577
+            "low": -1.279635586981521,
+            "expected": -1.279635586981521,
+            "high": -1.279635586981521
           },
           "flexibility": {
-            "low": -2.2450667959399757,
-            "expected": -2.2450667959399757,
-            "high": -2.2450667959399757
+            "low": -2.231627155103376,
+            "expected": -2.231627155103376,
+            "high": -2.231627155103376
           },
           "car_km": {
-            "low": -5113.284034394248,
-            "expected": -3489.981724298254,
-            "high": -2203.4707373306246
+            "low": -5101.667197454144,
+            "expected": -3479.523990427663,
+            "high": -2193.3917113257767
           },
           "co2_kg": {
-            "low": -510.9925191626796,
-            "expected": -349.32220396255013,
-            "high": -221.95931248387885
+            "low": -509.9944144181369,
+            "expected": -348.4209300637029,
+            "high": -221.08993874843662
           },
-          "saving_per_extra_hour": 57.48580129846042
+          "saving_per_extra_hour": 58.21723171051471
         },
         "confidence": "LOW",
         "data_quality_notes": []
@@ -7401,9 +7401,9 @@
       {
         "portfolio_id": "car-free+pt_e_bike",
         "annual_cost": {
-          "low": 1294.4933721862353,
-          "expected": 1642.3324985819295,
-          "high": 2322.1188718702106
+          "low": 1264.4933721862353,
+          "expected": 1612.3324985819295,
+          "high": 2292.1128104050417
         },
         "annual_travel_hours": {
           "low": 230.2164985952679,
@@ -7451,41 +7451,41 @@
         },
         "delta": {
           "cost": {
-            "low": -4130.23186068819,
-            "expected": -3121.62486444644,
-            "high": -2442.921590100178
+            "low": -4160.215568081643,
+            "expected": -3151.62486444644,
+            "high": -2472.9276612385356
           },
           "travel_hours": {
-            "low": 1.6986266465818485,
-            "expected": 9.682360829829626,
-            "high": 17.808454099345816
+            "low": 1.376338304789332,
+            "expected": 9.417023827965785,
+            "high": 17.556949717589575
           },
           "perceived_hours": {
-            "low": 24.93133857414523,
-            "expected": 37.817152405482524,
-            "high": 53.382187828704616
+            "low": 24.390037547196798,
+            "expected": 37.27084845584279,
+            "high": 52.82239680100227
           },
           "comfort": {
-            "low": -0.8621752443684354,
-            "expected": -0.8621752443684354,
-            "high": -0.8621752443684354
+            "low": -0.8550518425354987,
+            "expected": -0.8550518425354987,
+            "high": -0.8550518425354987
           },
           "flexibility": {
-            "low": -1.549870353414014,
-            "expected": -1.549870353414014,
-            "high": -1.549870353414014
+            "low": -1.5364307125774141,
+            "expected": -1.5364307125774141,
+            "high": -1.5364307125774141
           },
           "car_km": {
-            "low": -5113.284034394248,
-            "expected": -3489.981724298254,
-            "high": -2203.4707373306246
+            "low": -5101.667197454144,
+            "expected": -3479.523990427663,
+            "high": -2193.3917113257767
           },
           "co2_kg": {
-            "low": -556.9560510261405,
-            "expected": -390.7869530793808,
-            "high": -261.92363944565363
+            "low": -555.944512100374,
+            "expected": -389.88567918053354,
+            "high": -261.059342685032
           },
-          "saving_per_extra_hour": 322.4032773938016
+          "saving_per_extra_hour": 334.67313261829526
         },
         "confidence": "LOW",
         "data_quality_notes": []
@@ -7512,7 +7512,7 @@
                 "eur": 4763.957363028369,
                 "low": 4153.149206106883,
                 "high": 5887.586662771184,
-                "hours": 283.1808970547535
+                "hours": 283.44623405661736
               }
             },
             {
@@ -7526,7 +7526,7 @@
               "values": {
                 "name": "Senza auto + 1 abbonamento TP + e-bike",
                 "text": "Vendere «Utilitaria a benzina»; acquistare «E-bike»; sottoscrivere «Abbonamento annuale urbano ATM (ordinario)».",
-                "net_eur": 2043.4533403916148
+                "net_eur": 2078.916379888012
               }
             },
             {
@@ -7539,7 +7539,7 @@
           "explanation": [
             "La configurazione attuale costa circa 4.750 € l'anno (tra 4.150 e 5.900 €) e ti porta a passare circa 285 ore l'anno in viaggio.",
             "È già la più comoda tra quelle realistiche.",
-            "Esiste un'alternativa che conviene valutare (vendere «Utilitaria a benzina»; acquistare «E-bike»; sottoscrivere «Abbonamento annuale urbano ATM (ordinario)»), con un vantaggio netto di circa 2.050 € l'anno.",
+            "Esiste un'alternativa che conviene valutare (vendere «Utilitaria a benzina»; acquistare «E-bike»; sottoscrivere «Abbonamento annuale urbano ATM (ordinario)»), con un vantaggio netto di circa 2.100 € l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"
@@ -7553,47 +7553,47 @@
           "strength": "STRONG_OPPORTUNITY",
           "delta": {
             "cost": {
-              "low": -4498.1412070315,
-              "expected": -3507.398525751409,
-              "high": -2888.7650185304624
+              "low": -4527.333618189487,
+              "expected": -3536.57832427877,
+              "high": -2917.8760027787835
             },
             "travel_hours": {
-              "low": 46.92389427341528,
-              "expected": 61.013301485376424,
-              "high": 87.13670039640458
+              "low": 46.70192609719282,
+              "expected": 60.74796448351258,
+              "high": 86.77916582445039
             },
             "perceived_hours": {
-              "low": 96.27079022879775,
-              "expected": 123.48163109106285,
-              "high": 173.63016209143177
+              "low": 95.81513493251433,
+              "expected": 122.93532714142312,
+              "high": 172.8901598065805
             },
             "comfort": {
-              "low": -1.2867589888144577,
-              "expected": -1.2867589888144577,
-              "high": -1.2867589888144577
+              "low": -1.279635586981521,
+              "expected": -1.279635586981521,
+              "high": -1.279635586981521
             },
             "flexibility": {
-              "low": -2.2450667959399757,
-              "expected": -2.2450667959399757,
-              "high": -2.2450667959399757
+              "low": -2.231627155103376,
+              "expected": -2.231627155103376,
+              "high": -2.231627155103376
             },
             "car_km": {
-              "low": -5113.284034394248,
-              "expected": -3489.981724298254,
-              "high": -2203.4707373306246
+              "low": -5101.667197454144,
+              "expected": -3479.523990427663,
+              "high": -2193.3917113257767
             },
             "co2_kg": {
-              "low": -510.9925191626796,
-              "expected": -349.32220396255013,
-              "high": -221.95931248387885
+              "low": -509.9944144181369,
+              "expected": -348.4209300637029,
+              "high": -221.08993874843662
             },
-            "saving_per_extra_hour": 57.48580129846042
+            "saving_per_extra_hour": 58.21723171051471
           },
           "change_penalty": 450.0,
           "net_benefit": {
-            "low": 1026.218646860687,
-            "expected": 1822.5822148407806,
-            "high": 2850.0130137529095
+            "low": 1062.0262769035467,
+            "expected": 1857.225052864539,
+            "high": 2884.428311697438
           },
           "facts": [
             {
@@ -7611,9 +7611,9 @@
             {
               "code": "saving",
               "values": {
-                "eur": 3507.398525751409,
-                "low": 2888.7650185304624,
-                "high": 4498.1412070315
+                "eur": 3536.57832427877,
+                "low": 2917.8760027787835,
+                "high": 4527.333618189487
               }
             },
             {
@@ -7626,41 +7626,41 @@
             {
               "code": "services_cost",
               "values": {
-                "eur": 392.58123727696034,
+                "eur": 393.4014387495989,
                 "names": "biglietto treno regionale e BikeMi giornaliero"
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": 61.013301485376424,
-                "low": 46.92389427341528,
-                "high": 87.13670039640458,
-                "from_hours": 283.1808970547535,
+                "hours": 60.74796448351258,
+                "low": 46.70192609719282,
+                "high": 86.77916582445039,
+                "from_hours": 283.44623405661736,
                 "to_hours": 344.19419854012995
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 7.02051335099223,
+                "from_score": 7.0133899491592935,
                 "to_score": 5.7337543621777725
               }
             },
             {
               "code": "saving_per_extra_hour",
               "values": {
-                "eur_per_hour": 57.48580129846042
+                "eur_per_hour": 58.21723171051471
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": 1822.5822148407806,
-                "low": 1026.218646860687,
-                "high": 2850.0130137529095,
-                "time_eur": -610.1330148537643,
-                "comfort_eur": -624.6832960568643,
+                "eur": 1857.225052864539,
+                "low": 1062.0262769035467,
+                "high": 2884.428311697438,
+                "time_eur": -607.4796448351258,
+                "comfort_eur": -621.8736265791053,
                 "penalty_eur": 450.0,
                 "value_of_time": 10.0
               }
@@ -7668,9 +7668,9 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 3489.981724298254,
+                "car_km_from": 3479.523990427663,
                 "car_km_to": 0.0,
-                "co2_from": 586.2497993719497,
+                "co2_from": 585.3485254731025,
                 "co2_to": 236.9275954093996
               }
             },
@@ -7684,13 +7684,13 @@
           "explanation": [
             "È un'opportunità forte.",
             "Cosa cambia: Vendere «Utilitaria a benzina»; sottoscrivere «Abbonamento annuale urbano ATM (ordinario)».",
-            "Risparmi circa 3.500 € l'anno (tra 2.900 e 4.500 €).",
+            "Risparmi circa 3.550 € l'anno (tra 2.900 e 4.550 €).",
             "«Utilitaria a benzina» ti costa oggi circa 4.250 € l'anno.",
             "Per gli spostamenti che l'auto non copre più useresti biglietto treno regionale e BikeMi giornaliero, per circa 390 € l'anno.",
             "Passeresti circa 61 ore in più l'anno in viaggio: da 283 a 344 ore, con una differenza tra +47 ore e +87 ore.",
             "Il comfort passa da 7,0 a 5,7 su 10.",
-            "Ogni ora di viaggio in più ti fa risparmiare circa 57 €.",
-            "Contando anche il tempo in più (610 €), il minor comfort (620 €) e lo sforzo del cambiamento (450 €), il vantaggio netto è di circa 1.800 € l'anno (tra 1.050 e 2.850 €).",
+            "Ogni ora di viaggio in più ti fa risparmiare circa 58 €.",
+            "Contando anche il tempo in più (610 €), il minor comfort (620 €) e lo sforzo del cambiamento (450 €), il vantaggio netto è di circa 1.850 € l'anno (tra 1.050 e 2.900 €).",
             "Km in auto: da 3.500 a 0 l'anno. CO2: da 590 a 240 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
@@ -7705,47 +7705,47 @@
           "strength": "STRONG_OPPORTUNITY",
           "delta": {
             "cost": {
-              "low": -4130.23186068819,
-              "expected": -3121.62486444644,
-              "high": -2442.921590100178
+              "low": -4160.215568081643,
+              "expected": -3151.62486444644,
+              "high": -2472.9276612385356
             },
             "travel_hours": {
-              "low": 1.6986266465818485,
-              "expected": 9.682360829829626,
-              "high": 17.808454099345816
+              "low": 1.376338304789332,
+              "expected": 9.417023827965785,
+              "high": 17.556949717589575
             },
             "perceived_hours": {
-              "low": 24.93133857414523,
-              "expected": 37.817152405482524,
-              "high": 53.382187828704616
+              "low": 24.390037547196798,
+              "expected": 37.27084845584279,
+              "high": 52.82239680100227
             },
             "comfort": {
-              "low": -0.8621752443684354,
-              "expected": -0.8621752443684354,
-              "high": -0.8621752443684354
+              "low": -0.8550518425354987,
+              "expected": -0.8550518425354987,
+              "high": -0.8550518425354987
             },
             "flexibility": {
-              "low": -1.549870353414014,
-              "expected": -1.549870353414014,
-              "high": -1.549870353414014
+              "low": -1.5364307125774141,
+              "expected": -1.5364307125774141,
+              "high": -1.5364307125774141
             },
             "car_km": {
-              "low": -5113.284034394248,
-              "expected": -3489.981724298254,
-              "high": -2203.4707373306246
+              "low": -5101.667197454144,
+              "expected": -3479.523990427663,
+              "high": -2193.3917113257767
             },
             "co2_kg": {
-              "low": -556.9560510261405,
-              "expected": -390.7869530793808,
-              "high": -261.92363944565363
+              "low": -555.944512100374,
+              "expected": -389.88567918053354,
+              "high": -261.059342685032
             },
-            "saving_per_extra_hour": 322.4032773938016
+            "saving_per_extra_hour": 334.67313261829526
           },
           "change_penalty": 700.0,
           "net_benefit": {
-            "low": 1347.130737440258,
-            "expected": 2043.4533403916148,
-            "high": 3060.258382018275
+            "low": 1382.6298302294576,
+            "expected": 2078.916379888012,
+            "high": 3095.698921253561
           },
           "facts": [
             {
@@ -7763,9 +7763,9 @@
             {
               "code": "saving",
               "values": {
-                "eur": 3121.62486444644,
-                "low": 2442.921590100178,
-                "high": 4130.23186068819
+                "eur": 3151.62486444644,
+                "low": 2472.9276612385356,
+                "high": 4160.215568081643
               }
             },
             {
@@ -7785,34 +7785,34 @@
             {
               "code": "extra_time",
               "values": {
-                "hours": 9.682360829829626,
-                "low": 1.6986266465818485,
-                "high": 17.808454099345816,
-                "from_hours": 283.1808970547535,
+                "hours": 9.417023827965785,
+                "low": 1.376338304789332,
+                "high": 17.556949717589575,
+                "from_hours": 283.44623405661736,
                 "to_hours": 292.8632578845831
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 7.02051335099223,
+                "from_score": 7.0133899491592935,
                 "to_score": 6.158338106623795
               }
             },
             {
               "code": "saving_per_extra_hour",
               "values": {
-                "eur_per_hour": 322.4032773938016
+                "eur_per_hour": 334.67313261829526
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": 2043.4533403916148,
-                "low": 1347.130737440258,
-                "high": 3060.258382018275,
-                "time_eur": -96.82360829829626,
-                "comfort_eur": -281.34791575652895,
+                "eur": 2078.916379888012,
+                "low": 1382.6298302294576,
+                "high": 3095.698921253561,
+                "time_eur": -94.17023827965785,
+                "comfort_eur": -278.53824627877003,
                 "penalty_eur": 700.0,
                 "value_of_time": 10.0
               }
@@ -7820,9 +7820,9 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 3489.981724298254,
+                "car_km_from": 3479.523990427663,
                 "car_km_to": 0.0,
-                "co2_from": 586.2497993719497,
+                "co2_from": 585.3485254731025,
                 "co2_to": 195.46284629256897
               }
             },
@@ -7836,13 +7836,13 @@
           "explanation": [
             "È un'opportunità forte.",
             "Cosa cambia: Vendere «Utilitaria a benzina»; acquistare «E-bike»; sottoscrivere «Abbonamento annuale urbano ATM (ordinario)».",
-            "Risparmi circa 3.100 € l'anno (tra 2.450 e 4.150 €).",
+            "Risparmi circa 3.150 € l'anno (tra 2.450 e 4.150 €).",
             "«Utilitaria a benzina» ti costa oggi circa 4.250 € l'anno.",
             "Per gli spostamenti che l'auto non copre più useresti biglietto treno regionale, per circa 240 € l'anno.",
-            "Passeresti circa 10 ore in più l'anno in viaggio: da 283 a 293 ore, con una differenza tra +2 ore e +18 ore.",
+            "Passeresti circa 9 ore in più l'anno in viaggio: da 283 a 293 ore, con una differenza tra +1 ora e +18 ore.",
             "Il comfort passa da 7,0 a 6,2 su 10.",
-            "Ogni ora di viaggio in più ti fa risparmiare circa 322 €.",
-            "Contando anche il tempo in più (95 €), il minor comfort (280 €) e lo sforzo del cambiamento (700 €), il vantaggio netto è di circa 2.050 € l'anno (tra 1.350 e 3.050 €).",
+            "Ogni ora di viaggio in più ti fa risparmiare circa 335 €.",
+            "Contando anche il tempo in più (95 €), il minor comfort (280 €) e lo sforzo del cambiamento (700 €), il vantaggio netto è di circa 2.100 € l'anno (tra 1.400 e 3.100 €).",
             "Km in auto: da 3.500 a 0 l'anno. CO2: da 590 a 200 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
@@ -7857,47 +7857,47 @@
           "strength": "KEEP_CURRENT",
           "delta": {
             "cost": {
-              "low": 432.10046406747153,
-              "expected": 761.092054539849,
-              "high": 1164.0946306862415
+              "low": 433.03826155555225,
+              "expected": 761.9190406458264,
+              "high": 1164.8914645886864
             },
             "travel_hours": {
-              "low": -54.92681878465906,
-              "expected": -35.469119661734844,
-              "high": -25.475160355723155
+              "low": -54.95555013766396,
+              "expected": -35.50434579153123,
+              "high": -25.513405112449263
             },
             "perceived_hours": {
-              "low": -63.03728086472405,
-              "expected": -38.29338060439736,
-              "high": -24.749692646504478
+              "low": -63.21187327702868,
+              "expected": -38.44251025336185,
+              "high": -24.886831585985465
             },
             "comfort": {
-              "low": -0.3126099205800452,
-              "expected": -0.3126099205800452,
-              "high": -0.3126099205800452
+              "low": -0.30916918439069363,
+              "expected": -0.30916918439069363,
+              "high": -0.30916918439069363
             },
             "flexibility": {
-              "low": -0.10018243365875712,
-              "expected": -0.10018243365875712,
-              "high": -0.10018243365875712
+              "low": -0.09475712720825769,
+              "expected": -0.09475712720825769,
+              "high": -0.09475712720825769
             },
             "car_km": {
-              "low": -2753.858420848954,
-              "expected": -1836.5079866380636,
-              "high": -1095.132004370826
+              "low": -2746.3526908500585,
+              "expected": -1829.5416960237778,
+              "high": -1088.340285044243
             },
             "co2_kg": {
-              "low": -182.76734370049485,
-              "expected": -119.23081116909552,
-              "high": -67.16283792627817
+              "low": -182.2053387846038,
+              "expected": -118.69303758135392,
+              "high": -66.63300982743785
             },
             "saving_per_extra_hour": null
           },
           "change_penalty": 250.0,
           "net_benefit": {
-            "low": -1053.3102504089632,
-            "expected": -628.1582484958753,
-            "high": -216.50119874348252
+            "low": -1052.6555742833239,
+            "expected": -627.4939381122078,
+            "high": -215.77230725606125
           },
           "facts": [
             {
@@ -7915,36 +7915,36 @@
             {
               "code": "saving",
               "values": {
-                "eur": -761.092054539849,
-                "low": -1164.0946306862415,
-                "high": -432.10046406747153
+                "eur": -761.9190406458264,
+                "low": -1164.8914645886864,
+                "high": -433.03826155555225
               }
             },
             {
               "code": "extra_time",
               "values": {
-                "hours": -35.469119661734844,
-                "low": -54.92681878465906,
-                "high": -25.475160355723155,
-                "from_hours": 283.1808970547535,
-                "to_hours": 247.71177739301865
+                "hours": -35.50434579153123,
+                "low": -54.95555013766396,
+                "high": -25.513405112449263,
+                "from_hours": 283.44623405661736,
+                "to_hours": 247.9418882650861
               }
             },
             {
               "code": "comfort",
               "values": {
-                "from_score": 7.02051335099223,
-                "to_score": 6.707903430412185
+                "from_score": 7.0133899491592935,
+                "to_score": 6.7042207647686
               }
             },
             {
               "code": "net_benefit",
               "values": {
-                "eur": -628.1582484958753,
-                "low": -1053.3102504089632,
-                "high": -216.50119874348252,
-                "time_eur": 354.69119661734845,
-                "comfort_eur": 28.242609426625165,
+                "eur": -627.4939381122078,
+                "low": -1052.6555742833239,
+                "high": -215.77230725606125,
+                "time_eur": 355.0434579153123,
+                "comfort_eur": 29.381644618306268,
                 "penalty_eur": 250.0,
                 "value_of_time": 10.0
               }
@@ -7952,10 +7952,10 @@
             {
               "code": "environment",
               "values": {
-                "car_km_from": 3489.981724298254,
-                "car_km_to": 1653.4737376601904,
-                "co2_from": 586.2497993719497,
-                "co2_to": 467.01898820285425
+                "car_km_from": 3479.523990427663,
+                "car_km_to": 1649.9822944038854,
+                "co2_from": 585.3485254731025,
+                "co2_to": 466.6554878917486
               }
             },
             {
@@ -7969,10 +7969,10 @@
             "Non conviene cambiare.",
             "Cosa cambia: Acquistare «Scooter 125 cc».",
             "Spenderesti circa 760 € l'anno in più (tra 430 e 1.150 €).",
-            "Passeresti circa 35 ore in meno l'anno in viaggio: da 283 a 248 ore, con una differenza tra -55 ore e -25 ore.",
+            "Passeresti circa 36 ore in meno l'anno in viaggio: da 283 a 248 ore, con una differenza tra -55 ore e -26 ore.",
             "Il comfort passa da 7,0 a 6,7 su 10.",
-            "Contando anche il tempo guadagnato (350 €), il comfort (30 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 630 € l'anno (tra -1.050 e -220 €).",
-            "Km in auto: da 3.500 a 1.700 l'anno. CO2: da 590 a 470 kg l'anno.",
+            "Contando anche il tempo guadagnato (360 €), il comfort (30 €) e lo sforzo del cambiamento (250 €), il saldo è negativo: circa 630 € l'anno (tra -1.050 e -220 €).",
+            "Km in auto: da 3.500 a 1.600 l'anno. CO2: da 590 a 470 kg l'anno.",
             "Affidabilità della stima: bassa."
           ],
           "confidence": "LOW"

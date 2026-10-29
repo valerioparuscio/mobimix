@@ -17,8 +17,7 @@ using a number for anything beyond the MVP, check it against the primary source.
 | `sum_money_costo_auto` | TCO of a small car, sedan and EV; ~10%/year depreciation | online simulator, not official |
 | `isfort_costo_auto_2026` | 334 EUR/month average, range 2,329-4,486 EUR/year | secondary; used only as a sanity check |
 | `alvolante_costi_2026` | EV vs diesel maintenance and depreciation | magazine estimate |
-| `atm_tariffe_milano` | ATM passes (39 monthly, under-27 200, senior 300, Mi1-Mi3 460); the ordinary annual pass (330) and the ticket (2.20) were then superseded by the values below | press; ticket-price change date unverified |
-| `product_owner_2026_10` | ordinary annual urban pass about 360 EUR and ticket 2.30 EUR, as told by the product owner on 2026-10-30 | to verify on atm.it; the other passes were not updated |
+| `atm_tariffe_milano` | ATM passes (330 annual, 39 monthly, under-27 200, senior 300, Mi1-Mi3 460) and ticket 2.20 | press; the annual pass and the ticket were confirmed by the product owner on 2026-10-30 |
 | `trenord_tariffe_2026` | Lombardy-wide annual pass ~1,137 EUR; ticket 21-50 km 5.40 EUR | press; official PDF has the per-distance tables (not yet modelled) |
 | `taxi_milano_2026` | 1.32 EUR/km, 34.48 EUR/h, base fare 4.10 EUR | other sources report 1.20 / 31.30: verify with the Comune |
 | `free2move_milano` | ~0.21 EUR/min, 9.99 EUR/h, 43.33 EUR/day | official page, undated |

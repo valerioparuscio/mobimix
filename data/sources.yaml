@@ -53,7 +53,7 @@ sources:
     publisher: ATM Milano (via Il Giorno / ATM)
     url: https://www.ilgiorno.it/milano/cronaca/via-ai-rincari-dei-mezzi-pubblici-biglietti-carnet-e-settimanali-ecco-quanto-costa-viaggiare-5e46af38
     retrieved_on: 2026-10-28
-    notes: Urbano ordinario mensile 39, annuale 330; biglietto 2,20 (da 2,00). Annuale ordinario e biglietto sono poi stati aggiornati a 360 e 2,30 dal product owner (vedi product_owner_2026_10). Under 27 annuale 200; senior (65+) annuale 300; Mi1-Mi3 annuale 460 (aggiornamento aprile 2025). Verificare su atm.it.
+    notes: Urbano ordinario mensile 39, annuale 330; biglietto 2,20 (da 2,00). Annuale ordinario (330) e biglietto (2,20) confermati dal product owner il 2026-10-30. Under 27 annuale 200; senior (65+) annuale 300; Mi1-Mi3 annuale 460 (aggiornamento aprile 2025). Verificare su atm.it.
 
   - id: trenord_tariffe_2026
     name: Trenord - tariffe dal 1 settembre 2026
@@ -138,9 +138,3 @@ sources:
     url: https://www.ayvens.com/it-it/blog/conducenti/costo-autostrada/
     retrieved_on: 2026-10-29
     notes: In pianura 7-9 EUR ogni 100 km per la classe A (IVA inclusa), in montagna 9-14. Milano-Roma 45,60 EUR su 572 km (calcolopercorso.it), cioe' 0,08 EUR/km. Le tariffe variano per concessionaria e tratta.
-
-  - id: product_owner_2026_10
-    name: Valori indicati dal product owner
-    publisher: Product owner del progetto (conoscenza diretta delle tariffe di Milano)
-    retrieved_on: 2026-10-30
-    notes: Abbonamento annuale urbano ATM circa 360 EUR e biglietto singolo 2,30 EUR, indicati il 2026-10-30. Da sostituire con la tariffa ufficiale di atm.it quando verificata. Gli altri abbonamenti (under 27, senior, mensile, Mi1-Mi3) sono rimasti ai valori precedenti.
