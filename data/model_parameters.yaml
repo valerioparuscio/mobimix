@@ -330,6 +330,28 @@ parameters:
     placeholder: true
     notes: "Stima propria: a Milano piove circa 80-90 giorni l'anno e non si rinuncia alla bici in tutti."
 
+  - id: assignment.peak_speed_factor.urban
+    description: Speed of a road vehicle (car, taxi; motorcycle only partly) on a trip of the
+      URBAN band that starts in the peak hours, as a share of its normal speed in
+      mobility_options.yaml. Public transport on its own lanes, bicycles and trains do not slow
+      down this way.
+    unit: share 0-1
+    value: 0.70
+    low: 0.60
+    high: 0.85
+    confidence: LOW
+    source: tomtom_traffic_index_2025
+    notes: "Milano: velocita' media nelle ore di punta 15,4 km/h (TomTom 2025) contro i 22 km/h di una utilitaria fuori punta nel catalogo, cioe' 0,70. Una sola testata riporta la cifra 2025 (2023: 17 km/h, 0,77)."
+
+  - id: assignment.peak_speed_factor.regional
+    description: The same for a trip of the REGIONAL band (tangenziali, strade di accesso).
+    unit: share 0-1
+    value: 0.85
+    low: 0.70
+    high: 1.0
+    placeholder: true
+    notes: Nessuna fonte. A meta' tra la citta' e nessun rallentamento. Le tratte lunghe (LONG) non si considerano rallentate.
+
   # --- recommendations (step 11) ----------------------------------------------------------
   # The change penalty is the effort of changing, in EUR-equivalent per year: it keeps the engine
   # from recommending a big change for a small gain (CLAUDE.md section 22). Values proposed by

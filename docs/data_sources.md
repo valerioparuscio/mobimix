@@ -28,6 +28,8 @@ using a number for anything beyond the MVP, check it against the primary source.
 | `istat_percorrenze_2023` | ~10,950 km/vehicle/year (UNRAE 10,712; ACI 10,647) | official |
 | `aci_annuario_2025` | average fleet age 13 years | official, via press |
 | `audimob_2025` | trips per day, 80% within 10 km; average trip ~9 km (own derivation) | official, via press |
+| `tomtom_traffic_index_2025` | Milan: 10 km in 31 min 35 s on average (about 19 km/h), 15.4 km/h in the rush hours (2023 edition: 17 km/h) | press, one newspaper for the 2025 figure; TomTom page not consulted |
+| `milano_area_c_sosta_2026` | Area C 7.50 EUR/day (residents 3 EUR after 50 free entries); blue lines 1.20-3.00 EUR/h; garages 4-8 EUR/h, about 25 EUR/day cap | third-party tariffs (Al Volante, Telepass Moveo, Sicurauto), not the official table |
 | `ispra_fattori_emissione` | electricity mix ~280 gCO2/kWh | 2021 value, to be updated |
 
 ## Gaps (searched, not found)

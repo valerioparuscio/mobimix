@@ -138,3 +138,17 @@ sources:
     url: https://www.ayvens.com/it-it/blog/conducenti/costo-autostrada/
     retrieved_on: 2026-10-29
     notes: In pianura 7-9 EUR ogni 100 km per la classe A (IVA inclusa), in montagna 9-14. Milano-Roma 45,60 EUR su 572 km (calcolopercorso.it), cioe' 0,08 EUR/km. Le tariffe variano per concessionaria e tratta.
+
+  - id: tomtom_traffic_index_2025
+    name: TomTom Traffic Index 2025 - Milano (tempo per 10 km, velocita' nelle ore di punta)
+    publisher: TomTom (via stampa)
+    url: https://siviaggia.it/notizie/citta-piu-trafficate-italia-2025-classifica-tomtom/574307/
+    retrieved_on: 2026-10-29
+    notes: Milano, edizione 2025 (pubblicata a gennaio 2026) - 10 km in media 31 min 35 s (circa 19 km/h tutto il giorno), oltre 38 minuti nella punta serale, velocita' media nelle ore di punta 15,4 km/h. Edizione 2023 - 28 min 40 s per 10 km e 17 km/h nelle ore di punta. Cifra 2025 riportata da una sola testata (la pagina TomTom non e' stata consultata direttamente) - da verificare.
+
+  - id: milano_area_c_sosta_2026
+    name: Milano - ticket Area C e tariffe della sosta (strisce blu e autorimesse)
+    publisher: Comune di Milano / ATM (via Al Volante, Telepass Moveo, Sicurauto)
+    url: https://www.alvolante.it/da_sapere/legge-e-burocrazia/Area-C-Milano-2026-auto-che-non-possono-entrare-e-costi-379981
+    retrieved_on: 2026-10-29
+    notes: Area C - ticket giornaliero 7,50 EUR (lun-ven, con estensione al weekend annunciata ma riportata in modo discorde), residenti 3 EUR dopo 50 ingressi gratuiti. Strisce blu - da 1,20 EUR/h (zone esterne) a 3,00 EUR/h (centro storico, massimo 2 ore consecutive). Autorimesse del centro - 4-8 EUR/h, con massimo giornaliero intorno a 25 EUR. Tariffe di terzi, non della pagina ufficiale - da verificare.

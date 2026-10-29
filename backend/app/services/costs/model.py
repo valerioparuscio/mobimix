@@ -20,6 +20,8 @@ Components, as `CostLine` labels (EUR/year, all optional):
     tolls             toll per km x km on toll motorways   (road vehicles)
     destination_mobility   cost per day x days of stay at a destination reached without a
                       vehicle (rail, flights)
+    destination_charges    parking and access charges (Area C) paid at the destination by a car
+                      left there: `usage.annual_destination_charges`, already in EUR
 
 Fixed components are multiplied by `usage.quantity`.
 
@@ -74,6 +76,7 @@ USAGE_COMPONENTS = (
     "day_charge",
     "tolls",
     "destination_mobility",
+    "destination_charges",
 )
 FIXED_COMPONENTS = (
     "depreciation",
@@ -251,6 +254,9 @@ class TcoCostModel:
             "destination_mobility": self._destination_mobility(
                 option, probe.at("destination_days", usage.annual_destination_days), probe
             ),
+            "destination_charges": probe.at("destination_charges", usage.annual_destination_charges)
+            if option.parks_at_destination
+            else 0.0,
         }
 
     def _toll(self, option: MobilityOption, toll_km: float, probe: _Probe) -> float:

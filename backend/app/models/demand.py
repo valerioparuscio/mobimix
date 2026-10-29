@@ -42,6 +42,11 @@ class MobilityMission(DomainModel):
     luggage: LuggageLevel = LuggageLevel.NONE
     time_critical: bool = False
     start_time_window: TimeBand = TimeBand.ANY
+    destination_car_cost: Estimated | None = Field(
+        default=None,
+        description="What a car arriving at the destination pays for one occurrence (EUR): "
+        "parking, Area C. None when the mission has no such cost or nothing is known.",
+    )
     duration_tolerance: Level = Level.MEDIUM
     weather_sensitivity: Level = Level.MEDIUM
     accessibility_requirements: list[AccessibilityConstraint] = Field(default_factory=list)

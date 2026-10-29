@@ -19,6 +19,7 @@ options:
   # ============================ CARS ======================================================
   - id: car_small_petrol
     uses_motorways: true
+    parks_at_destination: true
     name: Utilitaria a benzina
     type: CAR_SMALL_PETROL
     mode: CAR
@@ -45,6 +46,7 @@ options:
 
   - id: car_medium_petrol
     uses_motorways: true
+    parks_at_destination: true
     name: Auto media a benzina
     type: CAR_MEDIUM_PETROL
     mode: CAR
@@ -71,6 +73,7 @@ options:
 
   - id: car_diesel
     uses_motorways: true
+    parks_at_destination: true
     name: Auto media a gasolio
     type: CAR_DIESEL
     mode: CAR
@@ -98,6 +101,7 @@ options:
 
   - id: car_electric
     uses_motorways: true
+    parks_at_destination: true
     name: Auto elettrica
     type: CAR_ELECTRIC
     mode: CAR

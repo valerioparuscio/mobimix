@@ -37,6 +37,11 @@ class OptionUsage(DomainModel):
         default_factory=_zero,
         description="Days of stay at a destination reached without a vehicle (rail, flights).",
     )
+    annual_destination_charges: Range = Field(
+        default_factory=_zero,
+        description="Parking and access charges (EUR) paid at the destination by a car left "
+        "there: already priced, as they depend on the destination, not on the car.",
+    )
     months_held: float = Field(default=12.0, ge=0, le=12)
     quantity: int = Field(default=1, ge=1)
     existing_asset: bool = Field(

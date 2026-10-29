@@ -128,6 +128,12 @@ class MobilityOption(DomainModel):
         default=False,
         description="True for road vehicles that drive on toll motorways (and pay the toll).",
     )
+    parks_at_destination: bool = Field(
+        default=False,
+        description="True for cars (owned or rented) that are left at the destination and so "
+        "pay its parking and access charges (Area C...). Car sharing, taxis and two-wheelers "
+        "do not: they park free in the city or do not park at all.",
+    )
     no_vehicle_at_destination: bool = Field(
         default=False,
         description="True for rail and flights: the traveller arrives without a vehicle and "

@@ -8,6 +8,9 @@ Time
     leg_hours = distance / speed(trip band) + fixed time per trip / 60
     The speed of a band the option does not define is taken from the nearest band it defines
     (the slowest, when two are equally near).
+    A trip that starts in the rush hours (`peak_windows`) is slower by road: the speed of a
+    car or taxi is multiplied by `assignment.peak_speed_factor.<band>`, that of a motorcycle
+    half as much (`congestion_exposure`). Public transport, bicycles and trains keep theirs.
     person_hours = legs x leg_hours x passengers: every traveller's time counts, children's too.
 
 Units
@@ -23,6 +26,11 @@ Usage (the input of the cost model, for ONE occurrence)
     toll km   km x the share of the distance on toll motorways (by trip band), for road vehicles
     stay days `days_away` rounded up, for rail and flights: the traveller arrives without a
               vehicle and has to get around at the destination
+
+Charges at the destination
+    A car (owned or rented: `parks_at_destination`) on a mission that has a
+    `destination_car_cost` (the working day: parking, Area C) pays it once per car and
+    occurrence. It is a cost of using the car, so it goes with the fuel in the marginal cost.
 
 Cost on the margin
     What using the option costs on top of owning it (`TcoCostModel.usage_cost`): the fuel and
@@ -40,7 +48,14 @@ import math
 from dataclasses import dataclass
 
 from app.data.loader import Catalog
-from app.models import MobilityMission, MobilityOption, OptionUsage, Range, TripBand
+from app.models import (
+    MobilityMission,
+    MobilityOption,
+    OptionUsage,
+    Range,
+    TimeBand,
+    TripBand,
+)
 from app.services.costs.model import TcoCostModel
 
 _BAND_ORDER = (TripBand.URBAN, TripBand.REGIONAL, TripBand.LONG)
@@ -72,7 +87,7 @@ class TripCalculator:
             if option.capacity
             else mission.passengers
         )
-        leg_hours = self.leg_hours(option, distance)
+        leg_hours = self.leg_hours(option, distance, mission.start_time_window)
         trip_minutes = legs * leg_hours * 60.0
 
         if option.cost_per_minute is not None:
@@ -95,6 +110,7 @@ class TripCalculator:
             annual_days=Range.point(days),
             annual_toll_km=Range.point(toll_km),
             annual_destination_days=Range.point(destination_days),
+            annual_destination_charges=self._destination_charges(mission, option, units),
         )
         if option.comfort_score is None:
             raise ValueError(f"{option.id}: no comfort score")
@@ -108,7 +124,9 @@ class TripCalculator:
             comfort=option.comfort_score.value,
         )
 
-    def leg_hours(self, option: MobilityOption, distance_km: float) -> float:
+    def leg_hours(
+        self, option: MobilityOption, distance_km: float, window: TimeBand = TimeBand.ANY
+    ) -> float:
         speeds = option.average_speed_kmh
         if not speeds:
             raise ValueError(f"{option.id}: no average speed")
@@ -121,7 +139,29 @@ class TripCalculator:
             ),
         )
         overhead = option.fixed_time_min_per_trip.value if option.fixed_time_min_per_trip else 0.0
-        return distance_km / speeds[nearest].value + overhead / 60.0
+        speed = speeds[nearest].value * self._traffic_factor(option, band, window)
+        return distance_km / speed + overhead / 60.0
+
+    def _traffic_factor(self, option: MobilityOption, band: TripBand, window: TimeBand) -> float:
+        """Share of its normal speed a vehicle keeps in the traffic of the trip's start time:
+        1 outside the rush hours, or for a mode the traffic does not slow down."""
+        rules = self._catalog.assignment_rules
+        exposure = rules.congestion_exposure.get(option.mode, 0.0)
+        if window not in rules.peak_windows or exposure == 0.0 or band is TripBand.LONG:
+            return 1.0
+        key = "urban" if band is TripBand.URBAN else "regional"
+        peak_factor = self._catalog.value(f"assignment.peak_speed_factor.{key}")
+        return 1.0 - exposure * (1.0 - peak_factor)
+
+    @staticmethod
+    def _destination_charges(mission: MobilityMission, option: MobilityOption, units: int) -> Range:
+        """What the cars left at the destination pay for one occurrence of the mission."""
+        cost = mission.destination_car_cost
+        if cost is None or not option.parks_at_destination:
+            return Range.point(0.0)
+        low = cost.value if cost.low is None else cost.low
+        high = cost.value if cost.high is None else cost.high
+        return Range(low=units * low, expected=units * cost.value, high=units * high)
 
     def _motorway_share(self, distance_km: float) -> float:
         """Share of a leg driven on toll motorways: none in town, more as the trip gets longer."""

@@ -276,6 +276,7 @@ options:
 
   - id: car_rental_daily
     uses_motorways: true
+    parks_at_destination: true
     service_kind: CAR_RENTAL
     name: Noleggio auto (giornaliero)
     type: CAR_RENTAL

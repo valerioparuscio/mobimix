@@ -32,3 +32,15 @@ weather_factor:
   LOW: 0.0
   MEDIUM: 1.0
   HIGH: 1.5
+
+# Peak hours: a trip that starts in one of these windows is made in the traffic of the morning or
+# evening rush. The slowdown itself is `assignment.peak_speed_factor.*` (model_parameters.yaml);
+# here is which windows count and how much of it each mode suffers (1 = all of it, 0 = none).
+# A car and a taxi stand in the same queue; a motorcycle filters through it partly; public
+# transport (metro, trams on their own lanes), bicycles, walking and trains are not modelled as
+# slowed down (buses in traffic are: a known simplification in favour of public transport).
+peak_windows: [MORNING_PEAK, EVENING_PEAK]
+congestion_exposure:
+  CAR: 1.0
+  TAXI: 1.0
+  MOTORCYCLE: 0.5

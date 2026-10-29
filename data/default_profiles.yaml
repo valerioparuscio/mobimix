@@ -9,6 +9,10 @@
 # Keys (the estimator relies on all of them):
 #   car_annual_km_first / _second          km/year driven by the first / second car
 #   parking_cost_year_per_car              EUR/year, garage or permit
+#   workplace_car_cost_per_day             EUR/day, parking and Area C paid by a car at the
+#                                          workplace (average over all commuters, free places included)
+#   local_trip_car_cost                    EUR per outing, parking of a car on a shopping or leisure
+#                                          trip in town (average, free places included)
 #   commute_distance_km_one_way            km, when the user does not know it
 #   work_days_per_week                     days/week of work or study before remote work
 #   local_trips_per_week_per_adult         round trips/week for shopping, errands, leisure
@@ -36,6 +40,8 @@ defaults:
       car_annual_km_first: {value: 6500, low: 4500, high: 9000, placeholder: true, notes: "Sotto la media nazionale (10.700 km): molti spostamenti brevi fatti a piedi / con mezzi pubblici."}
       car_annual_km_second: {value: 4000, low: 2500, high: 6000, placeholder: true}
       parking_cost_year_per_car: {value: 1800, low: 900, high: 2700, placeholder: true, notes: "Box / posto auto ~150 EUR/mese a Milano; nessuna fonte."}
+      workplace_car_cost_per_day: {value: 10, low: 0, high: 25, placeholder: true, source: milano_area_c_sosta_2026, notes: "Costo medio di un giorno di lavoro con l'auto, tra chi ha il posto gratuito o aziendale e chi paga strisce blu (1,20-3,00 EUR/h, in centro al massimo 2 ore), autorimessa (massimo giornaliero circa 25 EUR) o il ticket Area C (7,50 EUR). I pesi della miscela sono una stima."}
+      local_trip_car_cost: {value: 2.0, low: 0, high: 5, placeholder: true, source: milano_area_c_sosta_2026, notes: "Sosta media di una uscita in auto in città, tra posto libero e strisce blu (1,20-3,00 EUR/h, per un'ora e mezza circa). I pesi della miscela sono una stima."}
       commute_distance_km_one_way: {value: 5, low: 2, high: 9, placeholder: true}
       work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
       local_trips_per_week_per_adult: {value: 3.0, low: 2.0, high: 5.0, placeholder: true}
@@ -61,6 +67,8 @@ defaults:
       car_annual_km_first: {value: 9000, low: 6500, high: 12000, placeholder: true}
       car_annual_km_second: {value: 5500, low: 3500, high: 8000, placeholder: true}
       parking_cost_year_per_car: {value: 900, low: 300, high: 1800, placeholder: true}
+      workplace_car_cost_per_day: {value: 5, low: 0, high: 15, placeholder: true, source: milano_area_c_sosta_2026, notes: "Costo medio di un giorno di lavoro con l'auto, tra chi ha il posto gratuito o aziendale e chi paga strisce blu (1,20-3,00 EUR/h, in centro al massimo 2 ore), autorimessa (massimo giornaliero circa 25 EUR) o il ticket Area C (7,50 EUR). I pesi della miscela sono una stima."}
+      local_trip_car_cost: {value: 1.0, low: 0, high: 3, placeholder: true, source: milano_area_c_sosta_2026, notes: "Sosta media di una uscita in auto in città, tra posto libero e strisce blu (1,20-3,00 EUR/h, per un'ora e mezza circa). I pesi della miscela sono una stima."}
       commute_distance_km_one_way: {value: 8, low: 3, high: 14, placeholder: true}
       work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
       local_trips_per_week_per_adult: {value: 3.5, low: 2.0, high: 6.0, placeholder: true}
@@ -86,6 +94,8 @@ defaults:
       car_annual_km_first: {value: 12000, low: 8500, high: 16000, placeholder: true}
       car_annual_km_second: {value: 7500, low: 4500, high: 11000, placeholder: true}
       parking_cost_year_per_car: {value: 250, low: 0, high: 800, placeholder: true}
+      workplace_car_cost_per_day: {value: 1.5, low: 0, high: 6, placeholder: true, source: milano_area_c_sosta_2026, notes: "Costo medio di un giorno di lavoro con l'auto, tra chi ha il posto gratuito o aziendale e chi paga strisce blu (1,20-3,00 EUR/h, in centro al massimo 2 ore), autorimessa (massimo giornaliero circa 25 EUR) o il ticket Area C (7,50 EUR). I pesi della miscela sono una stima."}
+      local_trip_car_cost: {value: 0.3, low: 0, high: 1.5, placeholder: true, source: milano_area_c_sosta_2026, notes: "Sosta media di una uscita in auto in città, tra posto libero e strisce blu (1,20-3,00 EUR/h, per un'ora e mezza circa). I pesi della miscela sono una stima."}
       commute_distance_km_one_way: {value: 12, low: 5, high: 25, placeholder: true}
       work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
       local_trips_per_week_per_adult: {value: 4.0, low: 2.5, high: 7.0, placeholder: true}
@@ -111,6 +121,8 @@ defaults:
       car_annual_km_first: {value: 14500, low: 10000, high: 20000, placeholder: true, notes: "Sopra la media nazionale: distanze maggiori per ogni servizio."}
       car_annual_km_second: {value: 9000, low: 5500, high: 13000, placeholder: true}
       parking_cost_year_per_car: {value: 0, low: 0, high: 300, placeholder: true}
+      workplace_car_cost_per_day: {value: 0, low: 0, high: 2, placeholder: true, source: milano_area_c_sosta_2026, notes: "Costo medio di un giorno di lavoro con l'auto, tra chi ha il posto gratuito o aziendale e chi paga strisce blu (1,20-3,00 EUR/h, in centro al massimo 2 ore), autorimessa (massimo giornaliero circa 25 EUR) o il ticket Area C (7,50 EUR). I pesi della miscela sono una stima."}
+      local_trip_car_cost: {value: 0, low: 0, high: 0.5, placeholder: true, source: milano_area_c_sosta_2026, notes: "Sosta media di una uscita in auto in città, tra posto libero e strisce blu (1,20-3,00 EUR/h, per un'ora e mezza circa). I pesi della miscela sono una stima."}
       commute_distance_km_one_way: {value: 20, low: 8, high: 40, placeholder: true}
       work_days_per_week: {value: 5, low: 4, high: 5, placeholder: true}
       local_trips_per_week_per_adult: {value: 4.5, low: 3.0, high: 8.0, placeholder: true}

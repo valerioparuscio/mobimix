@@ -886,7 +886,8 @@ class TestDemoHouseholds:
             )
 
         assert balanced(money).startswith("car-free")
-        assert balanced(cosy) == "current"
+        # whoever values comfort and flexibility keeps the car (it may add a bike or a scooter)
+        assert not balanced(cosy).startswith("car-free")
 
     def test_the_analysis_is_deterministic(self, catalog, households):
         profile = households["urban_couple"]

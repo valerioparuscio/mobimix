@@ -10,7 +10,9 @@ can sit side by side. What each control does:
                         in the demand estimator). Fewer commuting occurrences, so fewer trips.
     fuel price          the petrol and diesel prices of the parameters, value and range.
     parking cost        the parking cost a year of every car the household owns, as declared; and
-                        the statistical default (an undeclared cost, and the cost of a car bought).
+                        the statistical defaults: an undeclared cost, the cost of a car bought,
+                        and what a car pays for parking and Area C at the workplace and on a
+                        shopping or leisure trip in town.
     car km              the kilometres a year of every car, as declared, and the statistical
                         defaults for an undeclared one. The missions do not change.
     e-bike subsidy      the purchase price of the e-bike the generator proposes; never below its
@@ -33,7 +35,11 @@ from app.models import (
 )
 
 FUEL_PRICE_PARAMETERS = ("energy.petrol_eur_per_l", "energy.diesel_eur_per_l")
-_PARKING_DEFAULT = "parking_cost_year_per_car"
+_PARKING_DEFAULTS = (
+    "parking_cost_year_per_car",
+    "workplace_car_cost_per_day",
+    "local_trip_car_cost",
+)
 _CAR_KM_DEFAULTS = ("car_annual_km_first", "car_annual_km_second")
 
 
@@ -74,7 +80,8 @@ def apply_scenario(
     if scenario.parking_cost_change or scenario.car_km_change:
         for area, defaults in catalog.area_defaults.items():
             values = dict(defaults.values)
-            values[_PARKING_DEFAULT] = _scaled(values[_PARKING_DEFAULT], parking)
+            for key in _PARKING_DEFAULTS:
+                values[key] = _scaled(values[key], parking)
             for key in _CAR_KM_DEFAULTS:
                 values[key] = _scaled(values[key], kilometres)
             area_defaults[area] = defaults.model_copy(update={"values": values})

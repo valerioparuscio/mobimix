@@ -345,6 +345,7 @@ class PortfolioEvaluator:
             annual_days=times.scale(one.annual_days.expected),
             annual_toll_km=scale.scale(one.annual_toll_km.expected),
             annual_destination_days=times.scale(one.annual_destination_days.expected),
+            annual_destination_charges=times.times_independent(one.annual_destination_charges),
         )
 
     @staticmethod

@@ -257,6 +257,18 @@ class _Estimation:
             occurrences = scaled(physical_days, weeks)
 
             time_critical = work.time_critical
+            # Nobody is asked about it yet: a typical figure for the area, always told to the user.
+            car_cost = from_parameter(
+                self.defaults["workplace_car_cost_per_day"], ValueSource.STATISTICAL_ESTIMATE
+            )
+            if not study and car_cost.value > 0:
+                self._note(
+                    car_cost,
+                    person.id,
+                    "workplace_car_cost",
+                    f"{who}: se vai al lavoro in auto stimiamo {{value}} € per ogni giorno tra "
+                    "parcheggio e Area C, un valore tipico per {area}",
+                )
             missions.append(
                 self._mission(
                     f"{purpose.value.lower()}_{person.id}",
@@ -266,6 +278,7 @@ class _Estimation:
                     person_id=person.id,
                     time_critical=time_critical,
                     start_time_window=work.typical_start,
+                    destination_car_cost=None if study else car_cost,
                     duration_tolerance=Level.LOW
                     if time_critical
                     else self.catalog.mission_templates[purpose].duration_tolerance,
@@ -331,13 +344,31 @@ class _Estimation:
             "La distanza tipica degli spostamenti locali non è nota, usiamo {value} km, "
             "un valore tipico per {area}",
         )
+        car_cost = from_parameter(
+            self.defaults["local_trip_car_cost"], ValueSource.STATISTICAL_ESTIMATE
+        )
+        if car_cost.value > 0:
+            self._note(
+                car_cost,
+                "household",
+                "local_trip_car_cost",
+                "Se per spesa e svago in città usate l'auto, stimiamo {value} € di sosta a "
+                "uscita, un valore tipico per {area}",
+            )
         return [
-            self._mission("shopping", Purpose.SHOPPING, scaled(total, shopping_share), distance),
+            self._mission(
+                "shopping",
+                Purpose.SHOPPING,
+                scaled(total, shopping_share),
+                distance,
+                destination_car_cost=car_cost,
+            ),
             self._mission(
                 "local_leisure",
                 Purpose.LOCAL_LEISURE,
                 scaled(total, complement(shopping_share)),
                 distance,
+                destination_car_cost=car_cost,
             ),
         ]
 

@@ -355,7 +355,7 @@ how they were treated. (CLAUDE.md section 21: a transparent rule, no solver.)
 step 10 so the two cannot disagree):
 
 ```text
-leg_hours      = distance / speed(trip band) + fixed time per trip / 60
+leg_hours      = distance / (speed(trip band) x traffic factor) + fixed time per trip / 60
 person_hours   = legs x leg_hours x passengers            (children's time counts as well)
 units          = ceil(passengers / capacity)  for a vehicle with seats (one car for four,
                  two taxis for six, one bicycle each);  = passengers  for a service without seats
@@ -366,14 +366,58 @@ days           = units x max(1, ceil(days_away))   for rental and day passes
 toll km        = km x share of the distance on toll motorways (0 in town, 40% regional, 80% long)
                  for road vehicles
 stay days      = ceil(days_away) for rail and flights: no vehicle at the destination
+destination    = destination_car_cost x units, for a car (owned or rented) left at the
+charges          destination: parking, Area C
 ```
 
 A band the option does not define takes the speed of the nearest band it defines (the slower one
 if two are equally near).
 
+**Rush hours.** A trip that starts in the morning or the evening peak (`peak_windows`) is slower by
+road: the speed of the option is multiplied by the traffic factor
+
+```text
+traffic factor = 1 - exposure x (1 - peak factor)
+exposure       = 1 for a car or a taxi, 0.5 for a powered two-wheeler, 0 for anything else
+peak factor    = 0.70 on a town trip (URBAN band), 0.85 on a regional one, none on a long one
+```
+
+(`congestion_exposure` in [assignment_rules.yaml](../data/assignment_rules.yaml),
+`assignment.peak_speed_factor.*` in model_parameters.yaml.) 0.70 is the average speed of Milan in
+the rush hours, 15.4 km/h (TomTom Traffic Index 2025, `tomtom_traffic_index_2025`: a single newspaper
+reports the 2025 figure, to verify), over the 22 km/h of a car in the catalogue; the regional factor is
+a placeholder. Public transport, bicycles, walking and trains are **not** slowed down: true for the
+metro and for trams on their own lanes, not for a bus in traffic, so the simplification favours public
+transport a little. Only the missions that have a start time slow down: the commute and the study
+missions start in the morning peak (and come back in the evening one); a mission with no start time
+(`ANY`) keeps the normal speed, although the all-day average speed in Milan is about 19 km/h, below
+the 22 of the catalogue.
+
+**Charges at the destination.** A car left at the destination pays for the parking and, in the
+centre of Milan, for Area C. The mission carries the amount (`destination_car_cost`, EUR per
+occurrence of the mission) and the cost model counts it with the use of the car, not with owning it
+(`destination_charges`, once per car), so it weighs on the choice of the means and disappears if the
+car does. Only the options flagged `parks_at_destination` pay: owned cars and the daily rental.
+Free-floating car sharing (it parks free and enters Area C free), taxis, motorcycles and scooters do
+not. Nobody is asked about it yet, so the demand estimator uses a typical figure for the area type,
+says so to the user (always, with its confidence) and keeps its range:
+
+| per... | city centre | city | suburb | periphery |
+|---|---|---|---|---|
+| working day, to the workplace (`workplace_car_cost_per_day`) | 10 (0-25) | 5 (0-15) | 1.5 (0-6) | 0 (0-2) |
+| shopping or leisure outing in town (`local_trip_car_cost`) | 2 (0-5) | 1 (0-3) | 0.3 (0-1.5) | 0 (0-0.5) |
+
+These are averages over everyone who drives to work, free places included (a company car park, a
+resident's permit), against Area C 7.50 EUR a day, blue lines 1.20-3.00 EUR/h (two hours at most in
+the centre) and garages 4-8 EUR/h up to about 25 EUR a day (`milano_area_c_sosta_2026`, third-party
+tariffs): the weights of that mixture are **placeholders**. Students and the missions away from home
+(weekends, holidays) pay nothing; the school escort is a short stop and pays nothing either. The annual
+parking cost the household declares (a garage or a permit at home) is a different thing and is not
+counted twice. The parking slider of the what-if panel moves these figures too.
+
 **Cost on the margin** (`TcoCostModel.usage_cost`): the components of the cost that grow with use
-(energy, distance charge, time charge, trip charge, day charge, tolls, local transport at a
-destination reached without a vehicle), not the fixed ones. Tolls are charged at 0.08 EUR/km
+(energy, distance charge, time charge, trip charge, day charge, tolls, parking and Area C at the
+destination, local transport at a destination reached without a vehicle), not the fixed ones. Tolls are charged at 0.08 EUR/km
 (`usage.motorway_toll_eur_per_km`, class A average, sourced); a stay by train or plane costs
 15 EUR/day to get around (`usage.destination_mobility_eur_per_day`, a placeholder). A household
 that owns a car does not weigh its insurance when it decides how to go to work; it weighs the
@@ -727,6 +771,13 @@ and car-sharing availability, also listed in CLAUDE.md section 27, are not offer
 - The assignment parameters (scale of the choice, perceived-time multiplier, share of bad-weather
   days, stay hours, weather weights) are **placeholders**; section 11 says what they do and what
   is not modelled.
+- Rush hours and charges at the destination (section 11) are Milan-centred and rest on third-party
+  figures and on guessed mixtures: where a commuter leaves the car is not asked, so the model
+  uses the typical cost of the area. Asking whether the workplace has free parking and whether it
+  is inside Area C is the most useful question to add. The uncertainty of these charges is in the
+  absolute costs but, like the one of prices and speeds, not in the ranges of the differences
+  between portfolios. Buses in traffic are not slowed down; trips with no start time and trips
+  to a destination outside the town band pay no parking.
 - Server-side validation messages are in English (Pydantic); the form prevents most invalid
   input, but a translated error layer is still to do.
 - The municipality is free text: no ISTAT list, so the Car Independence Index cannot be looked up yet.

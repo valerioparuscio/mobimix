@@ -20,6 +20,7 @@ from app.models import (
     MobilityDemand,
     MobilityMission,
     ModeAssignment,
+    NumericAnswer,
     Portfolio,
     PortfolioItem,
     PortfolioOrigin,
@@ -451,7 +452,10 @@ class TestNotes:
         )
 
     def test_a_model_that_overshoots_the_declared_car_use_says_so(self, catalog, households):
-        notes = _evaluate(catalog, households, "peripheral_family")[0].evaluation.data_quality_notes
+        # declaring 8,000 km, far fewer than the model finds for this family
+        profile = households["peripheral_family"].model_copy(deep=True)
+        profile.vehicles[0].annual_km = NumericAnswer.of(8000)
+        notes = _evaluate(catalog, {"f": profile}, "f")[0].evaluation.data_quality_notes
         assert any("più auto di quanta ne usiate" in note for note in notes)
 
 
@@ -553,13 +557,16 @@ class TestCostAnchoring:
         result = evaluator.evaluate(twin, baseline, demand, profile)
         assert result.annual_cost.expected == pytest.approx(current_cost.cost.total.expected)
 
-    def test_an_e_bike_costs_its_purchase_less_the_fuel_it_saves_not_the_cars_fixed_costs(
+    def test_an_e_bike_costs_its_purchase_less_what_it_saves_not_the_cars_fixed_costs(
         self, evaluated
     ):
+        # The car stays: the e-bike saves the fuel and the parking at the workplace of the trips
+        # it takes over, not the car's insurance, depreciation or garage (about 2,000 EUR a year,
+        # which would put the difference below -1,000).
         _, _, entries = evaluated["urban_couple"]
         ebike = next(e for e in entries if e.portfolio.id == "keep-car1+e_bike").evaluation
         current = entries[0].evaluation
-        assert 0 < ebike.annual_cost.expected - current.annual_cost.expected < 600
+        assert -400 < ebike.annual_cost.expected - current.annual_cost.expected < 600
 
 
 # --- time and comfort, in the large ---------------------------------------------------------
