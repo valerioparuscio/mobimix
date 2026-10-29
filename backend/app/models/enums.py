@@ -202,10 +202,22 @@ class IncomeBand(StrEnum):
 
 
 class AccessibilityConstraint(StrEnum):
+    """What a person cannot, or will not, do: the modes it rules out are in
+    data/feasibility_rules.yaml."""
+
     REDUCED_MOBILITY = "REDUCED_MOBILITY"
     WHEELCHAIR = "WHEELCHAIR"
     CANNOT_CYCLE = "CANNOT_CYCLE"
+    NO_TWO_WHEELS = "NO_TWO_WHEELS"  # no bicycle, e-bike, kick scooter, motorcycle
     OTHER = "OTHER"
+
+
+class WeatherTolerance(StrEnum):
+    """How willing a person is to ride an exposed means (bicycle, e-bike, scooter,
+    motorcycle) in rain, cold or heat. Unanswered, the model uses its average."""
+
+    ANY_WEATHER = "ANY_WEATHER"
+    FAIR_WEATHER_ONLY = "FAIR_WEATHER_ONLY"
 
 
 class FamilyLogistic(StrEnum):

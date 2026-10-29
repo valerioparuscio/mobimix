@@ -26,10 +26,18 @@ export type NumericForm =
   | { kind: 'exact'; value: number | null }
   | { kind: 'range'; low: number; high: number }
 
+/**
+ * Whether an adult rides a bicycle, an e-bike or a scooter. 'NONE' is the constraint
+ * NO_TWO_WHEELS of the profile; the two weather answers are its `weather_tolerance`;
+ * 'UNSURE' (the default) leaves both empty, so the model uses its average.
+ */
+export type TwoWheelsUse = 'ANY_WEATHER' | 'FAIR_WEATHER_ONLY' | 'NONE' | 'UNSURE'
+
 export interface AdultForm {
   id: string
   occupation: Occupation
   hasLicense: boolean
+  twoWheels: TwoWheelsUse
   distanceKm: NumericForm
   daysPerWeek: number
   remoteDaysPerWeek: number

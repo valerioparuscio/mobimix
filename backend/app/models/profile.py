@@ -25,6 +25,7 @@ from .enums import (
     Occupation,
     ProfileMode,
     TimeBand,
+    WeatherTolerance,
 )
 from .provenance import NumericAnswer
 
@@ -66,6 +67,11 @@ class Person(DomainModel):
     occupation: Occupation = Occupation.WORKER
     work_or_study: WorkPattern | None = None
     accessibility_constraints: list[AccessibilityConstraint] = Field(default_factory=list)
+    weather_tolerance: WeatherTolerance | None = Field(
+        default=None,
+        description="Whether the person rides a bicycle, e-bike or scooter in bad "
+        "weather. None = not asked: the average share of days given up applies.",
+    )
 
 
 class OwnedVehicle(DomainModel):

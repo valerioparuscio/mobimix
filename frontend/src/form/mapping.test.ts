@@ -13,7 +13,7 @@ import type {
 } from '../api/types.ts'
 import { emptyForm, newAdult, unknownAnswer } from './defaults.ts'
 import { answerToNumeric, formToProfile, numericToAnswer, profileToForm } from './mapping.ts'
-import type { FormState } from './types.ts'
+import type { AdultForm, FormState } from './types.ts'
 
 function fixture<T>(name: string): T {
   return JSON.parse(readFileSync(new URL(`./fixtures/${name}`, import.meta.url), 'utf-8')) as T
@@ -202,6 +202,51 @@ describe('form -> profile', () => {
       formToProfile({ ...form, municipality: '   ' }, config, makeId).household.location.municipality,
       null,
     )
+  })
+
+  it('stores "no bicycles, e-bikes or scooters" as a constraint and keeps the others', () => {
+    const form = completeForm()
+    form.adults = [{ ...newAdult(0), twoWheels: 'NONE' }]
+    const person = formToProfile(form, config, makeId).household.adults[0]!
+    assert.deepEqual(person.accessibility_constraints, ['NO_TWO_WHEELS'])
+    assert.equal(person.weather_tolerance, null)
+
+    const base = { ...person, accessibility_constraints: ['WHEELCHAIR'] }
+    form.adults = [{ ...newAdult(0), twoWheels: 'NONE', base }]
+    assert.deepEqual(
+      formToProfile(form, config, makeId).household.adults[0]!.accessibility_constraints,
+      ['WHEELCHAIR', 'NO_TWO_WHEELS'],
+    )
+    form.adults = [{ ...newAdult(0), twoWheels: 'UNSURE', base: { ...base, accessibility_constraints: ['WHEELCHAIR', 'NO_TWO_WHEELS'] } }]
+    assert.deepEqual(
+      formToProfile(form, config, makeId).household.adults[0]!.accessibility_constraints,
+      ['WHEELCHAIR'],
+    )
+  })
+
+  it('stores the weather answers as a tolerance and the default as nothing', () => {
+    const tolerance = (twoWheels: AdultForm['twoWheels']) => {
+      const form = completeForm()
+      form.adults = [{ ...newAdult(0), twoWheels }]
+      const person = formToProfile(form, config, makeId).household.adults[0]!
+      assert.deepEqual(person.accessibility_constraints, [])
+      return person.weather_tolerance
+    }
+    assert.equal(tolerance('ANY_WEATHER'), 'ANY_WEATHER')
+    assert.equal(tolerance('FAIR_WEATHER_ONLY'), 'FAIR_WEATHER_ONLY')
+    assert.equal(tolerance('UNSURE'), null)
+  })
+
+  it('reads the two-wheeler answer back from a profile', () => {
+    const profile = structuredClone(households['urban_couple']!)
+    const [first, second] = profile.household.adults
+    first!.weather_tolerance = 'FAIR_WEATHER_ONLY'
+    second!.accessibility_constraints = ['NO_TWO_WHEELS']
+    const form = profileToForm(profile, config, options)
+    assert.deepEqual(form.adults.map((adult) => adult.twoWheels), ['FAIR_WEATHER_ONLY', 'NONE'])
+    const again = formToProfile(form, config, makeId).household.adults
+    assert.equal(again[0]!.weather_tolerance, 'FAIR_WEATHER_ONLY')
+    assert.deepEqual(again[1]!.accessibility_constraints, ['NO_TWO_WHEELS'])
   })
 
   it('keeps fields the questionnaire does not ask when editing a loaded profile', () => {

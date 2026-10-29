@@ -29,7 +29,8 @@
             "time_critical": false,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         },
         {
           "id": "p2",
@@ -55,7 +56,8 @@
             "time_critical": false,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         }
       ],
       "n_children": 0,
@@ -237,7 +239,8 @@
             "time_critical": true,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         },
         {
           "id": "p2",
@@ -263,7 +266,8 @@
             "time_critical": false,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         }
       ],
       "n_children": 2,
@@ -427,7 +431,8 @@
             "time_critical": true,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         },
         {
           "id": "p2",
@@ -453,7 +458,8 @@
             "time_critical": false,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         }
       ],
       "n_children": 1,
@@ -596,7 +602,8 @@
             "time_critical": true,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         },
         {
           "id": "p2",
@@ -622,7 +629,8 @@
             "time_critical": false,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         }
       ],
       "n_children": 0,
@@ -774,7 +782,8 @@
             "time_critical": false,
             "typical_start": "MORNING_PEAK"
           },
-          "accessibility_constraints": []
+          "accessibility_constraints": [],
+          "weather_tolerance": null
         }
       ],
       "n_children": 0,

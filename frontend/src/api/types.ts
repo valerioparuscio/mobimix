@@ -40,6 +40,8 @@ export interface Person {
   occupation: Occupation
   work_or_study: WorkPattern | null
   accessibility_constraints: string[]
+  /** Rides a bicycle, e-bike or scooter in any weather / only in fair weather; null = not asked. */
+  weather_tolerance: string | null
 }
 
 export interface Location {

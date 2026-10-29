@@ -25,6 +25,7 @@ from .enums import (
     ServiceKind,
     TimeBand,
     TripBand,
+    WeatherTolerance,
 )
 from .evaluation import (
     AccuracyHint,

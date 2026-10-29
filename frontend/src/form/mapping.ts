@@ -22,7 +22,7 @@ import {
   unknownAnswer,
 } from './defaults.ts'
 import { worksOrStudies } from './rules.ts'
-import type { AdultForm, FormState, NumericForm, VehicleForm } from './types.ts'
+import type { AdultForm, FormState, NumericForm, TwoWheelsUse, VehicleForm } from './types.ts'
 import { BAND_GROUPS } from './types.ts'
 
 // --- numeric answers ---------------------------------------------------------------------
@@ -81,6 +81,32 @@ function group(config: QuestionnaireConfig, name: string): BandGroup {
   return found
 }
 
+// --- bicycles, e-bikes and scooters ------------------------------------------------------
+
+const NO_TWO_WHEELS = 'NO_TWO_WHEELS'
+
+/**
+ * The two-wheeler answer as the profile keeps it: the constraint NO_TWO_WHEELS, or a weather
+ * tolerance. Other constraints of a loaded profile (wheelchair...) are left alone.
+ */
+function twoWheelsToPerson(
+  use: TwoWheelsUse,
+  person: Person,
+): Pick<Person, 'accessibility_constraints' | 'weather_tolerance'> {
+  const others = person.accessibility_constraints.filter((c) => c !== NO_TWO_WHEELS)
+  return {
+    accessibility_constraints: use === 'NONE' ? [...others, NO_TWO_WHEELS] : others,
+    weather_tolerance: use === 'ANY_WEATHER' || use === 'FAIR_WEATHER_ONLY' ? use : null,
+  }
+}
+
+function personTwoWheels(person: Person): TwoWheelsUse {
+  if (person.accessibility_constraints.includes(NO_TWO_WHEELS)) return 'NONE'
+  if (person.weather_tolerance === 'ANY_WEATHER') return 'ANY_WEATHER'
+  if (person.weather_tolerance === 'FAIR_WEATHER_ONLY') return 'FAIR_WEATHER_ONLY'
+  return 'UNSURE'
+}
+
 // --- form -> profile ---------------------------------------------------------------------
 
 function randomId(): string {
@@ -109,6 +135,7 @@ export function formToProfile(
       ...person,
       id: adult.id,
       has_license: adult.hasLicense,
+      ...twoWheelsToPerson(adult.twoWheels, person),
       occupation: adult.occupation,
       work_or_study: worksOrStudies(adult)
         ? {
@@ -216,6 +243,7 @@ export function profileToForm(
       id: person.id,
       occupation: person.occupation,
       hasLicense: person.has_license,
+      twoWheels: personTwoWheels(person),
       distanceKm: numeric('distanceKm', work?.one_way_distance_km),
       daysPerWeek: answerToCount(work?.days_per_week, 5),
       remoteDaysPerWeek: answerToCount(work?.remote_days_per_week, 0),

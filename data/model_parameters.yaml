@@ -330,6 +330,26 @@ parameters:
     placeholder: true
     notes: "Stima propria: a Milano piove circa 80-90 giorni l'anno e non si rinuncia alla bici in tutti."
 
+  - id: assignment.bad_weather_share_any_weather
+    description: The same share for a person who says they ride a bicycle, e-bike or
+      scooter in any weather.
+    unit: share 0-1
+    value: 0.05
+    low: 0.02
+    high: 0.10
+    placeholder: true
+    notes: "Scelta di modellazione: chi dichiara di andare con ogni tempo rinuncia solo ai giorni peggiori (temporali, gelo, caldo estremo)."
+
+  - id: assignment.bad_weather_share_fair_weather_only
+    description: The same share for a person who says they ride a bicycle, e-bike or
+      scooter only when the weather is good (not in rain or cold).
+    unit: share 0-1
+    value: 0.30
+    low: 0.20
+    high: 0.40
+    placeholder: true
+    notes: "Stima propria: i circa 80-90 giorni di pioggia l'anno a Milano (22-25%) piu' i giorni di freddo e caldo intensi."
+
   - id: assignment.peak_speed_factor.urban
     description: Speed of a road vehicle (car, taxi; motorcycle only partly) on a trip of the
       URBAN band that starts in the peak hours, as a share of its normal speed in

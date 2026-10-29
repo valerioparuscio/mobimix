@@ -1,9 +1,9 @@
 // Plain-language recap of the answers, shown before the analysis. Pure: no DOM.
 
 import type { BandGroup, MobilityOptionSummary, QuestionnaireConfig } from '../api/types.ts'
-import { AREA_LABELS, FREQUENCY_LABELS, OCCUPATION_LABELS } from './labels.ts'
+import { AREA_LABELS, FREQUENCY_LABELS, OCCUPATION_LABELS, TWO_WHEELS_LABELS } from './labels.ts'
 import { worksOrStudies } from './rules.ts'
-import type { FormState, NumericForm, StepId } from './types.ts'
+import type { AdultForm, FormState, NumericForm, StepId } from './types.ts'
 import { BAND_GROUPS } from './types.ts'
 
 export interface SummarySection {
@@ -35,6 +35,12 @@ function plural(n: number, one: string, many: string): string {
   return `${n} ${n === 1 ? one : many}`
 }
 
+/** Only said when the adult answered: 'Dipende' is the default and adds nothing. */
+function twoWheelsNote(adult: AdultForm): string {
+  if (adult.twoWheels === 'UNSURE') return ''
+  return `, bici, e-bike e scooter: ${TWO_WHEELS_LABELS[adult.twoWheels].toLowerCase()}`
+}
+
 export function describeForm(
   form: FormState,
   config: QuestionnaireConfig,
@@ -49,14 +55,18 @@ export function describeForm(
 
   const work = form.adults.map((adult, index) => {
     const who = `Adulto ${index + 1}`
-    if (!worksOrStudies(adult)) return `${who}: ${OCCUPATION_LABELS[adult.occupation].toLowerCase()}`
+    const twoWheels = twoWheelsNote(adult)
+    if (!worksOrStudies(adult)) {
+      return `${who}: ${OCCUPATION_LABELS[adult.occupation].toLowerCase()}${twoWheels}`
+    }
     const remote =
       adult.remoteDaysPerWeek > 0 ? ` (${adult.remoteDaysPerWeek} da remoto)` : ''
     const punctual = adult.timeCritical ? ', arrivo a orario preciso' : ''
     return (
       `${who}: ${OCCUPATION_LABELS[adult.occupation].toLowerCase()}, ` +
       `distanza ${label('distanceKm', adult.distanceKm)}, ` +
-      `${plural(adult.daysPerWeek, 'giorno', 'giorni')} a settimana${remote}${punctual}`
+      `${plural(adult.daysPerWeek, 'giorno', 'giorni')} a settimana${remote}${punctual}` +
+      twoWheels
     )
   })
 

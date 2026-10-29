@@ -2,6 +2,7 @@
 // depends on these strings.
 
 import type { AreaType, Frequency, Occupation } from '../api/types.ts'
+import type { TwoWheelsUse } from './types.ts'
 
 export const OCCUPATION_LABELS: Record<Occupation, string> = {
   WORKER: 'Lavora',
@@ -9,6 +10,20 @@ export const OCCUPATION_LABELS: Record<Occupation, string> = {
   RETIRED: 'In pensione',
   OTHER: 'Altro',
 }
+
+export const TWO_WHEELS_LABELS: Record<TwoWheelsUse, string> = {
+  ANY_WEATHER: 'Sì, con ogni tempo',
+  FAIR_WEATHER_ONLY: 'Sì, ma non con pioggia o freddo',
+  NONE: 'No, non li usa',
+  UNSURE: 'Dipende',
+}
+
+export const TWO_WHEELS_ORDER: TwoWheelsUse[] = [
+  'ANY_WEATHER',
+  'FAIR_WEATHER_ONLY',
+  'NONE',
+  'UNSURE',
+]
 
 export const AREA_LABELS: Record<AreaType, string> = {
   CITY_CENTER: 'Centro città',

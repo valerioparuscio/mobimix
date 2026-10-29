@@ -28,9 +28,12 @@ unavailable_time_bands:
   RAIL: [NIGHT]
 
 # Modes a person with each constraint cannot use. A mission shared by the whole household
-# (a weekend away) takes the constraints of every adult.
+# (a weekend away) takes the constraints of every adult. NO_TWO_WHEELS is the answer "I do
+# not use bicycles, e-bikes, scooters or motorcycles" of the questionnaire: it may be a
+# matter of ability or of choice, the model treats it the same.
 accessibility_exclusions:
   CANNOT_CYCLE: [BICYCLE, E_BIKE]
+  NO_TWO_WHEELS: [BICYCLE, E_BIKE, KICK_SCOOTER, MOTORCYCLE]
   REDUCED_MOBILITY: [BICYCLE, KICK_SCOOTER]
   WHEELCHAIR: [WALK, BICYCLE, E_BIKE, KICK_SCOOTER, MOTORCYCLE]
   OTHER: []

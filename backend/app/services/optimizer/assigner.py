@@ -18,7 +18,10 @@ For each mission, over the options the feasibility check admitted:
     still sends them all to a means that wins clearly.
 3.  Two situations take a share of a mission's occurrences away from some options:
         bad weather  `assignment.bad_weather_share` x the mission's weather weight: means
-                     exposed to the weather are not used (if another can serve the mission);
+                     exposed to the weather are not used (if another can serve the mission).
+                     The share depends on who travels: a person who rides in any weather
+                     or only in fair weather has their own (`weather_tolerance`); a
+                     mission of the household takes the average of its adults;
         car busy     with a single car and `simultaneous_car_need_days` = D, the car cannot
                      serve the personal missions of the household's other members on D of their
                      occurrences: the car goes to its main user, the others use something else.
@@ -36,6 +39,7 @@ to calibrate the choice), and tolls, which are not in the cost model.
 
 import math
 from collections import defaultdict
+from statistics import fmean
 
 from app.data.loader import Catalog
 from app.models import (
@@ -50,6 +54,7 @@ from app.models import (
     Ownership,
     PortfolioItem,
     UserProfile,
+    WeatherTolerance,
 )
 from app.models.enums import Level
 from app.services.costs.model import TcoCostModel
@@ -105,6 +110,12 @@ class _Assignment:
         self.scale = catalog.value("assignment.logit_scale_per_eur")
         self.min_share = catalog.value("assignment.min_share")
         self.bad_weather = catalog.value("assignment.bad_weather_share")
+        self.bad_weather_by_tolerance = {
+            WeatherTolerance.ANY_WEATHER: catalog.value("assignment.bad_weather_share_any_weather"),
+            WeatherTolerance.FAIR_WEATHER_ONLY: catalog.value(
+                "assignment.bad_weather_share_fair_weather_only"
+            ),
+        }
         self.weather_factor = catalog.assignment_rules.weather_factor
 
         self.options: dict[str, MobilityOption] = {
@@ -179,7 +190,9 @@ class _Assignment:
             usable = feasible
         only_option = len(usable) == 1
 
-        weather_share = self.bad_weather * self.weather_factor[mission.weather_sensitivity]
+        weather_share = (
+            self._bad_weather_share(mission) * self.weather_factor[mission.weather_sensitivity]
+        )
         busy_share = self.busy.get(mission.id, 0.0)
         contributions: dict[tuple[str, AllocationReason], float] = defaultdict(float)
         for bad_weather, weather_weight in ((False, 1 - weather_share), (True, weather_share)):
@@ -207,6 +220,15 @@ class _Assignment:
                         )
                     contributions[(option_id, reason)] += weight * share
         return self._merge(contributions)
+
+    def _bad_weather_share(self, mission: MobilityMission) -> float:
+        """Share of the days an exposed means is given up for the weather, for the person
+        who makes the mission; for a mission of the household, the average of its adults."""
+        travellers = [p for p in self.adults if p.id == mission.person_id] or self.adults
+        return fmean(
+            self.bad_weather_by_tolerance.get(person.weather_tolerance, self.bad_weather)
+            for person in travellers
+        )
 
     def _allowed(
         self, mission: MobilityMission, usable: list[str], bad_weather: bool, car_busy: bool

@@ -38,7 +38,6 @@ from itertools import combinations
 
 from app.data.loader import Catalog
 from app.models import (
-    AccessibilityConstraint,
     Addon,
     AddonSet,
     ChangeKind,
@@ -207,7 +206,7 @@ class _Generation:
             scooter = self._added_vehicle(
                 self.rules.new_vehicles.scooter,
                 owned=self._owns_powered_two_wheeler(),
-                possible=any(person.has_license for person in self.adults),
+                possible=self._can_ride_a_scooter(),
             )
             if scooter is None:
                 return None
@@ -264,10 +263,21 @@ class _Generation:
             for vehicle in self.other_vehicles
         )
 
+    def _may_use(self, person: Person, mode: Mode) -> bool:
+        """Whether the person's constraints leave them the mode: the table the feasibility
+        check reads."""
+        exclusions = self.catalog.feasibility_rules.accessibility_exclusions
+        return not any(
+            mode in exclusions.get(constraint, [])
+            for constraint in person.accessibility_constraints
+        )
+
     def _can_cycle(self) -> bool:
+        return any(self._may_use(person, Mode.E_BIKE) for person in self.adults)
+
+    def _can_ride_a_scooter(self) -> bool:
         return any(
-            AccessibilityConstraint.CANNOT_CYCLE not in person.accessibility_constraints
-            for person in self.adults
+            person.has_license and self._may_use(person, Mode.MOTORCYCLE) for person in self.adults
         )
 
     @staticmethod

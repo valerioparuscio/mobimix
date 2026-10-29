@@ -27,7 +27,12 @@ export function loadDraft(): Draft | null {
     const draft = JSON.parse(raw) as Partial<Draft> | null
     if (draft?.version !== 1 || !draft.form || !Array.isArray(draft.form.adults)) return null
     if (typeof draft.step !== 'string') return null
-    return draft as Draft
+    // A draft saved before an answer existed has no value for it: the default applies.
+    const adults = draft.form.adults.map((adult) => ({
+      ...adult,
+      twoWheels: adult.twoWheels ?? 'UNSURE',
+    }))
+    return { ...draft, form: { ...draft.form, adults } } as Draft
   } catch {
     return null
   }

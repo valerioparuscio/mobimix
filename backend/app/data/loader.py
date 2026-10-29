@@ -91,6 +91,8 @@ REQUIRED_PARAMETER_IDS: tuple[str, ...] = (
     "assignment.min_share",
     "assignment.perceived_time_multiplier_at_zero_comfort",
     "assignment.bad_weather_share",
+    "assignment.bad_weather_share_any_weather",
+    "assignment.bad_weather_share_fair_weather_only",
     "assignment.peak_speed_factor.urban",
     "assignment.peak_speed_factor.regional",
     "usage.motorway_toll_eur_per_km",

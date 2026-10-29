@@ -1,7 +1,7 @@
 import type { Occupation } from '../api/types.ts'
 import { Chips, Field, NumericField, Stepper } from '../components/controls.tsx'
 import { updateAdult } from '../form/actions.ts'
-import { OCCUPATION_LABELS } from '../form/labels.ts'
+import { OCCUPATION_LABELS, TWO_WHEELS_LABELS, TWO_WHEELS_ORDER } from '../form/labels.ts'
 import { worksOrStudies } from '../form/rules.ts'
 import { BAND_GROUPS } from '../form/types.ts'
 import type { StepProps } from './types.ts'
@@ -9,6 +9,11 @@ import type { StepProps } from './types.ts'
 const OCCUPATIONS = (Object.keys(OCCUPATION_LABELS) as Occupation[]).map((value) => ({
   value,
   label: OCCUPATION_LABELS[value],
+}))
+
+const TWO_WHEELS = TWO_WHEELS_ORDER.map((value) => ({
+  value,
+  label: TWO_WHEELS_LABELS[value],
 }))
 
 export function WorkStep({ form, setForm, config }: StepProps) {
@@ -41,6 +46,17 @@ export function WorkStep({ form, setForm, config }: StepProps) {
               />
               Ha la patente di guida
             </label>
+            <Field
+              label="Usa la bici, l’e-bike o lo scooter?"
+              hint="Non tutti possono o vogliono, soprattutto quando piove: se non li usa, non li proponiamo."
+            >
+              <Chips
+                label={`Bici, e-bike e scooter adulto ${index + 1}`}
+                options={TWO_WHEELS}
+                value={adult.twoWheels}
+                onChange={(twoWheels) => patch({ twoWheels })}
+              />
+            </Field>
 
             {worksOrStudies(adult) && distanceGroup && (
               <>

@@ -37,6 +37,7 @@ export function defaultPerson(id: string): Person {
     occupation: 'WORKER',
     work_or_study: null,
     accessibility_constraints: [],
+    weather_tolerance: null,
   }
 }
 
@@ -104,6 +105,7 @@ export function newAdult(index: number): AdultForm {
     id: `p${index + 1}`,
     occupation: 'WORKER',
     hasLicense: true,
+    twoWheels: 'UNSURE',
     distanceKm: { kind: 'unknown' },
     daysPerWeek: 5,
     remoteDaysPerWeek: 0,

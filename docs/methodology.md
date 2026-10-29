@@ -112,8 +112,11 @@ profile has `NumericAnswer`s. `formToProfile` / `profileToForm` convert between 
 - **Persistence.** The draft is kept in the browser's `localStorage`; nothing is stored on the
   server.
 
-Added to the profile for the questionnaire: `OtherMobility.car_rental_days_per_year`, and a
-per-adult "has a driving licence" answer (needed to know who can drive).
+Added to the profile for the questionnaire: `OtherMobility.car_rental_days_per_year`, a
+per-adult "has a driving licence" answer (needed to know who can drive) and a per-adult "uses a
+bicycle, an e-bike or a scooter" answer: yes in any weather, yes but not in rain or cold, no,
+or "it depends" (the default). "No" is the constraint `NO_TWO_WHEELS`; the two weather answers are
+`Person.weather_tolerance`; "it depends" leaves both empty (sections 10 and 11).
 
 ## 7. Demand estimation
 
@@ -295,7 +298,7 @@ holds (the first rule that fails is the reason recorded):
 | seats | owned vehicles of the mode have, together, `capacity` x `quantity` >= passengers; pay-per-use services are taken as available in as many units as needed |
 | luggage | luggage space + `feasibility.luggage_tolerance_levels` >= luggage of the mission |
 | children | modes in `modes_not_with_children` (scooter, motorcycle) are out |
-| accessibility | modes excluded by a constraint of the traveller (all adults for a household mission) |
+| accessibility | modes excluded by a constraint of the traveller (all adults for a household mission). `NO_TWO_WHEELS` ("I do not use bicycles, e-bikes or scooters": a matter of ability or of choice, the model treats it the same) rules out bicycle, e-bike, kick scooter and motorcycle. The portfolio generator reads the same table: it proposes no e-bike if no adult may use one, no scooter if no adult may ride one and has a licence |
 | hours | modes in `unavailable_time_bands` are out at that hour (public transport and rail at night) |
 | regularity | from `feasibility.regular_min_occurrences_per_year` (50) a mission is regular: types in `occasional_only_types` (taxi, ride hailing, rental, flights) do not count |
 
@@ -449,10 +452,16 @@ preferences weigh the *outcomes* later (CLAUDE.md section 7).
    rest on; the logit spreads trips over near ties and still sends them all to a clear winner.
 3. *Two situations take part of a mission's occurrences away from some options.* The mission is split
    into slices, each assigned by steps 1-2, and the shares are summed.
-   - **Bad weather**: on a share `assignment.bad_weather_share` (15%) x the mission's weather weight
-     (`weather_factor`: low 0, medium 1, high 1.5) of occurrences, options exposed to the weather
-     (bicycle, e-bike, scooter, motorcycle, micro-sharing) are not used, if the portfolio has
-     another way to serve the mission.
+   - **Bad weather**: on a share of the occurrences, options exposed to the weather (bicycle,
+     e-bike, scooter, motorcycle, micro-sharing) are not used, if the portfolio has another way
+     to serve the mission. The share is the *person's* share x the mission's weather weight
+     (`weather_factor`: low 0, medium 1, high 1.5). The person's share depends on what they said
+     (`weather_tolerance`): `assignment.bad_weather_share` (15%) if they did not say,
+     `assignment.bad_weather_share_any_weather` (5%) if they ride in any weather,
+     `assignment.bad_weather_share_fair_weather_only` (30%) if they do not ride in rain or cold
+     (Milan has about 80-90 rainy days a year, 22-25%, plus the coldest and the hottest ones).
+     A personal mission takes the share of its person; a mission of the household, the average of
+     its adults. All three shares are **placeholders**.
    - **Car busy**: with a single car and `simultaneous_car_need_days` = D, the car cannot serve the
      personal missions of the household's other members on D of their occurrences (spread over their
      missions in proportion). The car goes to its driver: the holder of the car, or else the first
@@ -771,6 +780,12 @@ and car-sharing availability, also listed in CLAUDE.md section 27, are not offer
 - The assignment parameters (scale of the choice, perceived-time multiplier, share of bad-weather
   days, stay hours, weather weights) are **placeholders**; section 11 says what they do and what
   is not modelled.
+- Who rides a bicycle, an e-bike or a scooter is asked once per adult, for the four of them
+  together: someone who cycles but will not ride a motorcycle, or the reverse, cannot say so (the
+  profile can, through `CANNOT_CYCLE`, which the questionnaire does not set). Age is not used to
+  guess it. An adult who does not answer is assumed to ride, giving it up on 15% of the days
+  (rain, cold, heat) when another way serves the trip; where nothing else serves the trip the
+  two-wheeler is used whatever the weather. Darkness, ice and fatigue are not modelled.
 - Rush hours and charges at the destination (section 11) are Milan-centred and rest on third-party
   figures and on guessed mixtures: where a commuter leaves the car is not asked, so the model
   uses the typical cost of the area. Asking whether the workplace has free parking and whether it
